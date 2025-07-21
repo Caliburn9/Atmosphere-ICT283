@@ -1,0 +1,5 @@
+<map id="PromptMonth" name="PromptMonth">
+<area shape="rect" id="Node000001" title="Prompts the user to enter a valid month (1&#45;12)." alt="" coords="137,5,236,32"/>
+<area shape="rect" id="Node000002" href="$_menu_8cpp.html#a4db2fb2bcdeceb1e4f4b221498bd6e6c" title="Handles Option 1: Display wind speed average and standard deviation." alt="" coords="5,5,89,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,21,89,21,89,16,121,16"/>
+</map>

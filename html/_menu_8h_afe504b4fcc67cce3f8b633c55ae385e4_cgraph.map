@@ -1,0 +1,5 @@
+<map id="OptionFour" name="OptionFour">
+<area shape="rect" id="Node000001" title="Handles Option 4: Export wind, temperature, and solar radiation data to file." alt="" coords="5,5,91,32"/>
+<area shape="rect" id="Node000002" href="$_menu_8cpp.html#ad65996beea80065ae55a757ef40f1c9a" title="Prompts the user to enter a year." alt="" coords="139,5,228,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,16,123,16,123,21,91,21"/>
+</map>

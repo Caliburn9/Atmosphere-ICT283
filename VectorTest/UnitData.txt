@@ -1,0 +1,10 @@
+ICT100,IntroProgramming,3
+ICT159,FundamentalsCS,3
+ICT283,DataStructures,3
+ICT374,Algorithms,3
+ICT289,SoftwareEng,3
+ICT207,WebDev,3
+ICT302,CyberSecurity,3
+ICT115,Databases,3
+ICT203,OOP,3
+ICT210,OSFundamentals,3

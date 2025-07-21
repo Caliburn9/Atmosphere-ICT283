@@ -1,0 +1,284 @@
+# depslib dependency file v1.0
+1749938697 source:d:\tools\codeblocks projects\atmosphere\time.cpp
+	"time.h"
+
+1749945611 d:\tools\codeblocks projects\atmosphere\time.h
+
+1750183837 source:d:\tools\codeblocks projects\atmosphere\timetest\timetest.cpp
+	"../time.h"
+	<cassert>
+	<iostream>
+
+1748789512 source:d:\tools\codeblocks projects\atmosphere\date.cpp
+	"date.h"
+
+1749936336 d:\tools\codeblocks projects\atmosphere\date.h
+
+1750281358 source:d:\tools\codeblocks projects\atmosphere\atmospherecalc.cpp
+	"atmospherecalc.h"
+	"atmospherelogtypes.h"
+	"vector.h"
+	<iostream>
+	<fstream>
+	<math.h>
+	<string>
+
+1750281352 d:\tools\codeblocks projects\atmosphere\atmospherecalc.h
+	"vector.h"
+	"atmospherelogtypes.h"
+	<fstream>
+	<string>
+
+1750355083 d:\tools\codeblocks projects\atmosphere\vector.h
+	<cassert>
+
+1750372703 d:\tools\codeblocks projects\atmosphere\atmospherelogtypes.h
+	"date.h"
+	"mytime.h"
+	"vector.h"
+
+1750355619 source:d:\tools\codeblocks projects\atmosphere\main.cpp
+	"atmospherelogtypes.h"
+	"menu.h"
+	"fileio.h"
+	<string>
+	<iostream>
+	<fstream>
+
+1750184232 source:d:\tools\codeblocks projects\atmosphere\vectortest\unit.cpp
+	"unit.h"
+	<string>
+
+1750184196 d:\tools\codeblocks projects\atmosphere\vectortest\unit.h
+	<iostream>
+	<string>
+
+1750185639 source:d:\tools\codeblocks projects\atmosphere\vectortest\utils.cpp
+	"utils.h"
+	"unit.h"
+	"../date.h"
+	<iostream>
+
+1750185650 d:\tools\codeblocks projects\atmosphere\vectortest\utils.h
+	"unit.h"
+	"../date.h"
+	<iostream>
+
+1750231005 source:d:\tools\codeblocks projects\atmosphere\vectortest\vectortest.cpp
+	"../vector.h"
+	"../date.h"
+	"utils.h"
+	"unit.h"
+	<cassert>
+	<fstream>
+	<iostream>
+
+1750279118 source:d:\tools\codeblocks projects\atmosphere\mytime.cpp
+	"mytime.h"
+
+1750279143 d:\tools\codeblocks projects\atmosphere\mytime.h
+
+1750291232 source:d:\tools\codeblocks projects\atmosphere\calc.cpp
+	"calc.h"
+	"atmospherelogtypes.h"
+	<math.h>
+
+1750397783 d:\tools\codeblocks projects\atmosphere\calc.h
+	"vector.h"
+	<math.h>
+
+1750368796 d:\tools\codeblocks projects\atmosphere\menu.h
+	"atmospherelogtypes.h"
+	<string>
+
+1750398559 d:\tools\codeblocks projects\atmosphere\fileio.h
+	"atmospherelogtypes.h"
+	"vector.h"
+	<string>
+	<fstream>
+
+1750368788 source:d:\tools\codeblocks projects\atmosphere\menu.cpp
+	"menu.h"
+	"atmospherelogtypes.h"
+	"calc.h"
+	"vector.h"
+	"fileio.h"
+	<iostream>
+	<iomanip>
+	<string>
+
+1750365696 source:d:\tools\codeblocks projects\atmosphere\fileio.cpp
+	"fileio.h"
+	"atmospherelogtypes.h"
+	<string>
+	<iostream>
+
+1750279205 source:d:\tools\codeblocks projects\atmosphere\timetest\mytimetest.cpp
+	"../mytime.h"
+	<cassert>
+	<iostream>
+
+1750291232 source:d:\tools\codeblocks projects\atmosphere v4\calc.cpp
+	"calc.h"
+	"atmospherelogtypes.h"
+	<math.h>
+
+1752190521 d:\tools\codeblocks projects\atmosphere v4\calc.h
+	"vector.h"
+	<math.h>
+	<iostream>
+
+1751559817 d:\tools\codeblocks projects\atmosphere v4\vector.h
+	<cassert>
+
+1751582289 d:\tools\codeblocks projects\atmosphere v4\atmospherelogtypes.h
+	"date.h"
+	"mytime.h"
+	"vector.h"
+
+1749936336 d:\tools\codeblocks projects\atmosphere v4\date.h
+
+1750279143 d:\tools\codeblocks projects\atmosphere v4\mytime.h
+
+1748789512 source:d:\tools\codeblocks projects\atmosphere v4\date.cpp
+	"date.h"
+
+1750279118 source:d:\tools\codeblocks projects\atmosphere v4\mytime.cpp
+	"mytime.h"
+
+1751567859 source:d:\tools\codeblocks projects\atmosphere v4\fileio.cpp
+	"fileio.h"
+	"atmospherelogtypes.h"
+	<string>
+	<iostream>
+
+1751568425 d:\tools\codeblocks projects\atmosphere v4\fileio.h
+	"atmospherelogtypes.h"
+	"vector.h"
+	<string>
+	<fstream>
+
+1751582295 source:d:\tools\codeblocks projects\atmosphere v4\menu.cpp
+	"menu.h"
+	"atmospherelogtypes.h"
+	"calc.h"
+	"vector.h"
+	"fileio.h"
+	<iostream>
+	<iomanip>
+	<string>
+
+1750401632 d:\tools\codeblocks projects\atmosphere v4\menu.h
+	"atmospherelogtypes.h"
+	<string>
+
+1751582281 source:d:\tools\codeblocks projects\atmosphere v4\main.cpp
+	"atmospherelogtypes.h"
+	"menu.h"
+	"fileio.h"
+	<string>
+	<iostream>
+	<fstream>
+
+1751559752 d:\tools\codeblocks projects\atmosphere v4\vectorstl.h
+	<cassert>
+	<vector>
+
+1752190501 source:d:\tools\codeblocks projects\atmosphere v4\stattest.cpp
+	<iostream>
+	"vector.h"
+	"calc.h"
+
+1750291232 source:d:\tools\codeblocks projects\atmosphere v5\calc.cpp
+	"calc.h"
+	"atmospherelogtypes.h"
+	<math.h>
+
+1752190521 d:\tools\codeblocks projects\atmosphere v5\calc.h
+	"vector.h"
+	<math.h>
+	<iostream>
+
+1751559817 d:\tools\codeblocks projects\atmosphere v5\vector.h
+	<cassert>
+
+1751582289 d:\tools\codeblocks projects\atmosphere v5\atmospherelogtypes.h
+	"date.h"
+	"mytime.h"
+	"vector.h"
+
+1749936336 d:\tools\codeblocks projects\atmosphere v5\date.h
+
+1750279143 d:\tools\codeblocks projects\atmosphere v5\mytime.h
+
+1748789512 source:d:\tools\codeblocks projects\atmosphere v5\date.cpp
+	"date.h"
+
+1751567859 source:d:\tools\codeblocks projects\atmosphere v5\fileio.cpp
+	"fileio.h"
+	"atmospherelogtypes.h"
+	<string>
+	<iostream>
+
+1751568425 d:\tools\codeblocks projects\atmosphere v5\fileio.h
+	"atmospherelogtypes.h"
+	"vector.h"
+	<string>
+	<fstream>
+
+1751582281 source:d:\tools\codeblocks projects\atmosphere v5\main.cpp
+	"atmospherelogtypes.h"
+	"menu.h"
+	"fileio.h"
+	<string>
+	<iostream>
+	<fstream>
+
+1750401632 d:\tools\codeblocks projects\atmosphere v5\menu.h
+	"atmospherelogtypes.h"
+	<string>
+
+1751582295 source:d:\tools\codeblocks projects\atmosphere v5\menu.cpp
+	"menu.h"
+	"atmospherelogtypes.h"
+	"calc.h"
+	"vector.h"
+	"fileio.h"
+	<iostream>
+	<iomanip>
+	<string>
+
+1750279118 source:d:\tools\codeblocks projects\atmosphere v5\mytime.cpp
+	"mytime.h"
+
+1750184232 source:d:\tools\codeblocks projects\atmosphere v5\vectortest\unit.cpp
+	"unit.h"
+	<string>
+
+1750184196 d:\tools\codeblocks projects\atmosphere v5\vectortest\unit.h
+	<iostream>
+	<string>
+
+1753042720 source:d:\tools\codeblocks projects\atmosphere v5\utils.cpp
+	"utils.h"
+	"date.h"
+	"VectorTest/unit.h"
+	<iostream>
+	<string>
+
+1753042728 d:\tools\codeblocks projects\atmosphere v5\utils.h
+	"date.h"
+	"BST.h"
+	"VectorTest/unit.h"
+	<iostream>
+	<string>
+
+1753075387 d:\tools\codeblocks projects\atmosphere v5\bst.h
+	<iostream>
+
+1753041467 source:d:\tools\codeblocks projects\atmosphere v5\bsttest\bsttest.cpp
+	"../BST.h"
+	"../Date.h"
+	"../Utils.h"
+	<iostream>
+

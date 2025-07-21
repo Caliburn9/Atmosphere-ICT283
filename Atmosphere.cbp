@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Atmosphere" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Atmosphere" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Atmosphere" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="VectorTest">
+				<Option output="bin/Tests/VectorTest" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="DateTest">
+				<Option output="bin/Tests/DateTest" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="TimeTest">
+				<Option output="bin/Tests/TimeTest" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="BSTTest">
+				<Option output="bin/Tests/BSTTest" prefix_auto="1" extension_auto="1" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="AtmosphereLogTypes.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="BST.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="BSTTest" />
+		</Unit>
+		<Unit filename="BSTTest/BSTTest.cpp">
+			<Option target="BSTTest" />
+		</Unit>
+		<Unit filename="Calc.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Calc.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Date.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="VectorTest" />
+			<Option target="DateTest" />
+			<Option target="BSTTest" />
+		</Unit>
+		<Unit filename="Date.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="VectorTest" />
+			<Option target="DateTest" />
+			<Option target="BSTTest" />
+		</Unit>
+		<Unit filename="DateTest/DateTest.CPP">
+			<Option target="DateTest" />
+		</Unit>
+		<Unit filename="FileIO.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="FileIO.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Menu.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Menu.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="MyTime.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="TimeTest" />
+		</Unit>
+		<Unit filename="MyTime.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="TimeTest" />
+		</Unit>
+		<Unit filename="TimeTest/MyTimeTest.cpp">
+			<Option target="TimeTest" />
+		</Unit>
+		<Unit filename="Utils.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="BSTTest" />
+			<Option target="VectorTest" />
+		</Unit>
+		<Unit filename="Utils.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="BSTTest" />
+			<Option target="VectorTest" />
+		</Unit>
+		<Unit filename="Vector.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="VectorTest" />
+		</Unit>
+		<Unit filename="VectorSTL.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+			<Option target="VectorTest" />
+		</Unit>
+		<Unit filename="VectorTest/Unit.cpp">
+			<Option target="VectorTest" />
+			<Option target="BSTTest" />
+		</Unit>
+		<Unit filename="VectorTest/Unit.h">
+			<Option target="VectorTest" />
+			<Option target="BSTTest" />
+		</Unit>
+		<Unit filename="VectorTest/VectorTest.cpp">
+			<Option target="VectorTest" />
+		</Unit>
+		<Unit filename="main.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

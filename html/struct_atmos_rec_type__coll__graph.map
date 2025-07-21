@@ -1,0 +1,12 @@
+<map id="AtmosRecType" name="AtmosRecType">
+<area shape="rect" id="Node000001" title="Represents a atmospheric data record containing date, wind speed, wind temperature and solar radiatio..." alt="" coords="114,523,215,592"/>
+<area shape="rect" id="Node000002" href="$class_date.html" title="Represents a calendar date using integers that represent when marks were obtained for a unit." alt="" coords="5,189,94,408"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,407,99,453,121,497,127,508,122,510,116,500,94,455,77,409"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="94,5,118,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="96,55,80,75,66,100,56,135,51,173,45,172,51,134,61,98,75,72,92,52"/>
+<area shape="rect" id="Node000004" href="$class_my_time.html" title="Stores and manages 24&#45;hour time using hour and minute." alt="" coords="118,211,210,387"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="121,66,132,98,154,193,148,195,127,99,116,68"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,386,167,506,162,506,162,386"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="235,264,270,333"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="253,334,242,411,230,456,214,500,208,511,203,508,209,498,225,455,237,410,248,333"/>
+</map>

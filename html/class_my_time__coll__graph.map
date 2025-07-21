@@ -1,0 +1,5 @@
+<map id="MyTime" name="MyTime">
+<area shape="rect" id="Node000001" title="Stores and manages 24&#45;hour time using hour and minute." alt="" coords="5,168,97,344"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="39,5,64,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,75,54,151,49,151,49,75"/>
+</map>

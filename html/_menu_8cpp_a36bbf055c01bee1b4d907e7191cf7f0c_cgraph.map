@@ -1,0 +1,5 @@
+<map id="OptionTwo" name="OptionTwo">
+<area shape="rect" id="Node000001" title="Handles Option 2: Display temperature average and stddev for each month of a given year." alt="" coords="5,5,89,32"/>
+<area shape="rect" id="Node000002" href="$_menu_8cpp.html#ad65996beea80065ae55a757ef40f1c9a" title="Prompts the user to enter a year." alt="" coords="137,5,226,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,16,121,16,121,21,89,21"/>
+</map>

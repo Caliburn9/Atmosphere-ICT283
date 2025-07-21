@@ -1,0 +1,5 @@
+<map id="MyTime::SetHour" name="MyTime::SetHour">
+<area shape="rect" id="Node000001" title="Sets the value of the hour variable." alt="" coords="180,5,304,32"/>
+<area shape="rect" id="Node000002" href="$_file_i_o_8cpp.html#a98a245d6c336a39fb0c12f22df63228d" title="Parse a time string into a Time object." alt="" coords="5,5,132,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,21,132,21,132,16,164,16"/>
+</map>
