@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Atmosphere: Calc.h File Reference</title>
+<title>Atmosphere-ICT283: Calc.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Atmosphere
+   <div id="projectname">Atmosphere-ICT283
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -84,16 +84,19 @@ $(function() { codefold.init(); });
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_vector_8h_source.html">vector.h</a>&quot;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Calc.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_calc_8h__incl.png" border="0" usemap="#a_calc_8h" loading="lazy" alt=""/></div>
 <map name="a_calc_8h" id="a_calc_8h">
-<area shape="rect" title=" " alt="" coords="54,5,113,32"/>
+<area shape="rect" title=" " alt="" coords="99,5,158,32"/>
 <area shape="rect" href="_vector_8h.html" title=" " alt="" coords="5,80,74,107"/>
-<area shape="poly" title=" " alt="" coords="78,34,57,68,53,65,74,31"/>
+<area shape="poly" title=" " alt="" coords="115,35,68,72,65,68,112,30"/>
 <area shape="rect" title=" " alt="" coords="98,80,160,107"/>
-<area shape="poly" title=" " alt="" coords="94,31,115,65,111,68,89,34"/>
+<area shape="poly" title=" " alt="" coords="132,33,132,64,126,64,126,33"/>
+<area shape="rect" title=" " alt="" coords="184,80,255,107"/>
+<area shape="poly" title=" " alt="" coords="146,30,194,68,191,72,143,35"/>
 <area shape="rect" title=" " alt="" coords="7,155,72,181"/>
 <area shape="poly" title=" " alt="" coords="42,107,42,139,37,139,37,107"/>
 </map>
@@ -103,11 +106,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_calc_8h__dep__incl.png" border="0" usemap="#a_calc_8hdep" loading="lazy" alt=""/></div>
 <map name="a_calc_8hdep" id="a_calc_8hdep">
-<area shape="rect" title=" " alt="" coords="62,5,121,32"/>
-<area shape="rect" href="_calc_8cpp.html" title=" " alt="" coords="5,80,79,107"/>
-<area shape="poly" title=" " alt="" coords="76,47,53,81,48,78,72,44"/>
-<area shape="rect" href="_menu_8cpp.html" title=" " alt="" coords="103,80,181,107"/>
-<area shape="poly" title=" " alt="" coords="111,43,135,78,131,81,107,46"/>
+<area shape="rect" title=" " alt="" coords="208,5,268,32"/>
+<area shape="rect" href="_atmosphere_log_types_8cpp.html" title=" " alt="" coords="5,80,178,107"/>
+<area shape="poly" title=" " alt="" coords="200,42,118,82,116,77,198,37"/>
+<area shape="rect" href="_calc_8cpp.html" title=" " alt="" coords="202,80,275,107"/>
+<area shape="poly" title=" " alt="" coords="241,48,241,80,236,80,236,48"/>
+<area shape="rect" href="_menu_8cpp.html" title=" " alt="" coords="299,80,377,107"/>
+<area shape="poly" title=" " alt="" coords="269,39,322,77,319,82,266,43"/>
 </map>
 </div>
 </div>
@@ -116,18 +121,96 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a882deacb3ec6f009862c02d31abb297e" id="r_a882deacb3ec6f009862c02d31abb297e"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:a882deacb3ec6f009862c02d31abb297e template"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a882deacb3ec6f009862c02d31abb297e">CalculateMean</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;vec, int total)</td></tr>
+<tr class="memitem:a882deacb3ec6f009862c02d31abb297e template"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a882deacb3ec6f009862c02d31abb297e">CalculateMean</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;vec, <a class="el" href="classint.html">int</a> total)</td></tr>
 <tr class="memdesc:a882deacb3ec6f009862c02d31abb297e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the mean (average) of a vector of values.  <br /></td></tr>
-<tr class="memitem:a453990f6c34a223e5f798953da4c293b" id="r_a453990f6c34a223e5f798953da4c293b"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:a453990f6c34a223e5f798953da4c293b template"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a453990f6c34a223e5f798953da4c293b">CalculateStandardDeviation</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;vec, int N, float mean)</td></tr>
-<tr class="memdesc:a453990f6c34a223e5f798953da4c293b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the sample standard deviation of a vector of values.  <br /></td></tr>
+<tr class="memitem:a662b55e4f0cbaa4ce3209fde82b5b936" id="r_a662b55e4f0cbaa4ce3209fde82b5b936"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a662b55e4f0cbaa4ce3209fde82b5b936 template"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a662b55e4f0cbaa4ce3209fde82b5b936">CalculateStandardDeviation</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;vec, <a class="el" href="classint.html">int</a> N, float mean)</td></tr>
+<tr class="memdesc:a662b55e4f0cbaa4ce3209fde82b5b936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the sample standard deviation of a vector of values.  <br /></td></tr>
 <tr class="memitem:ad253a38b93032ca469c7e076399b347d" id="r_ad253a38b93032ca469c7e076399b347d"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
-<tr class="memitem:ad253a38b93032ca469c7e076399b347d template"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad253a38b93032ca469c7e076399b347d">CalculateTotal</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;vec, int size)</td></tr>
+<tr class="memitem:ad253a38b93032ca469c7e076399b347d template"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad253a38b93032ca469c7e076399b347d">CalculateTotal</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;vec, <a class="el" href="classint.html">int</a> size)</td></tr>
 <tr class="memdesc:ad253a38b93032ca469c7e076399b347d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the total sum of a vector of values.  <br /></td></tr>
-<tr class="memitem:a69e2e0a12ffe79412a3c71f7b815337c" id="r_a69e2e0a12ffe79412a3c71f7b815337c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69e2e0a12ffe79412a3c71f7b815337c">CompareSpeed</a> (float a, float b)</td></tr>
-<tr class="memdesc:a69e2e0a12ffe79412a3c71f7b815337c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two floating-point speed values to check if they are approximately equal.  <br /></td></tr>
+<tr class="memitem:ac165be4af158972e8451929dccdf1893" id="r_ac165be4af158972e8451929dccdf1893"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:ac165be4af158972e8451929dccdf1893 template"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac165be4af158972e8451929dccdf1893">sPCC</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;x, const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;y)</td></tr>
+<tr class="memdesc:ac165be4af158972e8451929dccdf1893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the Sample Pearson Correlation Coefficient (sPCC) between two vectors.  <br /></td></tr>
+<tr class="memitem:a0d29392217f123a2e16dbd75e6cad64b" id="r_a0d29392217f123a2e16dbd75e6cad64b"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a0d29392217f123a2e16dbd75e6cad64b template"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d29392217f123a2e16dbd75e6cad64b">ValidateVectorSizes</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;x, const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;y)</td></tr>
+<tr class="memdesc:a0d29392217f123a2e16dbd75e6cad64b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates that two vectors are non-empty and of equal size.  <br /></td></tr>
+<tr class="memitem:a77d13f3ec6c60ffde88b03780c1b1112" id="r_a77d13f3ec6c60ffde88b03780c1b1112"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a77d13f3ec6c60ffde88b03780c1b1112 template"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a77d13f3ec6c60ffde88b03780c1b1112">CalculateCovariance</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;x, const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;y, float meanX, float meanY)</td></tr>
+<tr class="memdesc:a77d13f3ec6c60ffde88b03780c1b1112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the covariance component for sPCC between two vectors.  <br /></td></tr>
+<tr class="memitem:a02b7ba00722d02931c1b86231f1117a4" id="r_a02b7ba00722d02931c1b86231f1117a4"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:a02b7ba00722d02931c1b86231f1117a4 template"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02b7ba00722d02931c1b86231f1117a4">CalculateVariance</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;vec, float mean)</td></tr>
+<tr class="memdesc:a02b7ba00722d02931c1b86231f1117a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the sum of squared differences (variance numerator) of a vector.  <br /></td></tr>
+<tr class="memitem:adf233160f3b9c3ff0d6091e33341de2b" id="r_adf233160f3b9c3ff0d6091e33341de2b"><td class="memTemplParams" colspan="2">template&lt;class T&gt; </td></tr>
+<tr class="memitem:adf233160f3b9c3ff0d6091e33341de2b template"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf233160f3b9c3ff0d6091e33341de2b">MAD</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;vec, <a class="el" href="classint.html">int</a> size)</td></tr>
+<tr class="memdesc:adf233160f3b9c3ff0d6091e33341de2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the Mean Absolute Deviation (MAD) of a vector of values.  <br /></td></tr>
+<tr class="memitem:ab8e2f110d7f8cf2f18bc7a33e136714d" id="r_ab8e2f110d7f8cf2f18bc7a33e136714d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8e2f110d7f8cf2f18bc7a33e136714d">CompareFloats</a> (float a, float b)</td></tr>
+<tr class="memdesc:ab8e2f110d7f8cf2f18bc7a33e136714d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two floating-point speed values to check if they are approximately equal.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a77d13f3ec6c60ffde88b03780c1b1112" name="a77d13f3ec6c60ffde88b03780c1b1112"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77d13f3ec6c60ffde88b03780c1b1112">&#9670;&#160;</a></span>CalculateCovariance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">float CalculateCovariance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>meanX</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>meanY</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the covariance component for sPCC between two vectors. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The numeric type stored in the vectors. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The first data vector. </td></tr>
+    <tr><td class="paramname">y</td><td>The second data vector. </td></tr>
+    <tr><td class="paramname">meanX</td><td>The precomputed mean of vector x. </td></tr>
+    <tr><td class="paramname">meanY</td><td>The precomputed mean of vector y. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The sum of products of differences from the means. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_calc_8h_source.html#l00168">168</a> of file <a class="el" href="_calc_8h_source.html">Calc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  168</span>                                                                                            {</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordtype">float</span> sumXY = 0;</div>
+<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; x.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>(); i++) {</div>
+<div class="line"><span class="lineno">  171</span>        <span class="keywordtype">float</span> xDiff = x[i] - meanX;</div>
+<div class="line"><span class="lineno">  172</span>        <span class="keywordtype">float</span> yDiff = y[i] - meanY;</div>
+<div class="line"><span class="lineno">  173</span>        sumXY += xDiff * yDiff;</div>
+<div class="line"><span class="lineno">  174</span>    }</div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">return</span> sumXY;</div>
+<div class="line"><span class="lineno">  176</span>}</div>
+<div class="ttc" id="aclass_vector_html_a0151d4cb23bc2c5474418beb125829ca"><div class="ttname"><a href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">Vector::GetSize</a></div><div class="ttdeci">int GetSize() const</div><div class="ttdoc">Returns the value of the size variable as an integer.</div><div class="ttdef"><b>Definition</b> <a href="_vector_8h_source.html#l00290">Vector.h:290</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a882deacb3ec6f009862c02d31abb297e" name="a882deacb3ec6f009862c02d31abb297e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a882deacb3ec6f009862c02d31abb297e">&#9670;&#160;</a></span>CalculateMean()</h2>
 
@@ -144,7 +227,7 @@ template&lt;class T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>total</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a></td>          <td class="paramname"><span class="paramname"><em>total</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -168,20 +251,20 @@ template&lt;class T&gt; </div>
 <dl class="section pre"><dt>Precondition</dt><dd>total &gt; 0 and all elements in vec must be valid numeric values. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Returns the calculated mean of type T. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_calc_8h_source.html#l00025">25</a> of file <a class="el" href="_calc_8h_source.html">Calc.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
-<div class="line"><span class="lineno">   27</span>    T sum = 0;</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; total; i++)</div>
-<div class="line"><span class="lineno">   29</span>    {</div>
-<div class="line"><span class="lineno">   30</span>        sum += vec[i];</div>
-<div class="line"><span class="lineno">   31</span>    }</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> sum/total;</div>
-<div class="line"><span class="lineno">   33</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_calc_8h_source.html#l00026">26</a> of file <a class="el" href="_calc_8h_source.html">Calc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    T sum = 0;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; total; i++)</div>
+<div class="line"><span class="lineno">   30</span>    {</div>
+<div class="line"><span class="lineno">   31</span>        sum += vec[i];</div>
+<div class="line"><span class="lineno">   32</span>    }</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> sum/total;</div>
+<div class="line"><span class="lineno">   34</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a453990f6c34a223e5f798953da4c293b" name="a453990f6c34a223e5f798953da4c293b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a453990f6c34a223e5f798953da4c293b">&#9670;&#160;</a></span>CalculateStandardDeviation()</h2>
+<a id="a662b55e4f0cbaa4ce3209fde82b5b936" name="a662b55e4f0cbaa4ce3209fde82b5b936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a662b55e4f0cbaa4ce3209fde82b5b936">&#9670;&#160;</a></span>CalculateStandardDeviation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,14 +272,14 @@ template&lt;class T&gt; </div>
 template&lt;class T&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T CalculateStandardDeviation </td>
+          <td class="memname">float CalculateStandardDeviation </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vec</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>N</em></span>, </td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a></td>          <td class="paramname"><span class="paramname"><em>N</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -224,18 +307,18 @@ template&lt;class T&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The sample standard deviation of the elements in the vector. </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>N &gt; 1 and all elements in vec must be valid numeric values. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Returns the sample standard deviation of type T. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Returns the sample standard deviation. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_calc_8h_source.html#l00052">52</a> of file <a class="el" href="_calc_8h_source.html">Calc.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
-<div class="line"><span class="lineno">   54</span>    T sum = 0;</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; ++i)</div>
-<div class="line"><span class="lineno">   56</span>    {</div>
-<div class="line"><span class="lineno">   57</span>        T diff = vec[i] - mean;</div>
-<div class="line"><span class="lineno">   58</span>        sum += diff * diff;</div>
-<div class="line"><span class="lineno">   59</span>    }</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(sqrt(sum / (N - 1)));</div>
-<div class="line"><span class="lineno">   61</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_calc_8h_source.html#l00053">53</a> of file <a class="el" href="_calc_8h_source.html">Calc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>{</div>
+<div class="line"><span class="lineno">   55</span>    T sum = 0;</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; N; ++i)</div>
+<div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        T diff = vec[i] - mean;</div>
+<div class="line"><span class="lineno">   59</span>        sum += diff * diff;</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> sqrt(sum / (N - 1));</div>
+<div class="line"><span class="lineno">   62</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -255,7 +338,7 @@ template&lt;class T&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -279,26 +362,76 @@ template&lt;class T&gt; </div>
 <dl class="section pre"><dt>Precondition</dt><dd>size &gt;= 0 and all elements in vec must be valid numeric values. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Returns the total of type T. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_calc_8h_source.html#l00078">78</a> of file <a class="el" href="_calc_8h_source.html">Calc.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>{</div>
-<div class="line"><span class="lineno">   80</span>    T sum = 0;</div>
-<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i)</div>
-<div class="line"><span class="lineno">   82</span>    {</div>
-<div class="line"><span class="lineno">   83</span>        sum += vec[i];</div>
-<div class="line"><span class="lineno">   84</span>    }</div>
-<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">return</span> sum;</div>
-<div class="line"><span class="lineno">   86</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_calc_8h_source.html#l00079">79</a> of file <a class="el" href="_calc_8h_source.html">Calc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>{</div>
+<div class="line"><span class="lineno">   81</span>    T sum = 0;</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; ++i)</div>
+<div class="line"><span class="lineno">   83</span>    {</div>
+<div class="line"><span class="lineno">   84</span>        sum += vec[i];</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><span class="lineno">   87</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a69e2e0a12ffe79412a3c71f7b815337c" name="a69e2e0a12ffe79412a3c71f7b815337c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69e2e0a12ffe79412a3c71f7b815337c">&#9670;&#160;</a></span>CompareSpeed()</h2>
+<a id="a02b7ba00722d02931c1b86231f1117a4" name="a02b7ba00722d02931c1b86231f1117a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02b7ba00722d02931c1b86231f1117a4">&#9670;&#160;</a></span>CalculateVariance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">float CalculateVariance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vec</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>mean</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the sum of squared differences (variance numerator) of a vector. </p>
+<p>This function computes the variance numerator (∑(x - mean)²), useful for correlation or standard deviation.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The numeric type of the vector elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>The data vector. </td></tr>
+    <tr><td class="paramname">mean</td><td>The mean of the vector's values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The sum of squared differences from the mean. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_calc_8h_source.html#l00191">191</a> of file <a class="el" href="_calc_8h_source.html">Calc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>                                                          {</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordtype">float</span> sumSquaredDiff = 0;</div>
+<div class="line"><span class="lineno">  193</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vec.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>(); i++) {</div>
+<div class="line"><span class="lineno">  194</span>        <span class="keywordtype">float</span> diff = vec[i] - mean;</div>
+<div class="line"><span class="lineno">  195</span>        sumSquaredDiff += diff * diff;</div>
+<div class="line"><span class="lineno">  196</span>    }</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">return</span> sumSquaredDiff;</div>
+<div class="line"><span class="lineno">  198</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab8e2f110d7f8cf2f18bc7a33e136714d" name="ab8e2f110d7f8cf2f18bc7a33e136714d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e2f110d7f8cf2f18bc7a33e136714d">&#9670;&#160;</a></span>CompareFloats()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool CompareSpeed </td>
+          <td class="memname">bool CompareFloats </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
@@ -311,15 +444,15 @@ template&lt;class T&gt; </div>
 </div><div class="memdoc">
 
 <p>Compare two floating-point speed values to check if they are approximately equal. </p>
-<p>This function compares two float values representing speeds and returns true if they are within a small tolerance of each other to account for floating-point precision.</p>
+<p>This function compares two float values and returns true if they are within a small tolerance of each other to account for floating-point precision.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>- The first speed value. </td></tr>
-    <tr><td class="paramname">b</td><td>- The second speed value to compare against. </td></tr>
+    <tr><td class="paramname">a</td><td>- The first float value. </td></tr>
+    <tr><td class="paramname">b</td><td>- The second float value to compare against. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the speeds are considered equal within tolerance; false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the floats are considered equal within tolerance; false otherwise. </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>The inputs a and b are valid floating-point numbers (not NaN or infinity). </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Returns a boolean indicating whether a and b are within tolerance. </dd></dl>
 
@@ -328,6 +461,201 @@ template&lt;class T&gt; </div>
 <div class="line"><span class="lineno">    9</span>    <span class="keywordtype">float</span> epsilon = 0.5f;</div>
 <div class="line"><span class="lineno">   10</span>    <span class="keywordflow">return</span> std::fabs(a - b) &lt; epsilon;</div>
 <div class="line"><span class="lineno">   11</span>}</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="_atmosphere_log_types_8cpp_source.html#l00007">operator&lt;()</a>, <a class="el" href="_atmosphere_log_types_8cpp_source.html#l00071">operator==()</a>, and <a class="el" href="_atmosphere_log_types_8cpp_source.html#l00039">operator&gt;()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_calc_8h_ab8e2f110d7f8cf2f18bc7a33e136714d_icgraph.png" border="0" usemap="#a_calc_8h_ab8e2f110d7f8cf2f18bc7a33e136714d_icgraph" loading="lazy" alt=""/></div>
+<map name="a_calc_8h_ab8e2f110d7f8cf2f18bc7a33e136714d_icgraph" id="a_calc_8h_ab8e2f110d7f8cf2f18bc7a33e136714d_icgraph">
+<area shape="rect" title="Compare two floating&#45;point speed values to check if they are approximately equal." alt="" coords="138,56,248,83"/>
+<area shape="rect" href="_atmosphere_log_types_8cpp.html#a6ca8cc6b031e522ce6dca15746ed9002" title="Less&#45;than operator for comparing two AtmosRecType objects." alt="" coords="9,5,86,32"/>
+<area shape="poly" title=" " alt="" coords="137,53,85,34,87,29,139,48"/>
+<area shape="rect" href="_atmosphere_log_types_8cpp.html#ae94026b02a15fcde6a95a2cd08d0ef0a" title="Comparison operator for comparing two AtmosRecType objects." alt="" coords="5,56,90,83"/>
+<area shape="poly" title=" " alt="" coords="122,72,90,72,90,67,122,67"/>
+<area shape="rect" href="_atmosphere_log_types_8cpp.html#a8d20a64ac3e6e512b2465c8b7cdec6fa" title="Greater&#45;than operator for comparing two AtmosRecType objects." alt="" coords="9,107,86,133"/>
+<area shape="poly" title=" " alt="" coords="139,91,87,109,85,104,137,86"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adf233160f3b9c3ff0d6091e33341de2b" name="adf233160f3b9c3ff0d6091e33341de2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf233160f3b9c3ff0d6091e33341de2b">&#9670;&#160;</a></span>MAD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">float MAD </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vec</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a></td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the Mean Absolute Deviation (MAD) of a vector of values. </p>
+<p>This templated function computes the Mean Absolute Deviation (MAD), which is the average of the absolute differences between each value and the mean. It is a measure of dispersion in the dataset and is less sensitive to outliers than standard deviation.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>- The type of the elements stored in the vector (e.g., float, int). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>- A vector containing elements of type T. </td></tr>
+    <tr><td class="paramname">size</td><td>- The number of elements to include in the MAD calculation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The mean absolute deviation of the elements in the vector. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>size &gt; 0 and all elements in vec must be valid numeric values. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Returns the mean absolute deviation as a float. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_calc_8h_source.html#l00217">217</a> of file <a class="el" href="_calc_8h_source.html">Calc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  218</span>{</div>
+<div class="line"><span class="lineno">  219</span>    T sum = 0;</div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordtype">float</span> mean = <a class="code hl_function" href="#a882deacb3ec6f009862c02d31abb297e">CalculateMean</a>(vec, size);</div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; size; i++)</div>
+<div class="line"><span class="lineno">  222</span>    {</div>
+<div class="line"><span class="lineno">  223</span>        sum += std::abs(vec[i] - mean);</div>
+<div class="line"><span class="lineno">  224</span>    }</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">return</span> sum / size;</div>
+<div class="line"><span class="lineno">  226</span>}</div>
+<div class="ttc" id="a_calc_8h_html_a882deacb3ec6f009862c02d31abb297e"><div class="ttname"><a href="#a882deacb3ec6f009862c02d31abb297e">CalculateMean</a></div><div class="ttdeci">T CalculateMean(const Vector&lt; T &gt; &amp;vec, int total)</div><div class="ttdoc">Calculates the mean (average) of a vector of values.</div><div class="ttdef"><b>Definition</b> <a href="_calc_8h_source.html#l00026">Calc.h:26</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac165be4af158972e8451929dccdf1893" name="ac165be4af158972e8451929dccdf1893"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac165be4af158972e8451929dccdf1893">&#9670;&#160;</a></span>sPCC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">float sPCC </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the Sample Pearson Correlation Coefficient (sPCC) between two vectors. </p>
+<p>This function measures the linear correlation between two data sets by computing the covariance and variances, then applying the sPCC formula.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The numeric type stored in the vectors (e.g., float). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The first data vector. </td></tr>
+    <tr><td class="paramname">y</td><td>The second data vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The correlation coefficient between -1.0 and 1.0, or -1 if the inputs are invalid. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>x and y must be non-empty and of equal size. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>No modification to input vectors. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_calc_8h_source.html#l00105">105</a> of file <a class="el" href="_calc_8h_source.html">Calc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>{</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="#a0d29392217f123a2e16dbd75e6cad64b">ValidateVectorSizes</a>(x, y))</div>
+<div class="line"><span class="lineno">  108</span>    {</div>
+<div class="line"><span class="lineno">  109</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  110</span>    }</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordtype">float</span> meanX = <a class="code hl_function" href="#a882deacb3ec6f009862c02d31abb297e">CalculateMean</a>(x, x.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>());</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordtype">float</span> meanY = <a class="code hl_function" href="#a882deacb3ec6f009862c02d31abb297e">CalculateMean</a>(y, y.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>());</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordtype">float</span> sumXY = <a class="code hl_function" href="#a77d13f3ec6c60ffde88b03780c1b1112">CalculateCovariance</a>(x, y, meanX, meanY);</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordtype">float</span> sumX2 = <a class="code hl_function" href="#a02b7ba00722d02931c1b86231f1117a4">CalculateVariance</a>(x, meanX);</div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordtype">float</span> sumY2 = <a class="code hl_function" href="#a02b7ba00722d02931c1b86231f1117a4">CalculateVariance</a>(y, meanY);</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordtype">float</span> sqrtX2 = sqrt(sumX2);</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordtype">float</span> sqrtY2 = sqrt(sumY2);</div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordtype">float</span> denom = sqrtX2 * sqrtY2;</div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">if</span> (denom == 0)</div>
+<div class="line"><span class="lineno">  124</span>    {</div>
+<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  126</span>    }</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">return</span> sumXY / denom;</div>
+<div class="line"><span class="lineno">  129</span>}</div>
+<div class="ttc" id="a_calc_8h_html_a02b7ba00722d02931c1b86231f1117a4"><div class="ttname"><a href="#a02b7ba00722d02931c1b86231f1117a4">CalculateVariance</a></div><div class="ttdeci">float CalculateVariance(const Vector&lt; T &gt; &amp;vec, float mean)</div><div class="ttdoc">Calculates the sum of squared differences (variance numerator) of a vector.</div><div class="ttdef"><b>Definition</b> <a href="_calc_8h_source.html#l00191">Calc.h:191</a></div></div>
+<div class="ttc" id="a_calc_8h_html_a0d29392217f123a2e16dbd75e6cad64b"><div class="ttname"><a href="#a0d29392217f123a2e16dbd75e6cad64b">ValidateVectorSizes</a></div><div class="ttdeci">bool ValidateVectorSizes(const Vector&lt; T &gt; &amp;x, const Vector&lt; T &gt; &amp;y)</div><div class="ttdoc">Validates that two vectors are non-empty and of equal size.</div><div class="ttdef"><b>Definition</b> <a href="_calc_8h_source.html#l00143">Calc.h:143</a></div></div>
+<div class="ttc" id="a_calc_8h_html_a77d13f3ec6c60ffde88b03780c1b1112"><div class="ttname"><a href="#a77d13f3ec6c60ffde88b03780c1b1112">CalculateCovariance</a></div><div class="ttdeci">float CalculateCovariance(const Vector&lt; T &gt; &amp;x, const Vector&lt; T &gt; &amp;y, float meanX, float meanY)</div><div class="ttdoc">Computes the covariance component for sPCC between two vectors.</div><div class="ttdef"><b>Definition</b> <a href="_calc_8h_source.html#l00168">Calc.h:168</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0d29392217f123a2e16dbd75e6cad64b" name="a0d29392217f123a2e16dbd75e6cad64b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d29392217f123a2e16dbd75e6cad64b">&#9670;&#160;</a></span>ValidateVectorSizes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ValidateVectorSizes </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; T &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Validates that two vectors are non-empty and of equal size. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the vector elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The first vector. </td></tr>
+    <tr><td class="paramname">y</td><td>The second vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if both vectors are valid and compatible for paired operations. </dd>
+<dd>
+false if vectors are empty or sizes mismatch. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_calc_8h_source.html#l00143">143</a> of file <a class="el" href="_calc_8h_source.html">Calc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  143</span>                                                                 {</div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">if</span> (x.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>() != y.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>()) {</div>
+<div class="line"><span class="lineno">  145</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;X and Y are not the same size.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  146</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">if</span> (x.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>() == 0 || y.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>() == 0) {</div>
+<div class="line"><span class="lineno">  149</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Vectors are empty.\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  151</span>    }</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  153</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

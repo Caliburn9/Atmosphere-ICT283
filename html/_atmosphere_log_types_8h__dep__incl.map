@@ -1,20 +1,27 @@
 <map id="AtmosphereLogTypes.h" name="AtmosphereLogTypes.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="143,5,301,32"/>
-<area shape="rect" id="Node000002" href="$_calc_8cpp.html" title=" " alt="" coords="5,80,79,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,41,75,82,73,77,176,36"/>
-<area shape="rect" id="Node000003" href="$_file_i_o_8cpp.html" title=" " alt="" coords="95,155,176,181"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,42,162,59,144,81,137,100,135,120,136,154,131,155,129,119,132,99,140,79,158,56,181,38"/>
-<area shape="rect" id="Node000004" href="$_file_i_o_8h.html" title=" " alt="" coords="154,80,221,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="212,47,196,81,191,78,207,45"/>
-<area shape="rect" id="Node000005" href="$_menu_8cpp.html" title=" " alt="" coords="203,155,281,181"/>
-<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="230,47,235,80,244,154,238,155,230,80,225,48"/>
-<area shape="rect" id="Node000006" href="$main_8cpp.html" title=" " alt="" coords="305,155,379,181"/>
-<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="315,35,347,52,374,79,380,99,376,120,355,156,350,153,371,119,374,99,369,81,344,57,312,40"/>
-<area shape="rect" id="Node000007" href="$_menu_8h.html" title=" " alt="" coords="295,80,360,107"/>
-<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="254,39,310,77,307,82,251,43"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="172,121,146,156,142,153,167,118"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="208,118,235,153,230,156,204,121"/>
-<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="229,111,316,152,314,156,227,116"/>
-<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="303,119,258,156,255,152,299,115"/>
-<area shape="poly" id="edge10_Node000007_Node000006" title=" " alt="" coords="336,122,342,154,337,155,330,123"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="376,5,535,32"/>
+<area shape="rect" id="Node000002" href="$_atmosphere_log_types_8cpp.html" title=" " alt="" coords="5,80,178,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="377,38,156,82,155,77,376,33"/>
+<area shape="rect" id="Node000003" href="$_calc_8cpp.html" title=" " alt="" coords="202,80,275,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="404,40,276,82,274,77,402,35"/>
+<area shape="rect" id="Node000004" href="$_collector_8h.html" title=" " alt="" coords="299,80,383,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="424,43,362,82,360,77,421,38"/>
+<area shape="rect" id="Node000006" href="$_menu_8cpp.html" title=" " alt="" coords="398,155,476,181"/>
+<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="454,48,449,80,441,155,435,154,444,80,448,47"/>
+<area shape="rect" id="Node000007" href="$_file_i_o_8cpp.html" title=" " alt="" coords="500,155,582,181"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="551,30,593,48,612,61,627,79,632,90,632,102,619,124,596,142,571,156,568,152,593,138,615,120,627,101,627,91,623,81,608,65,590,52,549,34"/>
+<area shape="rect" id="Node000008" href="$_file_i_o_8h.html" title=" " alt="" coords="458,80,525,107"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="471,45,488,78,483,81,466,47"/>
+<area shape="rect" id="Node000009" href="$main_8cpp.html" title=" " alt="" coords="605,155,679,181"/>
+<area shape="poly" id="edge15_Node000001_Node000009" title=" " alt="" coords="550,24,578,31,604,42,628,58,648,79,657,98,658,119,650,155,645,153,652,118,651,99,644,81,625,62,602,47,576,36,549,29"/>
+<area shape="rect" id="Node000010" href="$_menu_8h.html" title=" " alt="" coords="549,80,613,107"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="491,38,560,77,558,82,489,42"/>
+<area shape="rect" id="Node000005" href="$_collector_8cpp.html" title=" " alt="" coords="276,155,374,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="337,123,330,155,325,154,332,122"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="371,114,422,152,419,156,368,118"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="475,121,448,156,444,153,471,118"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="511,118,535,153,530,156,507,121"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="532,111,617,152,615,156,530,116"/>
+<area shape="poly" id="edge13_Node000010_Node000006" title=" " alt="" coords="543,116,463,156,461,152,541,112"/>
+<area shape="poly" id="edge14_Node000010_Node000009" title=" " alt="" coords="603,117,634,153,630,156,599,120"/>
 </map>

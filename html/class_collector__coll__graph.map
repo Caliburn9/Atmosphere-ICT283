@@ -1,0 +1,15 @@
+<map id="Collector" name="Collector">
+<area shape="rect" id="Node000001" title="A static utility class for collecting and storing atmospheric data measurements by month." alt="" coords="5,899,130,1139"/>
+<area shape="rect" id="Node000002" href="$class_vector.html" title=" " alt="" coords="139,544,244,784"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,784,118,883,113,882,148,783"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="137,285,172,355"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="155,355,153,430,158,520,159,527,154,528,153,520,148,430,150,354"/>
+<area shape="rect" id="Node000004" href="$classint.html" title=" " alt="" coords="217,5,242,75"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="219,54,174,101,149,134,128,169,91,258,65,353,48,449,38,546,35,640,37,729,49,882,44,882,31,729,30,640,33,546,42,449,59,352,86,257,123,167,144,131,170,98,215,50"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="232,75,227,264,213,520,213,527,207,527,208,520,222,264,226,74"/>
+<area shape="rect" id="Node000005" href="$class_vector.html" title="A simplified dynamic array template class." alt="" coords="333,168,438,472"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="244,57,277,105,315,167,327,188,323,191,311,169,273,108,239,60"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="328,450,315,473,246,586,242,584,311,471,323,447"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="376,5,394,75"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="388,74,388,152,382,152,382,74"/>
+</map>

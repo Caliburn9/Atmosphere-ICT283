@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Atmosphere: FileIO.cpp File Reference</title>
+<title>Atmosphere-ICT283: FileIO.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Atmosphere
+   <div id="projectname">Atmosphere-ICT283
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -84,6 +84,9 @@ $(function() { codefold.init(); });
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="_file_i_o_8h_source.html">fileio.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_atmosphere_log_types_8h_source.html">atmospherelogtypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_sort_8h_source.html">sort.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_b_s_t_8h_source.html">BST.h</a>&quot;</code><br />
+<code>#include &lt;map&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -91,28 +94,38 @@ Include dependency graph for FileIO.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_file_i_o_8cpp__incl.png" border="0" usemap="#a_file_i_o_8cpp" loading="lazy" alt=""/></div>
 <map name="a_file_i_o_8cpp" id="a_file_i_o_8cpp">
-<area shape="rect" title=" " alt="" coords="260,5,341,32"/>
-<area shape="rect" href="_file_i_o_8h.html" title=" " alt="" coords="238,80,297,107"/>
-<area shape="poly" title=" " alt="" coords="297,34,282,67,277,65,292,31"/>
-<area shape="rect" href="_atmosphere_log_types_8h.html" title=" " alt="" coords="46,155,195,181"/>
-<area shape="poly" title=" " alt="" coords="287,34,228,82,149,147,145,143,224,78,284,30"/>
-<area shape="rect" title=" " alt="" coords="361,155,414,181"/>
-<area shape="poly" title=" " alt="" coords="310,31,375,140,370,143,306,34"/>
-<area shape="rect" title=" " alt="" coords="372,80,443,107"/>
-<area shape="poly" title=" " alt="" coords="321,30,378,69,375,73,318,35"/>
-<area shape="poly" title=" " alt="" coords="243,110,161,150,159,145,241,105"/>
+<area shape="rect" title=" " alt="" coords="395,5,476,32"/>
+<area shape="rect" href="_file_i_o_8h.html" title=" " alt="" coords="339,80,398,107"/>
+<area shape="poly" title=" " alt="" coords="426,34,392,70,388,67,422,31"/>
+<area shape="rect" href="_atmosphere_log_types_8h.html" title=" " alt="" coords="42,155,191,181"/>
+<area shape="poly" title=" " alt="" coords="395,29,314,48,268,63,225,82,178,113,141,146,137,142,175,109,222,78,266,58,312,43,393,24"/>
+<area shape="rect" href="_b_s_t_8h.html" title=" " alt="" coords="555,155,612,181"/>
+<area shape="poly" title=" " alt="" coords="450,31,562,142,558,145,446,34"/>
+<area shape="rect" title=" " alt="" coords="581,229,652,256"/>
+<area shape="poly" title=" " alt="" coords="471,30,510,48,554,75,596,109,613,130,627,154,633,185,629,215,624,214,628,185,622,156,609,133,592,113,551,79,508,53,469,35"/>
+<area shape="rect" title=" " alt="" coords="407,155,453,181"/>
+<area shape="poly" title=" " alt="" coords="438,33,434,139,428,139,432,32"/>
+<area shape="rect" title=" " alt="" coords="477,155,530,181"/>
+<area shape="poly" title=" " alt="" coords="444,31,494,139,489,142,439,34"/>
+<area shape="rect" href="_sort_8h.html" title=" " alt="" coords="235,80,289,107"/>
+<area shape="poly" title=" " alt="" coords="406,35,305,77,302,72,404,30"/>
+<area shape="poly" title=" " alt="" coords="340,106,176,152,175,147,338,101"/>
 <area shape="rect" href="_vector_8h.html" title=" " alt="" coords="194,229,263,256"/>
-<area shape="poly" title=" " alt="" coords="267,108,238,215,233,214,261,106"/>
-<area shape="poly" title=" " alt="" coords="290,105,355,144,352,149,287,109"/>
-<area shape="rect" title=" " alt="" coords="271,155,336,181"/>
-<area shape="poly" title=" " alt="" coords="276,106,293,139,288,142,271,108"/>
+<area shape="poly" title=" " alt="" coords="357,109,308,157,251,219,247,215,304,153,353,105"/>
+<area shape="poly" title=" " alt="" coords="400,102,541,150,539,155,398,107"/>
+<area shape="poly" title=" " alt="" coords="381,105,412,141,408,145,377,109"/>
+<area shape="poly" title=" " alt="" coords="393,105,468,144,465,149,391,110"/>
+<area shape="rect" title=" " alt="" coords="317,155,383,181"/>
+<area shape="poly" title=" " alt="" coords="368,108,360,140,354,139,363,107"/>
 <area shape="rect" href="_date_8h.html" title=" " alt="" coords="5,229,63,256"/>
-<area shape="poly" title=" " alt="" coords="107,184,62,221,59,217,104,180"/>
+<area shape="poly" title=" " alt="" coords="104,184,61,221,58,217,101,180"/>
 <area shape="rect" href="_my_time_8h.html" title=" " alt="" coords="87,229,162,256"/>
-<area shape="poly" title=" " alt="" coords="124,182,126,214,120,214,119,182"/>
-<area shape="poly" title=" " alt="" coords="141,180,199,218,196,222,138,184"/>
+<area shape="poly" title=" " alt="" coords="121,182,124,213,119,214,115,182"/>
+<area shape="poly" title=" " alt="" coords="138,180,198,218,195,223,135,184"/>
 <area shape="rect" title=" " alt="" coords="196,304,261,331"/>
 <area shape="poly" title=" " alt="" coords="231,257,231,288,226,288,226,257"/>
+<area shape="poly" title=" " alt="" coords="592,181,607,214,602,216,587,183"/>
+<area shape="poly" title=" " alt="" coords="262,108,237,215,232,214,257,107"/>
 </map>
 </div>
 </div>
@@ -120,24 +133,112 @@ Include dependency graph for FileIO.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa6339cdc18c7e77965f466e52fb48107" id="r_aa6339cdc18c7e77965f466e52fb48107"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6339cdc18c7e77965f466e52fb48107">ReadAtmosphereData</a> (std::ifstream &amp;file)</td></tr>
-<tr class="memdesc:aa6339cdc18c7e77965f466e52fb48107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads atmospheric data from a file into a structured vector.  <br /></td></tr>
-<tr class="memitem:ae021d014afae3d84ca4b8cc39365e9a6" id="r_ae021d014afae3d84ca4b8cc39365e9a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae021d014afae3d84ca4b8cc39365e9a6">GetColumnIndices</a> (std::string headerLine, int &amp;wastIndex, int &amp;sIndex, int &amp;tIndex, int &amp;srIndex)</td></tr>
-<tr class="memdesc:ae021d014afae3d84ca4b8cc39365e9a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the column indices of WAST, S, T, and SR from the header line.  <br /></td></tr>
-<tr class="memitem:adad13c7324403b3f478568970cc23d17" id="r_adad13c7324403b3f478568970cc23d17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adad13c7324403b3f478568970cc23d17">ReadRowData</a> (std::string line, std::string &amp;wastData, int wastIndex, std::string &amp;sData, int sIndex, std::string &amp;tData, int tIndex, std::string &amp;srData, int srIndex)</td></tr>
-<tr class="memdesc:adad13c7324403b3f478568970cc23d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts required field values from a CSV line based on column indices.  <br /></td></tr>
+<tr class="memitem:aa42493a5c72735b6d50237b448487c8b" id="r_aa42493a5c72735b6d50237b448487c8b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa42493a5c72735b6d50237b448487c8b">LoadAtmosphereData</a> (<a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp;atmosData)</td></tr>
+<tr class="memdesc:aa42493a5c72735b6d50237b448487c8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads atmospheric data from multiple input files listed in data_source.txt.  <br /></td></tr>
+<tr class="memitem:a441c83f0f3813ff647d5801f505f8a7a" id="r_a441c83f0f3813ff647d5801f505f8a7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a441c83f0f3813ff647d5801f505f8a7a">ReadAtmosphereData</a> (std::ifstream &amp;file, <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp;atmosData)</td></tr>
+<tr class="memdesc:a441c83f0f3813ff647d5801f505f8a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads atmospheric data from a file into a structured vector.  <br /></td></tr>
+<tr class="memitem:ae150a07f7b5279ddf1210a69120431ee" id="r_ae150a07f7b5279ddf1210a69120431ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae150a07f7b5279ddf1210a69120431ee">GetColumnIndices</a> (std::string &amp;headerLine, <a class="el" href="classint.html">int</a> &amp;wastIndex, <a class="el" href="classint.html">int</a> &amp;sIndex, <a class="el" href="classint.html">int</a> &amp;tIndex, <a class="el" href="classint.html">int</a> &amp;srIndex)</td></tr>
+<tr class="memdesc:ae150a07f7b5279ddf1210a69120431ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the column indices of WAST, S, T, and SR from the header line.  <br /></td></tr>
+<tr class="memitem:a524b9cc11ab093550365e56f1b9c7090" id="r_a524b9cc11ab093550365e56f1b9c7090"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a524b9cc11ab093550365e56f1b9c7090">ReadRowData</a> (std::string &amp;line, std::string &amp;wastData, <a class="el" href="classint.html">int</a> wastIndex, std::string &amp;sData, <a class="el" href="classint.html">int</a> sIndex, std::string &amp;tData, <a class="el" href="classint.html">int</a> tIndex, std::string &amp;srData, <a class="el" href="classint.html">int</a> srIndex)</td></tr>
+<tr class="memdesc:a524b9cc11ab093550365e56f1b9c7090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts required field values from a CSV line based on column indices.  <br /></td></tr>
 <tr class="memitem:ae45c206321579e060921e2a71a65f9db" id="r_ae45c206321579e060921e2a71a65f9db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae45c206321579e060921e2a71a65f9db">ParseDateRecord</a> (std::string dateStr, <a class="el" href="class_date.html">Date</a> &amp;d)</td></tr>
 <tr class="memdesc:ae45c206321579e060921e2a71a65f9db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a date string into a <a class="el" href="class_date.html" title="Represents a calendar date using integers that represent when marks were obtained for a unit.">Date</a> object.  <br /></td></tr>
 <tr class="memitem:a98a245d6c336a39fb0c12f22df63228d" id="r_a98a245d6c336a39fb0c12f22df63228d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98a245d6c336a39fb0c12f22df63228d">ParseTimeRecord</a> (std::string timeStr, <a class="el" href="class_my_time.html">MyTime</a> &amp;t)</td></tr>
 <tr class="memdesc:a98a245d6c336a39fb0c12f22df63228d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a time string into a Time object.  <br /></td></tr>
 <tr class="memitem:a11d38262872506b842e2cef223a44c71" id="r_a11d38262872506b842e2cef223a44c71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11d38262872506b842e2cef223a44c71">WriteAtmosphereData</a> (std::ofstream &amp;file, const <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp;atmosData)</td></tr>
 <tr class="memdesc:a11d38262872506b842e2cef223a44c71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes atmospheric data to a CSV output file.  <br /></td></tr>
-<tr class="memitem:a62119851ba7b836b5e830ca52bb4ac9d" id="r_a62119851ba7b836b5e830ca52bb4ac9d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62119851ba7b836b5e830ca52bb4ac9d">GetInputFilename</a> (const std::string &amp;sourceFilePath)</td></tr>
-<tr class="memdesc:a62119851ba7b836b5e830ca52bb4ac9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the data filename from the source file and return the full path.  <br /></td></tr>
+<tr class="memitem:ab04293170ab4e2ed17cb3e25a7411927" id="r_ab04293170ab4e2ed17cb3e25a7411927"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab04293170ab4e2ed17cb3e25a7411927">TransferToBSTAndMap</a> (const <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp;atmosData, <a class="el" href="class_b_s_t.html">BST</a>&lt; <a class="el" href="struct_atmos_rec_type.html">AtmosRecType</a> &gt; &amp;bstData, std::map&lt; <a class="el" href="classint.html">int</a>, <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &gt; &amp;mapData)</td></tr>
+<tr class="memdesc:ab04293170ab4e2ed17cb3e25a7411927"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transfers data from <a class="el" href="struct_atmos_rec_type.html" title="Represents a atmospheric data record containing date, wind speed, wind temperature and solar radiatio...">AtmosRecType</a> vector to <a class="el" href="class_b_s_t.html" title="A Binary Search Tree (BST) class that stores elements in sorted order.">BST</a> and map structures.  <br /></td></tr>
+<tr class="memitem:ac7e2048de17edc1b3cc359c4832fef24" id="r_ac7e2048de17edc1b3cc359c4832fef24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7e2048de17edc1b3cc359c4832fef24">BuildBalancedBST</a> (<a class="el" href="class_b_s_t.html">BST</a>&lt; <a class="el" href="struct_atmos_rec_type.html">AtmosRecType</a> &gt; &amp;bstData, const <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp;sortedData, <a class="el" href="classint.html">int</a> start, <a class="el" href="classint.html">int</a> end)</td></tr>
+<tr class="memdesc:ac7e2048de17edc1b3cc359c4832fef24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively builds a height-balanced Binary Search Tree from sorted atmospheric data.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ae021d014afae3d84ca4b8cc39365e9a6" name="ae021d014afae3d84ca4b8cc39365e9a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae021d014afae3d84ca4b8cc39365e9a6">&#9670;&#160;</a></span>GetColumnIndices()</h2>
+<a id="ac7e2048de17edc1b3cc359c4832fef24" name="ac7e2048de17edc1b3cc359c4832fef24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7e2048de17edc1b3cc359c4832fef24">&#9670;&#160;</a></span>BuildBalancedBST()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BuildBalancedBST </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_b_s_t.html">BST</a>&lt; <a class="el" href="struct_atmos_rec_type.html">AtmosRecType</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>bstData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sortedData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a></td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a></td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Recursively builds a height-balanced Binary Search Tree from sorted atmospheric data. </p>
+<p>This function uses a recursive divide-and-conquer strategy to construct a balanced <a class="el" href="class_b_s_t.html" title="A Binary Search Tree (BST) class that stores elements in sorted order.">BST</a> by inserting the middle element of the current range, then repeating the process for the left and right subranges.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bstData</td><td>A reference to the <a class="el" href="class_b_s_t.html" title="A Binary Search Tree (BST) class that stores elements in sorted order.">BST</a> where the balanced nodes will be inserted. </td></tr>
+    <tr><td class="paramname">sortedData</td><td>A const reference to a sorted <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126" title="A Vector container storing multiple AtmosRecType records.">AtmosLogType</a> (vector of <a class="el" href="struct_atmos_rec_type.html" title="Represents a atmospheric data record containing date, wind speed, wind temperature and solar radiatio...">AtmosRecType</a>). </td></tr>
+    <tr><td class="paramname">start</td><td>The starting index of the current range in the sorted vector. </td></tr>
+    <tr><td class="paramname">end</td><td>The ending index of the current range in the sorted vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>sortedData must be sorted by the desired <a class="el" href="class_b_s_t.html" title="A Binary Search Tree (BST) class that stores elements in sorted order.">BST</a> ordering criteria (e.g., Date/Time). </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>bstData is populated with a balanced <a class="el" href="class_b_s_t.html" title="A Binary Search Tree (BST) class that stores elements in sorted order.">BST</a> containing all elements from sortedData[start] to sortedData[end]. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00281">281</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  282</span>{</div>
+<div class="line"><span class="lineno">  283</span>    <span class="keywordflow">if</span> (start &gt; end)</div>
+<div class="line"><span class="lineno">  284</span>    {</div>
+<div class="line"><span class="lineno">  285</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  286</span>    }</div>
+<div class="line"><span class="lineno">  287</span> </div>
+<div class="line"><span class="lineno">  288</span>    <span class="keywordtype">int</span> mid = (start + end) / 2;</div>
+<div class="line"><span class="lineno">  289</span>    bstData.<a class="code hl_function" href="class_b_s_t.html#a54b620ccf16dcabf8996a9cd6ed3dada">Insert</a>(sortedData[mid]);</div>
+<div class="line"><span class="lineno">  290</span> </div>
+<div class="line"><span class="lineno">  291</span>    <a class="code hl_function" href="#ac7e2048de17edc1b3cc359c4832fef24">BuildBalancedBST</a>(bstData, sortedData, start, mid - 1);</div>
+<div class="line"><span class="lineno">  292</span>    <a class="code hl_function" href="#ac7e2048de17edc1b3cc359c4832fef24">BuildBalancedBST</a>(bstData, sortedData, mid + 1, end);</div>
+<div class="line"><span class="lineno">  293</span>}</div>
+<div class="ttc" id="a_file_i_o_8cpp_html_ac7e2048de17edc1b3cc359c4832fef24"><div class="ttname"><a href="#ac7e2048de17edc1b3cc359c4832fef24">BuildBalancedBST</a></div><div class="ttdeci">void BuildBalancedBST(BST&lt; AtmosRecType &gt; &amp;bstData, const AtmosLogType &amp;sortedData, int start, int end)</div><div class="ttdoc">Recursively builds a height-balanced Binary Search Tree from sorted atmospheric data.</div><div class="ttdef"><b>Definition</b> <a href="_file_i_o_8cpp_source.html#l00281">FileIO.cpp:281</a></div></div>
+<div class="ttc" id="aclass_b_s_t_html_a54b620ccf16dcabf8996a9cd6ed3dada"><div class="ttname"><a href="class_b_s_t.html#a54b620ccf16dcabf8996a9cd6ed3dada">BST::Insert</a></div><div class="ttdeci">void Insert(const T &amp;val)</div><div class="ttdoc">Insert a value into the BST.</div><div class="ttdef"><b>Definition</b> <a href="_b_s_t_8h_source.html#l00298">BST.h:298</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_file_i_o_8cpp_source.html#l00281">BuildBalancedBST()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="_file_i_o_8cpp_source.html#l00281">BuildBalancedBST()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_file_i_o_8cpp_ac7e2048de17edc1b3cc359c4832fef24_cgraph.png" border="0" usemap="#a_file_i_o_8cpp_ac7e2048de17edc1b3cc359c4832fef24_cgraph" loading="lazy" alt=""/></div>
+<map name="a_file_i_o_8cpp_ac7e2048de17edc1b3cc359c4832fef24_cgraph" id="a_file_i_o_8cpp_ac7e2048de17edc1b3cc359c4832fef24_cgraph">
+<area shape="rect" title="Recursively builds a height&#45;balanced Binary Search Tree from sorted atmospheric data." alt="" coords="5,29,136,56"/>
+<area shape="poly" title=" " alt="" coords="47,30,43,21,46,11,56,5,71,3,87,5,95,12,92,16,84,10,70,8,57,10,50,14,49,20,52,28"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_file_i_o_8cpp_ac7e2048de17edc1b3cc359c4832fef24_icgraph.png" border="0" usemap="#a_file_i_o_8cpp_ac7e2048de17edc1b3cc359c4832fef24_icgraph" loading="lazy" alt=""/></div>
+<map name="a_file_i_o_8cpp_ac7e2048de17edc1b3cc359c4832fef24_icgraph" id="a_file_i_o_8cpp_ac7e2048de17edc1b3cc359c4832fef24_icgraph">
+<area shape="rect" title="Recursively builds a height&#45;balanced Binary Search Tree from sorted atmospheric data." alt="" coords="5,29,136,56"/>
+<area shape="poly" title=" " alt="" coords="92,16,84,10,70,8,57,10,50,14,49,20,52,28,47,30,43,21,46,11,56,5,71,3,87,5,95,12"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae150a07f7b5279ddf1210a69120431ee" name="ae150a07f7b5279ddf1210a69120431ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae150a07f7b5279ddf1210a69120431ee">&#9670;&#160;</a></span>GetColumnIndices()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,27 +246,27 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">bool GetColumnIndices </td>
           <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>headerLine</em></span>, </td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>headerLine</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>wastIndex</em></span>, </td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>wastIndex</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>sIndex</em></span>, </td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>sIndex</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>tIndex</em></span>, </td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>tIndex</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>srIndex</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>srIndex</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -186,102 +287,119 @@ Functions</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd>headerLine must be a valid CSV-formatted line containing column headers. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>wastIndex, sIndex, tIndex, and srIndex are updated with appropriate values if found. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00091">91</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>{</div>
-<div class="line"><span class="lineno">   93</span>    wastIndex = -1;</div>
-<div class="line"><span class="lineno">   94</span>    sIndex = -1;</div>
-<div class="line"><span class="lineno">   95</span>    tIndex = -1;</div>
-<div class="line"><span class="lineno">   96</span>    srIndex = -1;</div>
-<div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>    <span class="keywordtype">int</span> columnIndex = 0, start = 0, end;</div>
-<div class="line"><span class="lineno">   99</span>    std::string data = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">while</span>((end = headerLine.find(<span class="charliteral">&#39;,&#39;</span>, start)) != -1)</div>
-<div class="line"><span class="lineno">  102</span>    {</div>
-<div class="line"><span class="lineno">  103</span>        data = headerLine.substr(start, end - start);</div>
-<div class="line"><span class="lineno">  104</span>        <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;WAST&quot;</span>)</div>
-<div class="line"><span class="lineno">  105</span>        {</div>
-<div class="line"><span class="lineno">  106</span>            wastIndex = columnIndex;</div>
-<div class="line"><span class="lineno">  107</span>        }</div>
-<div class="line"><span class="lineno">  108</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;S&quot;</span>)</div>
-<div class="line"><span class="lineno">  109</span>        {</div>
-<div class="line"><span class="lineno">  110</span>            sIndex = columnIndex;</div>
-<div class="line"><span class="lineno">  111</span>        }</div>
-<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;T&quot;</span>)</div>
-<div class="line"><span class="lineno">  113</span>        {</div>
-<div class="line"><span class="lineno">  114</span>            tIndex = columnIndex;</div>
-<div class="line"><span class="lineno">  115</span>        }</div>
-<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;SR&quot;</span>)</div>
-<div class="line"><span class="lineno">  117</span>        {</div>
-<div class="line"><span class="lineno">  118</span>            srIndex = columnIndex;</div>
-<div class="line"><span class="lineno">  119</span>        }</div>
-<div class="line"><span class="lineno">  120</span>        start = end + 1;</div>
-<div class="line"><span class="lineno">  121</span>        columnIndex++;</div>
-<div class="line"><span class="lineno">  122</span>    }</div>
-<div class="line"><span class="lineno">  123</span> </div>
-<div class="line"><span class="lineno">  124</span>    <span class="comment">// Check for last column (doesnt have a comma)</span></div>
-<div class="line"><span class="lineno">  125</span>    data = headerLine.substr(start);</div>
-<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;WAST&quot;</span>)</div>
-<div class="line"><span class="lineno">  127</span>    {</div>
-<div class="line"><span class="lineno">  128</span>        wastIndex = columnIndex;</div>
-<div class="line"><span class="lineno">  129</span>    }</div>
-<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;S&quot;</span>)</div>
-<div class="line"><span class="lineno">  131</span>    {</div>
-<div class="line"><span class="lineno">  132</span>        sIndex = columnIndex;</div>
-<div class="line"><span class="lineno">  133</span>    }</div>
-<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;T&quot;</span>)</div>
-<div class="line"><span class="lineno">  135</span>    {</div>
-<div class="line"><span class="lineno">  136</span>        tIndex = columnIndex;</div>
-<div class="line"><span class="lineno">  137</span>    }</div>
-<div class="line"><span class="lineno">  138</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;SR&quot;</span>)</div>
-<div class="line"><span class="lineno">  139</span>    {</div>
-<div class="line"><span class="lineno">  140</span>        srIndex = columnIndex;</div>
-<div class="line"><span class="lineno">  141</span>    }</div>
-<div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">return</span> (wastIndex != -1 &amp;&amp; sIndex != -1 &amp;&amp; tIndex != -1 &amp;&amp; srIndex != -1);</div>
-<div class="line"><span class="lineno">  144</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00122">122</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>{</div>
+<div class="line"><span class="lineno">  124</span>    wastIndex = -1;</div>
+<div class="line"><span class="lineno">  125</span>    sIndex = -1;</div>
+<div class="line"><span class="lineno">  126</span>    tIndex = -1;</div>
+<div class="line"><span class="lineno">  127</span>    srIndex = -1;</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordtype">int</span> columnIndex = 0, start = 0, end;</div>
+<div class="line"><span class="lineno">  130</span>    std::string data = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  131</span> </div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">while</span>((end = headerLine.find(<span class="charliteral">&#39;,&#39;</span>, start)) != -1)</div>
+<div class="line"><span class="lineno">  133</span>    {</div>
+<div class="line"><span class="lineno">  134</span>        data = headerLine.substr(start, end - start);</div>
+<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;WAST&quot;</span>)</div>
+<div class="line"><span class="lineno">  136</span>        {</div>
+<div class="line"><span class="lineno">  137</span>            wastIndex = columnIndex;</div>
+<div class="line"><span class="lineno">  138</span>        }</div>
+<div class="line"><span class="lineno">  139</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;S&quot;</span>)</div>
+<div class="line"><span class="lineno">  140</span>        {</div>
+<div class="line"><span class="lineno">  141</span>            sIndex = columnIndex;</div>
+<div class="line"><span class="lineno">  142</span>        }</div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;T&quot;</span>)</div>
+<div class="line"><span class="lineno">  144</span>        {</div>
+<div class="line"><span class="lineno">  145</span>            tIndex = columnIndex;</div>
+<div class="line"><span class="lineno">  146</span>        }</div>
+<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;SR&quot;</span>)</div>
+<div class="line"><span class="lineno">  148</span>        {</div>
+<div class="line"><span class="lineno">  149</span>            srIndex = columnIndex;</div>
+<div class="line"><span class="lineno">  150</span>        }</div>
+<div class="line"><span class="lineno">  151</span>        start = end + 1;</div>
+<div class="line"><span class="lineno">  152</span>        columnIndex++;</div>
+<div class="line"><span class="lineno">  153</span>    }</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    <span class="comment">// Check for last column (doesnt have a comma)</span></div>
+<div class="line"><span class="lineno">  156</span>    data = headerLine.substr(start);</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;WAST&quot;</span>)</div>
+<div class="line"><span class="lineno">  158</span>    {</div>
+<div class="line"><span class="lineno">  159</span>        wastIndex = columnIndex;</div>
+<div class="line"><span class="lineno">  160</span>    }</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;S&quot;</span>)</div>
+<div class="line"><span class="lineno">  162</span>    {</div>
+<div class="line"><span class="lineno">  163</span>        sIndex = columnIndex;</div>
+<div class="line"><span class="lineno">  164</span>    }</div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;T&quot;</span>)</div>
+<div class="line"><span class="lineno">  166</span>    {</div>
+<div class="line"><span class="lineno">  167</span>        tIndex = columnIndex;</div>
+<div class="line"><span class="lineno">  168</span>    }</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (data == <span class="stringliteral">&quot;SR&quot;</span>)</div>
+<div class="line"><span class="lineno">  170</span>    {</div>
+<div class="line"><span class="lineno">  171</span>        srIndex = columnIndex;</div>
+<div class="line"><span class="lineno">  172</span>    }</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordflow">return</span> (wastIndex != -1 &amp;&amp; sIndex != -1 &amp;&amp; tIndex != -1 &amp;&amp; srIndex != -1);</div>
+<div class="line"><span class="lineno">  175</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a62119851ba7b836b5e830ca52bb4ac9d" name="a62119851ba7b836b5e830ca52bb4ac9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62119851ba7b836b5e830ca52bb4ac9d">&#9670;&#160;</a></span>GetInputFilename()</h2>
+<a id="aa42493a5c72735b6d50237b448487c8b" name="aa42493a5c72735b6d50237b448487c8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa42493a5c72735b6d50237b448487c8b">&#9670;&#160;</a></span>LoadAtmosphereData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string GetInputFilename </td>
+          <td class="memname">bool LoadAtmosphereData </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>sourceFilePath</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>atmosData</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Read the data filename from the source file and return the full path. </p>
-<p>This function opens the file "data_source.txt" (or any source path provided), reads the first line to obtain the name of the actual data file (e.g., a .csv file), and returns its path prefixed with "data/" to indicate the data folder location.</p>
+<p>Loads atmospheric data from multiple input files listed in data_source.txt. </p>
+<p>This function opens the "data/data_source.txt" file and reads filenames line by line. For each listed file, it attempts to open and parse atmospheric records using <a class="el" href="_file_i_o_8h.html#a441c83f0f3813ff647d5801f505f8a7a" title="Reads atmospheric data from a file into a structured vector.">ReadAtmosphereData()</a>. All valid data is appended to the provided <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126" title="A Vector container storing multiple AtmosRecType records.">AtmosLogType</a> vector.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sourcePath</td><td>- The path to the source file containing the data filename. </td></tr>
+    <tr><td class="paramname">atmosData</td><td>A reference to an <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126" title="A Vector container storing multiple AtmosRecType records.">AtmosLogType</a> (i.e., <a class="el" href="class_vector.html" title="A simplified dynamic array template class.">Vector</a> of <a class="el" href="struct_atmos_rec_type.html" title="Represents a atmospheric data record containing date, wind speed, wind temperature and solar radiatio...">AtmosRecType</a>) where all parsed records are stored. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A string containing the relative path to the actual data file, or an empty string if the file could not be opened. </dd></dl>
-<dl class="section pre"><dt>Precondition</dt><dd>The sourcePath file must exist and contain a valid data filename in the first line. </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Returns the full data file path as a string if successful; returns an empty string if the source file is missing or invalid. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if data_source.txt was successfully opened and at least one input file was attempted, and false if data_source.txt could not be opened. </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>data/data_source.txt must exist and contain valid input filenames, one per line. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>atmosData contains all valid parsed records from the listed files. Invalid files are skipped with a warning. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00235">235</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  236</span>{</div>
-<div class="line"><span class="lineno">  237</span>    std::ifstream src(sourceFilePath);</div>
-<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">if</span> (!src)</div>
-<div class="line"><span class="lineno">  239</span>    {</div>
-<div class="line"><span class="lineno">  240</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Unable to open data_source.txt\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  241</span>        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">  242</span>    }</div>
-<div class="line"><span class="lineno">  243</span>    std::string inputFilename;</div>
-<div class="line"><span class="lineno">  244</span>    std::getline(src, inputFilename);</div>
-<div class="line"><span class="lineno">  245</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;data/&quot;</span> + inputFilename;</div>
-<div class="line"><span class="lineno">  246</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00011">11</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{</div>
+<div class="line"><span class="lineno">   13</span>    <span class="comment">// Get input filenames from data_source.txt</span></div>
+<div class="line"><span class="lineno">   14</span>    std::ifstream src(<span class="stringliteral">&quot;data/data_source.txt&quot;</span>);</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (!src)</div>
+<div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Unable to open data_source.txt\n&quot;</span>;</div>
+<div class="line"><span class="lineno">   18</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    <span class="comment">// Collect data from input files</span></div>
+<div class="line"><span class="lineno">   22</span>    std::string inFilename;</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">while</span> (std::getline(src, inFilename))</div>
+<div class="line"><span class="lineno">   24</span>    {</div>
+<div class="line"><span class="lineno">   25</span>        std::ifstream inFile(<span class="stringliteral">&quot;data/&quot;</span> + inFilename);</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (!inFile)</div>
+<div class="line"><span class="lineno">   27</span>        {</div>
+<div class="line"><span class="lineno">   28</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Unable to open input file &quot;</span> + inFilename &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   29</span>        }</div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   31</span>        {</div>
+<div class="line"><span class="lineno">   32</span>            <a class="code hl_function" href="#a441c83f0f3813ff647d5801f505f8a7a">ReadAtmosphereData</a>(inFile, atmosData);</div>
+<div class="line"><span class="lineno">   33</span>            inFile.close();</div>
+<div class="line"><span class="lineno">   34</span>        }</div>
+<div class="line"><span class="lineno">   35</span>    }</div>
+<div class="line"><span class="lineno">   36</span>    src.close();</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   38</span>}</div>
+<div class="ttc" id="a_file_i_o_8cpp_html_a441c83f0f3813ff647d5801f505f8a7a"><div class="ttname"><a href="#a441c83f0f3813ff647d5801f505f8a7a">ReadAtmosphereData</a></div><div class="ttdeci">void ReadAtmosphereData(std::ifstream &amp;file, AtmosLogType &amp;atmosData)</div><div class="ttdoc">Reads atmospheric data from a file into a structured vector.</div><div class="ttdef"><b>Definition</b> <a href="_file_i_o_8cpp_source.html#l00042">FileIO.cpp:42</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -317,19 +435,19 @@ Functions</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd>The date string must be in the format "DD/MM/YYYY". </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>The <a class="el" href="class_date.html" title="Represents a calendar date using integers that represent when marks were obtained for a unit.">Date</a> object contains the parsed day, month, and year. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00191">191</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  192</span>{</div>
-<div class="line"><span class="lineno">  193</span>    <span class="keywordtype">int</span> firstSlashInd = dateStr.find(<span class="charliteral">&#39;/&#39;</span>);</div>
-<div class="line"><span class="lineno">  194</span>    <span class="keywordtype">int</span> secondSlashInd = dateStr.find(<span class="charliteral">&#39;/&#39;</span>, firstSlashInd + 1);</div>
-<div class="line"><span class="lineno">  195</span> </div>
-<div class="line"><span class="lineno">  196</span>    <span class="keywordtype">int</span> day = stoi(dateStr.substr(0, firstSlashInd));</div>
-<div class="line"><span class="lineno">  197</span>    <span class="keywordtype">int</span> month = stoi(dateStr.substr(firstSlashInd + 1, secondSlashInd - firstSlashInd - 1));</div>
-<div class="line"><span class="lineno">  198</span>    <span class="keywordtype">int</span> year = stoi(dateStr.substr(secondSlashInd + 1));</div>
-<div class="line"><span class="lineno">  199</span> </div>
-<div class="line"><span class="lineno">  200</span>    d.<a class="code hl_function" href="class_date.html#a7b6f3262997530ea44b84dc1ff818690">SetDay</a>(day);</div>
-<div class="line"><span class="lineno">  201</span>    d.<a class="code hl_function" href="class_date.html#aa7814f6054a688039338ac1190d74a8d">SetMonth</a>(month);</div>
-<div class="line"><span class="lineno">  202</span>    d.<a class="code hl_function" href="class_date.html#a795790fc0cde4220ceaf13b5ce232e4a">SetYear</a>(year);</div>
-<div class="line"><span class="lineno">  203</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00222">222</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  223</span>{</div>
+<div class="line"><span class="lineno">  224</span>    <span class="keywordtype">int</span> firstSlashInd = dateStr.find(<span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordtype">int</span> secondSlashInd = dateStr.find(<span class="charliteral">&#39;/&#39;</span>, firstSlashInd + 1);</div>
+<div class="line"><span class="lineno">  226</span> </div>
+<div class="line"><span class="lineno">  227</span>    <span class="keywordtype">int</span> day = stoi(dateStr.substr(0, firstSlashInd));</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordtype">int</span> month = stoi(dateStr.substr(firstSlashInd + 1, secondSlashInd - firstSlashInd - 1));</div>
+<div class="line"><span class="lineno">  229</span>    <span class="keywordtype">int</span> year = stoi(dateStr.substr(secondSlashInd + 1));</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>    d.<a class="code hl_function" href="class_date.html#a7b6f3262997530ea44b84dc1ff818690">SetDay</a>(day);</div>
+<div class="line"><span class="lineno">  232</span>    d.<a class="code hl_function" href="class_date.html#aa7814f6054a688039338ac1190d74a8d">SetMonth</a>(month);</div>
+<div class="line"><span class="lineno">  233</span>    d.<a class="code hl_function" href="class_date.html#a795790fc0cde4220ceaf13b5ce232e4a">SetYear</a>(year);</div>
+<div class="line"><span class="lineno">  234</span>}</div>
 <div class="ttc" id="aclass_date_html_a795790fc0cde4220ceaf13b5ce232e4a"><div class="ttname"><a href="class_date.html#a795790fc0cde4220ceaf13b5ce232e4a">Date::SetYear</a></div><div class="ttdeci">void SetYear(int year)</div><div class="ttdoc">Sets the value of the year variable.</div><div class="ttdef"><b>Definition</b> <a href="_date_8cpp_source.html#l00058">Date.cpp:58</a></div></div>
 <div class="ttc" id="aclass_date_html_a7b6f3262997530ea44b84dc1ff818690"><div class="ttname"><a href="class_date.html#a7b6f3262997530ea44b84dc1ff818690">Date::SetDay</a></div><div class="ttdeci">void SetDay(int day)</div><div class="ttdoc">Sets the value of the day variable.</div><div class="ttdef"><b>Definition</b> <a href="_date_8cpp_source.html#l00030">Date.cpp:30</a></div></div>
 <div class="ttc" id="aclass_date_html_aa7814f6054a688039338ac1190d74a8d"><div class="ttname"><a href="class_date.html#aa7814f6054a688039338ac1190d74a8d">Date::SetMonth</a></div><div class="ttdeci">void SetMonth(int month)</div><div class="ttdoc">Sets the value of the month variable.</div><div class="ttdef"><b>Definition</b> <a href="_date_8cpp_source.html#l00044">Date.cpp:44</a></div></div>
@@ -384,16 +502,16 @@ Here is the call graph for this function:</div>
 <dl class="section pre"><dt>Precondition</dt><dd>The time string must be in the format "HH:MM". </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>The <a class="el" href="class_my_time.html" title="Stores and manages 24-hour time using hour and minute.">MyTime</a> object contains the parsed hour and minute. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00207">207</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  208</span>{</div>
-<div class="line"><span class="lineno">  209</span>    <span class="keywordtype">int</span> colonInd = timeStr.find(<span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><span class="lineno">  210</span> </div>
-<div class="line"><span class="lineno">  211</span>    <span class="keywordtype">int</span> hour = stoi(timeStr.substr(0, colonInd));</div>
-<div class="line"><span class="lineno">  212</span>    <span class="keywordtype">int</span> minute = stoi(timeStr.substr(colonInd + 1));</div>
-<div class="line"><span class="lineno">  213</span> </div>
-<div class="line"><span class="lineno">  214</span>    t.<a class="code hl_function" href="class_my_time.html#a508580f5bf8dffd14a526a1e5f942f33">SetHour</a>(hour);</div>
-<div class="line"><span class="lineno">  215</span>    t.<a class="code hl_function" href="class_my_time.html#a304b3506f3e1b6544b1bbd21b25b5eef">SetMinute</a>(minute);</div>
-<div class="line"><span class="lineno">  216</span>}</div>
+<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00238">238</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  239</span>{</div>
+<div class="line"><span class="lineno">  240</span>    <span class="keywordtype">int</span> colonInd = timeStr.find(<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><span class="lineno">  241</span> </div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordtype">int</span> hour = stoi(timeStr.substr(0, colonInd));</div>
+<div class="line"><span class="lineno">  243</span>    <span class="keywordtype">int</span> minute = stoi(timeStr.substr(colonInd + 1));</div>
+<div class="line"><span class="lineno">  244</span> </div>
+<div class="line"><span class="lineno">  245</span>    t.<a class="code hl_function" href="class_my_time.html#a508580f5bf8dffd14a526a1e5f942f33">SetHour</a>(hour);</div>
+<div class="line"><span class="lineno">  246</span>    t.<a class="code hl_function" href="class_my_time.html#a304b3506f3e1b6544b1bbd21b25b5eef">SetMinute</a>(minute);</div>
+<div class="line"><span class="lineno">  247</span>}</div>
 <div class="ttc" id="aclass_my_time_html_a304b3506f3e1b6544b1bbd21b25b5eef"><div class="ttname"><a href="class_my_time.html#a304b3506f3e1b6544b1bbd21b25b5eef">MyTime::SetMinute</a></div><div class="ttdeci">void SetMinute(int minute)</div><div class="ttdoc">Sets the value of the minute variable.</div><div class="ttdef"><b>Definition</b> <a href="_my_time_8cpp_source.html#l00035">MyTime.cpp:35</a></div></div>
 <div class="ttc" id="aclass_my_time_html_a508580f5bf8dffd14a526a1e5f942f33"><div class="ttname"><a href="class_my_time.html#a508580f5bf8dffd14a526a1e5f942f33">MyTime::SetHour</a></div><div class="ttdeci">void SetHour(int hour)</div><div class="ttdoc">Sets the value of the hour variable.</div><div class="ttdef"><b>Definition</b> <a href="_my_time_8cpp_source.html#l00021">MyTime.cpp:21</a></div></div>
 </div><!-- fragment -->
@@ -413,118 +531,118 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="aa6339cdc18c7e77965f466e52fb48107" name="aa6339cdc18c7e77965f466e52fb48107"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6339cdc18c7e77965f466e52fb48107">&#9670;&#160;</a></span>ReadAtmosphereData()</h2>
+<a id="a441c83f0f3813ff647d5801f505f8a7a" name="a441c83f0f3813ff647d5801f505f8a7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a441c83f0f3813ff647d5801f505f8a7a">&#9670;&#160;</a></span>ReadAtmosphereData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> ReadAtmosphereData </td>
+          <td class="memname">void ReadAtmosphereData </td>
           <td>(</td>
-          <td class="paramtype">std::ifstream &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td class="paramtype">std::ifstream &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>atmosData</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Reads atmospheric data from a file into a structured vector. </p>
-<p>Parses the specified file stream to extract date, time, wind speed, temperature, and solar radiation. Handles missing or invalid data by setting those values to -1.0f. Extracted values are stored in <a class="el" href="struct_atmos_rec_type.html" title="Represents a atmospheric data record containing date, wind speed, wind temperature and solar radiatio...">AtmosRecType</a> objects which are inserted into a <a class="el" href="class_vector.html" title="A simplified dynamic array template class.">Vector</a>.</p>
+<p>Parses the specified file stream to extract date, time, wind speed, temperature, and solar radiation. Handles missing or invalid data by setting those values to -1.0f. Extracted values are stored in <a class="el" href="struct_atmos_rec_type.html" title="Represents a atmospheric data record containing date, wind speed, wind temperature and solar radiatio...">AtmosRecType</a> objects which are inserted into a <a class="el" href="class_vector.html" title="A simplified dynamic array template class.">Vector</a> passed as a reference parameter.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file</td><td>- Input file stream containing atmospheric CSV data. </td></tr>
+    <tr><td class="paramname">atmosData</td><td>- A reference to a vector containing the parsed atmospheric records. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126" title="A Vector container storing multiple AtmosRecType records.">AtmosLogType</a> - A vector containing the parsed atmospheric records. </dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>file must be open and contain valid CSV data with appropriate headers. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>All valid records from the file are parsed and stored in the returned vector. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00008">8</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>{</div>
-<div class="line"><span class="lineno">   10</span>    <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> atmosDataTemp;</div>
-<div class="line"><span class="lineno">   11</span>    std::string line;</div>
-<div class="line"><span class="lineno">   12</span>    <span class="keywordtype">int</span> wastIndex, sIndex, tIndex, srIndex;</div>
-<div class="line"><span class="lineno">   13</span> </div>
-<div class="line"><span class="lineno">   14</span>    <span class="comment">// Read entire header line and find column indices of WAST, S, T and SR</span></div>
-<div class="line"><span class="lineno">   15</span>    <span class="comment">// If the columns don&#39;t exist, print error</span></div>
-<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">if</span> (!std::getline(file, line) || !<a class="code hl_function" href="#ae021d014afae3d84ca4b8cc39365e9a6">GetColumnIndices</a>(line, wastIndex, sIndex, tIndex, srIndex))</div>
-<div class="line"><span class="lineno">   17</span>    {</div>
-<div class="line"><span class="lineno">   18</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Column missing in data file&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">return</span> atmosDataTemp;</div>
-<div class="line"><span class="lineno">   20</span>    }</div>
-<div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>    <span class="comment">// Using found column indices, parse and store data from each row</span></div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">while</span> (std::getline(file, line))</div>
-<div class="line"><span class="lineno">   24</span>    {</div>
-<div class="line"><span class="lineno">   25</span>        std::string wastData = <span class="stringliteral">&quot;&quot;</span>, sData = <span class="stringliteral">&quot;&quot;</span>, tData = <span class="stringliteral">&quot;&quot;</span>, srData = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">   26</span>        <a class="code hl_function" href="#adad13c7324403b3f478568970cc23d17">ReadRowData</a>(line, wastData, wastIndex, sData, sIndex, tData, tIndex, srData, srIndex);</div>
-<div class="line"><span class="lineno">   27</span> </div>
-<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">if</span> (!wastData.empty())</div>
-<div class="line"><span class="lineno">   29</span>        {</div>
-<div class="line"><span class="lineno">   30</span>            <span class="comment">// Parse and store WAST data (date and time)</span></div>
-<div class="line"><span class="lineno">   31</span>            <span class="keywordtype">int</span> space = wastData.find(<span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>            <a class="code hl_class" href="class_date.html">Date</a> dateTemp;</div>
-<div class="line"><span class="lineno">   34</span>            <a class="code hl_function" href="#ae45c206321579e060921e2a71a65f9db">ParseDateRecord</a>(wastData.substr(0, space), dateTemp);</div>
-<div class="line"><span class="lineno">   35</span> </div>
-<div class="line"><span class="lineno">   36</span>            <a class="code hl_class" href="class_my_time.html">MyTime</a> timeTemp;</div>
-<div class="line"><span class="lineno">   37</span>            <a class="code hl_function" href="#a98a245d6c336a39fb0c12f22df63228d">ParseTimeRecord</a>(wastData.substr(space + 1), timeTemp);</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>            <span class="comment">// Parse and store S data</span></div>
-<div class="line"><span class="lineno">   40</span>            <span class="keywordtype">float</span> speedTemp;</div>
-<div class="line"><span class="lineno">   41</span>            <span class="keywordflow">if</span> (!sData.empty() &amp;&amp; sData != <span class="stringliteral">&quot;N/A&quot;</span>)</div>
-<div class="line"><span class="lineno">   42</span>            {</div>
-<div class="line"><span class="lineno">   43</span>                speedTemp = stof(sData);</div>
-<div class="line"><span class="lineno">   44</span>            }</div>
-<div class="line"><span class="lineno">   45</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   46</span>            {</div>
-<div class="line"><span class="lineno">   47</span>                speedTemp = -1.0f;</div>
-<div class="line"><span class="lineno">   48</span>            }</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>            <span class="comment">// Parse and store T data</span></div>
-<div class="line"><span class="lineno">   52</span>            <span class="keywordtype">float</span> temperatTemp;</div>
-<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">if</span> (!tData.empty() &amp;&amp; tData != <span class="stringliteral">&quot;N/A&quot;</span>)</div>
-<div class="line"><span class="lineno">   54</span>            {</div>
-<div class="line"><span class="lineno">   55</span>                temperatTemp = stof(tData);</div>
-<div class="line"><span class="lineno">   56</span>            }</div>
-<div class="line"><span class="lineno">   57</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   58</span>            {</div>
-<div class="line"><span class="lineno">   59</span>                temperatTemp = -1.0f;</div>
-<div class="line"><span class="lineno">   60</span>            }</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>            <span class="comment">// Parse and store SR data</span></div>
-<div class="line"><span class="lineno">   63</span>            <span class="keywordtype">float</span> srTemp;</div>
-<div class="line"><span class="lineno">   64</span>            <span class="keywordflow">if</span> (!srData.empty() &amp;&amp; srData != <span class="stringliteral">&quot;N/A&quot;</span>)</div>
-<div class="line"><span class="lineno">   65</span>            {</div>
-<div class="line"><span class="lineno">   66</span>                srTemp = stof(srData);</div>
-<div class="line"><span class="lineno">   67</span>            }</div>
-<div class="line"><span class="lineno">   68</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   69</span>            {</div>
-<div class="line"><span class="lineno">   70</span>                srTemp = -1.0f;</div>
-<div class="line"><span class="lineno">   71</span>            }</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>            <span class="comment">// Store atmosphere data into struct</span></div>
-<div class="line"><span class="lineno">   74</span>            <a class="code hl_struct" href="struct_atmos_rec_type.html">AtmosRecType</a> a;</div>
-<div class="line"><span class="lineno">   75</span>            a.<a class="code hl_variable" href="struct_atmos_rec_type.html#a4a53ab6de15e88a95b2b7e22e360a496">date</a> = dateTemp;</div>
-<div class="line"><span class="lineno">   76</span>            a.<a class="code hl_variable" href="struct_atmos_rec_type.html#a2cb12eb7351f785f7a08f54701171c43">time</a> = timeTemp;</div>
-<div class="line"><span class="lineno">   77</span>            a.<a class="code hl_variable" href="struct_atmos_rec_type.html#aa86e538df11fc192d01d6795fc7b1ea2">speed</a> = speedTemp;</div>
-<div class="line"><span class="lineno">   78</span>            a.<a class="code hl_variable" href="struct_atmos_rec_type.html#a47876727ed8af0ac44235be9faabaffd">temperature</a> = temperatTemp;</div>
-<div class="line"><span class="lineno">   79</span>            a.<a class="code hl_variable" href="struct_atmos_rec_type.html#a0212286022ec8850650f6def9b1c0cfc">solar_rad</a> = srTemp;</div>
-<div class="line"><span class="lineno">   80</span> </div>
-<div class="line"><span class="lineno">   81</span>            <span class="comment">// Insert atmosphere data into temporary vector</span></div>
-<div class="line"><span class="lineno">   82</span>            atmosDataTemp.<a class="code hl_function" href="class_vector.html#a480c4c87730a6706a2d928147c7dd6cc">PushBack</a>(a);</div>
-<div class="line"><span class="lineno">   83</span>        }</div>
-<div class="line"><span class="lineno">   84</span>    }</div>
-<div class="line"><span class="lineno">   85</span> </div>
-<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">return</span> atmosDataTemp;</div>
-<div class="line"><span class="lineno">   87</span>}</div>
-<div class="ttc" id="a_atmosphere_log_types_8h_html_a076529dd036c3c08a50bdc5fd8b7f126"><div class="ttname"><a href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a></div><div class="ttdeci">Vector&lt; AtmosRecType &gt; AtmosLogType</div><div class="ttdoc">A Vector container storing multiple AtmosRecType records.</div><div class="ttdef"><b>Definition</b> <a href="_atmosphere_log_types_8h_source.html#l00024">AtmosphereLogTypes.h:24</a></div></div>
-<div class="ttc" id="a_file_i_o_8cpp_html_a98a245d6c336a39fb0c12f22df63228d"><div class="ttname"><a href="#a98a245d6c336a39fb0c12f22df63228d">ParseTimeRecord</a></div><div class="ttdeci">void ParseTimeRecord(std::string timeStr, MyTime &amp;t)</div><div class="ttdoc">Parse a time string into a Time object.</div><div class="ttdef"><b>Definition</b> <a href="_file_i_o_8cpp_source.html#l00207">FileIO.cpp:207</a></div></div>
-<div class="ttc" id="a_file_i_o_8cpp_html_adad13c7324403b3f478568970cc23d17"><div class="ttname"><a href="#adad13c7324403b3f478568970cc23d17">ReadRowData</a></div><div class="ttdeci">void ReadRowData(std::string line, std::string &amp;wastData, int wastIndex, std::string &amp;sData, int sIndex, std::string &amp;tData, int tIndex, std::string &amp;srData, int srIndex)</div><div class="ttdoc">Extracts required field values from a CSV line based on column indices.</div><div class="ttdef"><b>Definition</b> <a href="_file_i_o_8cpp_source.html#l00148">FileIO.cpp:148</a></div></div>
-<div class="ttc" id="a_file_i_o_8cpp_html_ae021d014afae3d84ca4b8cc39365e9a6"><div class="ttname"><a href="#ae021d014afae3d84ca4b8cc39365e9a6">GetColumnIndices</a></div><div class="ttdeci">bool GetColumnIndices(std::string headerLine, int &amp;wastIndex, int &amp;sIndex, int &amp;tIndex, int &amp;srIndex)</div><div class="ttdoc">Finds the column indices of WAST, S, T, and SR from the header line.</div><div class="ttdef"><b>Definition</b> <a href="_file_i_o_8cpp_source.html#l00091">FileIO.cpp:91</a></div></div>
-<div class="ttc" id="a_file_i_o_8cpp_html_ae45c206321579e060921e2a71a65f9db"><div class="ttname"><a href="#ae45c206321579e060921e2a71a65f9db">ParseDateRecord</a></div><div class="ttdeci">void ParseDateRecord(std::string dateStr, Date &amp;d)</div><div class="ttdoc">Parse a date string into a Date object.</div><div class="ttdef"><b>Definition</b> <a href="_file_i_o_8cpp_source.html#l00191">FileIO.cpp:191</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00042">42</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
+<div class="line"><span class="lineno">   44</span>    std::string line;</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordtype">int</span> wastIndex, sIndex, tIndex, srIndex;</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="comment">// Read entire header line and find column indices of WAST, S, T and SR</span></div>
+<div class="line"><span class="lineno">   48</span>    <span class="comment">// If the columns don&#39;t exist, print error</span></div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (!std::getline(file, line) || !<a class="code hl_function" href="#ae150a07f7b5279ddf1210a69120431ee">GetColumnIndices</a>(line, wastIndex, sIndex, tIndex, srIndex))</div>
+<div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Column missing in data file&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <span class="comment">// Using found column indices, parse and store data from each row</span></div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">while</span> (std::getline(file, line))</div>
+<div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        std::string wastData = <span class="stringliteral">&quot;&quot;</span>, sData = <span class="stringliteral">&quot;&quot;</span>, tData = <span class="stringliteral">&quot;&quot;</span>, srData = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   59</span>        <a class="code hl_function" href="#a524b9cc11ab093550365e56f1b9c7090">ReadRowData</a>(line, wastData, wastIndex, sData, sIndex, tData, tIndex, srData, srIndex);</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">if</span> (!wastData.empty())</div>
+<div class="line"><span class="lineno">   62</span>        {</div>
+<div class="line"><span class="lineno">   63</span>            <span class="comment">// Parse and store WAST data (date and time)</span></div>
+<div class="line"><span class="lineno">   64</span>            <span class="keywordtype">int</span> space = wastData.find(<span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>            <a class="code hl_class" href="class_date.html">Date</a> dateTemp;</div>
+<div class="line"><span class="lineno">   67</span>            <a class="code hl_function" href="#ae45c206321579e060921e2a71a65f9db">ParseDateRecord</a>(wastData.substr(0, space), dateTemp);</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>            <a class="code hl_class" href="class_my_time.html">MyTime</a> timeTemp;</div>
+<div class="line"><span class="lineno">   70</span>            <a class="code hl_function" href="#a98a245d6c336a39fb0c12f22df63228d">ParseTimeRecord</a>(wastData.substr(space + 1), timeTemp);</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>            <span class="comment">// Parse and store S data</span></div>
+<div class="line"><span class="lineno">   73</span>            <span class="keywordtype">float</span> speedTemp;</div>
+<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">if</span> (!sData.empty() &amp;&amp; sData != <span class="stringliteral">&quot;N/A&quot;</span>)</div>
+<div class="line"><span class="lineno">   75</span>            {</div>
+<div class="line"><span class="lineno">   76</span>                speedTemp = stof(sData);</div>
+<div class="line"><span class="lineno">   77</span>            }</div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   79</span>            {</div>
+<div class="line"><span class="lineno">   80</span>                speedTemp = -1.0f;</div>
+<div class="line"><span class="lineno">   81</span>            }</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>            <span class="comment">// Parse and store T data</span></div>
+<div class="line"><span class="lineno">   85</span>            <span class="keywordtype">float</span> temperatTemp;</div>
+<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">if</span> (!tData.empty() &amp;&amp; tData != <span class="stringliteral">&quot;N/A&quot;</span>)</div>
+<div class="line"><span class="lineno">   87</span>            {</div>
+<div class="line"><span class="lineno">   88</span>                temperatTemp = stof(tData);</div>
+<div class="line"><span class="lineno">   89</span>            }</div>
+<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   91</span>            {</div>
+<div class="line"><span class="lineno">   92</span>                temperatTemp = -1.0f;</div>
+<div class="line"><span class="lineno">   93</span>            }</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>            <span class="comment">// Parse and store SR data</span></div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordtype">float</span> srTemp;</div>
+<div class="line"><span class="lineno">   97</span>            <span class="keywordflow">if</span> (!srData.empty() &amp;&amp; srData != <span class="stringliteral">&quot;N/A&quot;</span>)</div>
+<div class="line"><span class="lineno">   98</span>            {</div>
+<div class="line"><span class="lineno">   99</span>                srTemp = stof(srData);</div>
+<div class="line"><span class="lineno">  100</span>            }</div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  102</span>            {</div>
+<div class="line"><span class="lineno">  103</span>                srTemp = -1.0f;</div>
+<div class="line"><span class="lineno">  104</span>            }</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>            <span class="comment">// Store atmosphere data into struct</span></div>
+<div class="line"><span class="lineno">  107</span>            <a class="code hl_struct" href="struct_atmos_rec_type.html">AtmosRecType</a> a;</div>
+<div class="line"><span class="lineno">  108</span>            a.<a class="code hl_variable" href="struct_atmos_rec_type.html#a4a53ab6de15e88a95b2b7e22e360a496">date</a> = dateTemp;</div>
+<div class="line"><span class="lineno">  109</span>            a.<a class="code hl_variable" href="struct_atmos_rec_type.html#a2cb12eb7351f785f7a08f54701171c43">time</a> = timeTemp;</div>
+<div class="line"><span class="lineno">  110</span>            a.<a class="code hl_variable" href="struct_atmos_rec_type.html#aa86e538df11fc192d01d6795fc7b1ea2">speed</a> = speedTemp;</div>
+<div class="line"><span class="lineno">  111</span>            a.<a class="code hl_variable" href="struct_atmos_rec_type.html#a47876727ed8af0ac44235be9faabaffd">temperature</a> = temperatTemp;</div>
+<div class="line"><span class="lineno">  112</span>            a.<a class="code hl_variable" href="struct_atmos_rec_type.html#a0212286022ec8850650f6def9b1c0cfc">solar_rad</a> = srTemp;</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>            <span class="comment">// Insert atmosphere data into temporary vector</span></div>
+<div class="line"><span class="lineno">  115</span>            atmosData.<a class="code hl_function" href="class_vector.html#a480c4c87730a6706a2d928147c7dd6cc">PushBack</a>(a);</div>
+<div class="line"><span class="lineno">  116</span>        }</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+<div class="line"><span class="lineno">  118</span>}</div>
+<div class="ttc" id="a_file_i_o_8cpp_html_a524b9cc11ab093550365e56f1b9c7090"><div class="ttname"><a href="#a524b9cc11ab093550365e56f1b9c7090">ReadRowData</a></div><div class="ttdeci">void ReadRowData(std::string &amp;line, std::string &amp;wastData, int wastIndex, std::string &amp;sData, int sIndex, std::string &amp;tData, int tIndex, std::string &amp;srData, int srIndex)</div><div class="ttdoc">Extracts required field values from a CSV line based on column indices.</div><div class="ttdef"><b>Definition</b> <a href="_file_i_o_8cpp_source.html#l00179">FileIO.cpp:179</a></div></div>
+<div class="ttc" id="a_file_i_o_8cpp_html_a98a245d6c336a39fb0c12f22df63228d"><div class="ttname"><a href="#a98a245d6c336a39fb0c12f22df63228d">ParseTimeRecord</a></div><div class="ttdeci">void ParseTimeRecord(std::string timeStr, MyTime &amp;t)</div><div class="ttdoc">Parse a time string into a Time object.</div><div class="ttdef"><b>Definition</b> <a href="_file_i_o_8cpp_source.html#l00238">FileIO.cpp:238</a></div></div>
+<div class="ttc" id="a_file_i_o_8cpp_html_ae150a07f7b5279ddf1210a69120431ee"><div class="ttname"><a href="#ae150a07f7b5279ddf1210a69120431ee">GetColumnIndices</a></div><div class="ttdeci">bool GetColumnIndices(std::string &amp;headerLine, int &amp;wastIndex, int &amp;sIndex, int &amp;tIndex, int &amp;srIndex)</div><div class="ttdoc">Finds the column indices of WAST, S, T, and SR from the header line.</div><div class="ttdef"><b>Definition</b> <a href="_file_i_o_8cpp_source.html#l00122">FileIO.cpp:122</a></div></div>
+<div class="ttc" id="a_file_i_o_8cpp_html_ae45c206321579e060921e2a71a65f9db"><div class="ttname"><a href="#ae45c206321579e060921e2a71a65f9db">ParseDateRecord</a></div><div class="ttdeci">void ParseDateRecord(std::string dateStr, Date &amp;d)</div><div class="ttdoc">Parse a date string into a Date object.</div><div class="ttdef"><b>Definition</b> <a href="_file_i_o_8cpp_source.html#l00222">FileIO.cpp:222</a></div></div>
 <div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdoc">Represents a calendar date using integers that represent when marks were obtained for a unit.</div><div class="ttdef"><b>Definition</b> <a href="_date_8h_source.html#l00022">Date.h:22</a></div></div>
 <div class="ttc" id="aclass_my_time_html"><div class="ttname"><a href="class_my_time.html">MyTime</a></div><div class="ttdoc">Stores and manages 24-hour time using hour and minute.</div><div class="ttdef"><b>Definition</b> <a href="_my_time_8h_source.html#l00022">MyTime.h:22</a></div></div>
 <div class="ttc" id="aclass_vector_html_a480c4c87730a6706a2d928147c7dd6cc"><div class="ttname"><a href="class_vector.html#a480c4c87730a6706a2d928147c7dd6cc">Vector::PushBack</a></div><div class="ttdeci">void PushBack(const T &amp;val)</div><div class="ttdoc">Insert an element at the end of the internal array, growing the array if needed.</div><div class="ttdef"><b>Definition</b> <a href="_vector_8h_source.html#l00262">Vector.h:262</a></div></div>
@@ -539,8 +657,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="adad13c7324403b3f478568970cc23d17" name="adad13c7324403b3f478568970cc23d17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adad13c7324403b3f478568970cc23d17">&#9670;&#160;</a></span>ReadRowData()</h2>
+<a id="a524b9cc11ab093550365e56f1b9c7090" name="a524b9cc11ab093550365e56f1b9c7090"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a524b9cc11ab093550365e56f1b9c7090">&#9670;&#160;</a></span>ReadRowData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -548,7 +666,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void ReadRowData </td>
           <td>(</td>
-          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>line</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -558,7 +676,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>wastIndex</em></span>, </td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a></td>          <td class="paramname"><span class="paramname"><em>wastIndex</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -568,7 +686,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sIndex</em></span>, </td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a></td>          <td class="paramname"><span class="paramname"><em>sIndex</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -578,7 +696,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tIndex</em></span>, </td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a></td>          <td class="paramname"><span class="paramname"><em>tIndex</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -588,7 +706,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>srIndex</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="classint.html">int</a></td>          <td class="paramname"><span class="paramname"><em>srIndex</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -612,46 +730,115 @@ Here is the call graph for this function:</div>
 <dl class="section pre"><dt>Precondition</dt><dd>line must be a valid CSV-formatted string containing enough columns. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>wastData, sData, tData, and srData are updated with values if their respective columns exist. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00148">148</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  150</span>{</div>
-<div class="line"><span class="lineno">  151</span>    std::string data = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><span class="lineno">  152</span>    <span class="keywordtype">int</span> start = 0, end;</div>
-<div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>    <span class="comment">// Extract data from relevant column</span></div>
-<div class="line"><span class="lineno">  155</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> columnIndex = 0; columnIndex &lt; 18 &amp;&amp; (wastData.empty() || sData.empty() || tData.empty() || srData.empty()); columnIndex++)</div>
-<div class="line"><span class="lineno">  156</span>    {</div>
-<div class="line"><span class="lineno">  157</span>        end = line.find(<span class="charliteral">&#39;,&#39;</span>, start);</div>
-<div class="line"><span class="lineno">  158</span> </div>
-<div class="line"><span class="lineno">  159</span>        <span class="keywordflow">if</span> (end == -1)</div>
-<div class="line"><span class="lineno">  160</span>        {</div>
-<div class="line"><span class="lineno">  161</span>            data = line.substr(start);</div>
-<div class="line"><span class="lineno">  162</span>        }</div>
-<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  164</span>        {</div>
-<div class="line"><span class="lineno">  165</span>            data = line.substr(start, end - start);</div>
-<div class="line"><span class="lineno">  166</span>        }</div>
-<div class="line"><span class="lineno">  167</span> </div>
-<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">if</span> (columnIndex == wastIndex)</div>
-<div class="line"><span class="lineno">  169</span>        {</div>
-<div class="line"><span class="lineno">  170</span>            wastData = data;</div>
-<div class="line"><span class="lineno">  171</span>        }</div>
-<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (columnIndex == sIndex)</div>
-<div class="line"><span class="lineno">  173</span>        {</div>
-<div class="line"><span class="lineno">  174</span>            sData = data;</div>
-<div class="line"><span class="lineno">  175</span>        }</div>
-<div class="line"><span class="lineno">  176</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (columnIndex == tIndex)</div>
-<div class="line"><span class="lineno">  177</span>        {</div>
-<div class="line"><span class="lineno">  178</span>            tData = data;</div>
-<div class="line"><span class="lineno">  179</span>        }</div>
-<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (columnIndex == srIndex)</div>
-<div class="line"><span class="lineno">  181</span>        {</div>
-<div class="line"><span class="lineno">  182</span>            srData = data;</div>
-<div class="line"><span class="lineno">  183</span>        }</div>
+<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00179">179</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  181</span>{</div>
+<div class="line"><span class="lineno">  182</span>    std::string data = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordtype">int</span> start = 0, end;</div>
 <div class="line"><span class="lineno">  184</span> </div>
-<div class="line"><span class="lineno">  185</span>        start = (end == -1) ? line.size() : end + 1;</div>
-<div class="line"><span class="lineno">  186</span>    }</div>
-<div class="line"><span class="lineno">  187</span>}</div>
+<div class="line"><span class="lineno">  185</span>    <span class="comment">// Extract data from relevant column</span></div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> columnIndex = 0; columnIndex &lt; 18 &amp;&amp; (wastData.empty() || sData.empty() || tData.empty() || srData.empty()); columnIndex++)</div>
+<div class="line"><span class="lineno">  187</span>    {</div>
+<div class="line"><span class="lineno">  188</span>        end = line.find(<span class="charliteral">&#39;,&#39;</span>, start);</div>
+<div class="line"><span class="lineno">  189</span> </div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordflow">if</span> (end == -1)</div>
+<div class="line"><span class="lineno">  191</span>        {</div>
+<div class="line"><span class="lineno">  192</span>            data = line.substr(start);</div>
+<div class="line"><span class="lineno">  193</span>        }</div>
+<div class="line"><span class="lineno">  194</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  195</span>        {</div>
+<div class="line"><span class="lineno">  196</span>            data = line.substr(start, end - start);</div>
+<div class="line"><span class="lineno">  197</span>        }</div>
+<div class="line"><span class="lineno">  198</span> </div>
+<div class="line"><span class="lineno">  199</span>        <span class="keywordflow">if</span> (columnIndex == wastIndex)</div>
+<div class="line"><span class="lineno">  200</span>        {</div>
+<div class="line"><span class="lineno">  201</span>            wastData = data;</div>
+<div class="line"><span class="lineno">  202</span>        }</div>
+<div class="line"><span class="lineno">  203</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (columnIndex == sIndex)</div>
+<div class="line"><span class="lineno">  204</span>        {</div>
+<div class="line"><span class="lineno">  205</span>            sData = data;</div>
+<div class="line"><span class="lineno">  206</span>        }</div>
+<div class="line"><span class="lineno">  207</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (columnIndex == tIndex)</div>
+<div class="line"><span class="lineno">  208</span>        {</div>
+<div class="line"><span class="lineno">  209</span>            tData = data;</div>
+<div class="line"><span class="lineno">  210</span>        }</div>
+<div class="line"><span class="lineno">  211</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (columnIndex == srIndex)</div>
+<div class="line"><span class="lineno">  212</span>        {</div>
+<div class="line"><span class="lineno">  213</span>            srData = data;</div>
+<div class="line"><span class="lineno">  214</span>        }</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>        start = (end == -1) ? line.size() : end + 1;</div>
+<div class="line"><span class="lineno">  217</span>    }</div>
+<div class="line"><span class="lineno">  218</span>}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="ab04293170ab4e2ed17cb3e25a7411927" name="ab04293170ab4e2ed17cb3e25a7411927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04293170ab4e2ed17cb3e25a7411927">&#9670;&#160;</a></span>TransferToBSTAndMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TransferToBSTAndMap </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>atmosData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_b_s_t.html">BST</a>&lt; <a class="el" href="struct_atmos_rec_type.html">AtmosRecType</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>bstData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::map&lt; <a class="el" href="classint.html">int</a>, <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>mapData</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transfers data from <a class="el" href="struct_atmos_rec_type.html" title="Represents a atmospheric data record containing date, wind speed, wind temperature and solar radiatio...">AtmosRecType</a> vector to <a class="el" href="class_b_s_t.html" title="A Binary Search Tree (BST) class that stores elements in sorted order.">BST</a> and map structures. </p>
+<p>This method transfers the data from the <a class="el" href="struct_atmos_rec_type.html" title="Represents a atmospheric data record containing date, wind speed, wind temperature and solar radiatio...">AtmosRecType</a> vector (<a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126" title="A Vector container storing multiple AtmosRecType records.">AtmosLogType</a>) to a <a class="el" href="class_b_s_t.html" title="A Binary Search Tree (BST) class that stores elements in sorted order.">BST</a> and an std::map. It orders the data into the map using the month integer as the key.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">atmosData</td><td>- the reference to the <a class="el" href="struct_atmos_rec_type.html" title="Represents a atmospheric data record containing date, wind speed, wind temperature and solar radiatio...">AtmosRecType</a> vector, <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126" title="A Vector container storing multiple AtmosRecType records.">AtmosLogType</a>. </td></tr>
+    <tr><td class="paramname">bstData</td><td>- the reference to the <a class="el" href="struct_atmos_rec_type.html" title="Represents a atmospheric data record containing date, wind speed, wind temperature and solar radiatio...">AtmosRecType</a> Binary Search Tree. </td></tr>
+    <tr><td class="paramname">mapData</td><td>- the reference to the <a class="el" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126" title="A Vector container storing multiple AtmosRecType records.">AtmosLogType</a> Map with month integers as the keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>atmosData, bstData and mapData are valid and properly constructed. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>bstData contains all records from atmosData. mapData contains records indexed by month. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00266">266</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  267</span>{</div>
+<div class="line"><span class="lineno">  268</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; atmosData.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>(); i++)</div>
+<div class="line"><span class="lineno">  269</span>    {</div>
+<div class="line"><span class="lineno">  270</span>        <span class="keyword">const</span> <a class="code hl_struct" href="struct_atmos_rec_type.html">AtmosRecType</a> &amp; rec = atmosData[i];</div>
+<div class="line"><span class="lineno">  271</span>        mapData[rec.<a class="code hl_variable" href="struct_atmos_rec_type.html#a4a53ab6de15e88a95b2b7e22e360a496">date</a>.<a class="code hl_function" href="class_date.html#ad79ce504482f317ddcfdc4ecad77671f">GetYear</a>()].<a class="code hl_function" href="class_vector.html#a480c4c87730a6706a2d928147c7dd6cc">PushBack</a>(rec);</div>
+<div class="line"><span class="lineno">  272</span>    }</div>
+<div class="line"><span class="lineno">  273</span> </div>
+<div class="line"><span class="lineno">  274</span>    <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> sortedData = atmosData;</div>
+<div class="line"><span class="lineno">  275</span>    <a class="code hl_function" href="_sort_8h.html#a653e704f6d55aabeb870f65164c761cb">MergeSort</a>(sortedData, 0, sortedData.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>() - 1);</div>
+<div class="line"><span class="lineno">  276</span>    <a class="code hl_function" href="#ac7e2048de17edc1b3cc359c4832fef24">BuildBalancedBST</a>(bstData, sortedData, 0, sortedData.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>() - 1);</div>
+<div class="line"><span class="lineno">  277</span>}</div>
+<div class="ttc" id="a_atmosphere_log_types_8h_html_a076529dd036c3c08a50bdc5fd8b7f126"><div class="ttname"><a href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a></div><div class="ttdeci">Vector&lt; AtmosRecType &gt; AtmosLogType</div><div class="ttdoc">A Vector container storing multiple AtmosRecType records.</div><div class="ttdef"><b>Definition</b> <a href="_atmosphere_log_types_8h_source.html#l00024">AtmosphereLogTypes.h:24</a></div></div>
+<div class="ttc" id="a_sort_8h_html_a653e704f6d55aabeb870f65164c761cb"><div class="ttname"><a href="_sort_8h.html#a653e704f6d55aabeb870f65164c761cb">MergeSort</a></div><div class="ttdeci">void MergeSort(Vector&lt; T &gt; &amp;data, int start, int end)</div><div class="ttdoc">Sorts a vector using the Merge Sort algorithm.</div><div class="ttdef"><b>Definition</b> <a href="_sort_8h_source.html#l00046">Sort.h:46</a></div></div>
+<div class="ttc" id="aclass_date_html_ad79ce504482f317ddcfdc4ecad77671f"><div class="ttname"><a href="class_date.html#ad79ce504482f317ddcfdc4ecad77671f">Date::GetYear</a></div><div class="ttdeci">int GetYear() const</div><div class="ttdoc">Returns the value of the year variable as an integer.</div><div class="ttdef"><b>Definition</b> <a href="_date_8cpp_source.html#l00051">Date.cpp:51</a></div></div>
+<div class="ttc" id="aclass_vector_html_a0151d4cb23bc2c5474418beb125829ca"><div class="ttname"><a href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">Vector::GetSize</a></div><div class="ttdeci">int GetSize() const</div><div class="ttdoc">Returns the value of the size variable as an integer.</div><div class="ttdef"><b>Definition</b> <a href="_vector_8h_source.html#l00290">Vector.h:290</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="_atmosphere_log_types_8h_source.html#l00014">AtmosRecType::date</a>, and <a class="el" href="_date_8cpp_source.html#l00051">Date::GetYear()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="_file_i_o_8cpp_ab04293170ab4e2ed17cb3e25a7411927_cgraph.png" border="0" usemap="#a_file_i_o_8cpp_ab04293170ab4e2ed17cb3e25a7411927_cgraph" loading="lazy" alt=""/></div>
+<map name="a_file_i_o_8cpp_ab04293170ab4e2ed17cb3e25a7411927_cgraph" id="a_file_i_o_8cpp_ab04293170ab4e2ed17cb3e25a7411927_cgraph">
+<area shape="rect" title="Transfers data from AtmosRecType vector to BST and map structures." alt="" coords="5,5,162,32"/>
+<area shape="rect" href="class_date.html#ad79ce504482f317ddcfdc4ecad77671f" title="Returns the value of the year variable as an integer." alt="" coords="210,5,314,32"/>
+<area shape="poly" title=" " alt="" coords="162,16,194,16,194,21,162,21"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a11d38262872506b842e2cef223a44c71" name="a11d38262872506b842e2cef223a44c71"></a>
@@ -685,19 +872,18 @@ Here is the call graph for this function:</div>
 <dl class="section pre"><dt>Precondition</dt><dd>file must be open and ready for writing. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>The output file contains a formatted CSV representation of the atmospheric data. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00220">220</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  221</span>{</div>
-<div class="line"><span class="lineno">  222</span>    file &lt;&lt; <span class="stringliteral">&quot;Date,Time,Speed,Temperature,Solar Radiation\n&quot;</span>;</div>
-<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; atmosData.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>(); i++)</div>
-<div class="line"><span class="lineno">  224</span>    {</div>
-<div class="line"><span class="lineno">  225</span>        file &lt;&lt; atmosData[i].date.GetDay() &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; atmosData[i].date.GetMonth() &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; atmosData[i].date.GetYear() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
-<div class="line"><span class="lineno">  226</span>             &lt;&lt; atmosData[i].time.GetHour() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; atmosData[i].time.GetMinute() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
-<div class="line"><span class="lineno">  227</span>             &lt;&lt; atmosData[i].speed &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
-<div class="line"><span class="lineno">  228</span>             &lt;&lt; atmosData[i].temperature &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
-<div class="line"><span class="lineno">  229</span>             &lt;&lt; atmosData[i].solar_rad &lt;&lt; std::endl;</div>
-<div class="line"><span class="lineno">  230</span>    }</div>
-<div class="line"><span class="lineno">  231</span>}</div>
-<div class="ttc" id="aclass_vector_html_a0151d4cb23bc2c5474418beb125829ca"><div class="ttname"><a href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">Vector::GetSize</a></div><div class="ttdeci">int GetSize() const</div><div class="ttdoc">Returns the value of the size variable as an integer.</div><div class="ttdef"><b>Definition</b> <a href="_vector_8h_source.html#l00290">Vector.h:290</a></div></div>
+<p class="definition">Definition at line <a class="el" href="_file_i_o_8cpp_source.html#l00251">251</a> of file <a class="el" href="_file_i_o_8cpp_source.html">FileIO.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  252</span>{</div>
+<div class="line"><span class="lineno">  253</span>    file &lt;&lt; <span class="stringliteral">&quot;Date,Time,Speed,Temperature,Solar Radiation\n&quot;</span>;</div>
+<div class="line"><span class="lineno">  254</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; atmosData.<a class="code hl_function" href="class_vector.html#a0151d4cb23bc2c5474418beb125829ca">GetSize</a>(); i++)</div>
+<div class="line"><span class="lineno">  255</span>    {</div>
+<div class="line"><span class="lineno">  256</span>        file &lt;&lt; atmosData[i].date.GetDay() &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; atmosData[i].date.GetMonth() &lt;&lt; <span class="stringliteral">&quot;/&quot;</span> &lt;&lt; atmosData[i].date.GetYear() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><span class="lineno">  257</span>             &lt;&lt; atmosData[i].time.GetHour() &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; atmosData[i].time.GetMinute() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><span class="lineno">  258</span>             &lt;&lt; atmosData[i].speed &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><span class="lineno">  259</span>             &lt;&lt; atmosData[i].temperature &lt;&lt; <span class="stringliteral">&quot;,&quot;</span></div>
+<div class="line"><span class="lineno">  260</span>             &lt;&lt; atmosData[i].solar_rad &lt;&lt; std::endl;</div>
+<div class="line"><span class="lineno">  261</span>    }</div>
+<div class="line"><span class="lineno">  262</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

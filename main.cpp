@@ -1,65 +1,25 @@
 #include "atmospherelogtypes.h"
 #include "menu.h"
 #include "fileio.h"
-#include <string>
-#include <iostream>
-#include <fstream>
+#include "BST.h"
+#include <map>
 
 //---------------------------------------------------------------------------------------
 
 int main()
 {
     AtmosLogType atmos_data;
+    BST<AtmosRecType> atmos_bst;
+    std::map<int, AtmosLogType> atmos_map;
 
-    // Get input filenames from data_source.txt
-    std::ifstream src("data/data_source.txt");
-    if (!src)
+    if (!LoadAtmosphereData(atmos_data))
     {
-        std::cout << "Unable to open data_source.txt\n";
         return -1;
     }
 
-    // Collect data from input files
-    std::string inFilename;
-    while (std::getline(src, inFilename))
-    {
-        std::ifstream inFile("data/" + inFilename);
-        if (!inFile)
-        {
-            std::cout << "Unable to open input file " + inFilename << std::endl;
-        }
-        else
-        {
-            ReadAtmosphereData(inFile, atmos_data);
-            inFile.close();
-        }
-    }
+    TransferToBSTAndMap(atmos_data, atmos_bst, atmos_map);
 
-    // Menu loop
-    int choice = DisplayMenu();
-    while(choice != 5)
-    {
-        switch(choice)
-        {
-        case 1:
-            OptionOne(atmos_data);
-            std::cout << std::endl;
-            break;
-        case 2:
-            OptionTwo(atmos_data);
-            std::cout << std::endl;
-            break;
-        case 3:
-            OptionThree(atmos_data);
-            std::cout << std::endl;
-            break;
-        case 4:
-            OptionFour(atmos_data);
-            std::cout << std::endl;
-            break;
-        }
-        choice = DisplayMenu();
-    }
+    RunMenuLoop(atmos_bst, atmos_map);
 
     return 0;
 }

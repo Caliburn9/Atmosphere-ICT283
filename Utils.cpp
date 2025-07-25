@@ -1,5 +1,6 @@
 #include "utils.h"
 #include "date.h"
+#include "mytime.h"
 #include "VectorTest/unit.h"
 #include <iostream>
 #include <string>
@@ -53,6 +54,38 @@ bool operator ==(const Date & lhs, const Date & rhs)
     return lhs.GetYear() == rhs.GetYear() &&
            lhs.GetMonth() == rhs.GetMonth() &&
            lhs.GetDay() == rhs.GetDay();
+}
+
+//---------------------------------------------------------------------------------------
+
+bool operator <(const MyTime & lhs, const MyTime & rhs)
+{
+    if (lhs.GetHour() != rhs.GetHour())
+    {
+        return lhs.GetHour() < rhs.GetHour();
+    }
+
+    return lhs.GetMinute() < rhs.GetMinute();
+}
+
+//---------------------------------------------------------------------------------------
+
+bool operator >(const MyTime & lhs, const MyTime & rhs)
+{
+    if (lhs.GetHour() != rhs.GetHour())
+    {
+        return lhs.GetHour() > rhs.GetHour();
+    }
+
+    return lhs.GetMinute() >  rhs.GetMinute();
+}
+
+//---------------------------------------------------------------------------------------
+
+bool operator ==(const MyTime & lhs, const MyTime & rhs)
+{
+    return lhs.GetHour() == rhs.GetHour() &&
+           lhs.GetMinute() == rhs.GetMinute();
 }
 
 //---------------------------------------------------------------------------------------

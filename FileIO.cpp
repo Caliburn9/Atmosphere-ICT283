@@ -1,7 +1,41 @@
 #include "fileio.h"
 #include "atmospherelogtypes.h"
+#include "sort.h"
+#include "BST.h"
+#include <map>
 #include <string>
 #include <iostream>
+
+//----------------------------------------------------------------------------------
+
+bool LoadAtmosphereData(AtmosLogType & atmosData)
+{
+    // Get input filenames from data_source.txt
+    std::ifstream src("data/data_source.txt");
+    if (!src)
+    {
+        std::cout << "Unable to open data_source.txt\n";
+        return false;
+    }
+
+    // Collect data from input files
+    std::string inFilename;
+    while (std::getline(src, inFilename))
+    {
+        std::ifstream inFile("data/" + inFilename);
+        if (!inFile)
+        {
+            std::cout << "Unable to open input file " + inFilename << std::endl;
+        }
+        else
+        {
+            ReadAtmosphereData(inFile, atmosData);
+            inFile.close();
+        }
+    }
+    src.close();
+    return true;
+}
 
 //----------------------------------------------------------------------------------
 
@@ -85,7 +119,7 @@ void ReadAtmosphereData(std::ifstream & file, AtmosLogType & atmosData)
 
 //----------------------------------------------------------------------------------
 
-bool GetColumnIndices(std::string headerLine, int & wastIndex, int & sIndex, int & tIndex, int & srIndex)
+bool GetColumnIndices(std::string & headerLine, int & wastIndex, int & sIndex, int & tIndex, int & srIndex)
 {
     wastIndex = -1;
     sIndex = -1;
@@ -142,7 +176,7 @@ bool GetColumnIndices(std::string headerLine, int & wastIndex, int & sIndex, int
 
 //----------------------------------------------------------------------------------
 
-void ReadRowData(std::string line, std::string & wastData, int wastIndex, std::string & sData, int sIndex,
+void ReadRowData(std::string & line, std::string & wastData, int wastIndex, std::string & sData, int sIndex,
                  std::string & tData, int tIndex, std::string & srData, int srIndex)
 {
     std::string data = "";
@@ -229,4 +263,34 @@ void WriteAtmosphereData(std::ofstream & file, const AtmosLogType & atmosData)
 
 //----------------------------------------------------------------------------------
 
+void TransferToBSTAndMap(const AtmosLogType & atmosData, BST<AtmosRecType> & bstData, std::map<int, AtmosLogType> & mapData)
+{
+    for (int i = 0; i < atmosData.GetSize(); i++)
+    {
+        const AtmosRecType & rec = atmosData[i];
+        mapData[rec.date.GetYear()].PushBack(rec);
+    }
+
+    AtmosLogType sortedData = atmosData;
+    MergeSort(sortedData, 0, sortedData.GetSize() - 1);
+    BuildBalancedBST(bstData, sortedData, 0, sortedData.GetSize() - 1);
+}
+
+//----------------------------------------------------------------------------------
+
+void BuildBalancedBST(BST<AtmosRecType> & bstData, const AtmosLogType & sortedData, int start, int end)
+{
+    if (start > end)
+    {
+        return;
+    }
+
+    int mid = (start + end) / 2;
+    bstData.Insert(sortedData[mid]);
+
+    BuildBalancedBST(bstData, sortedData, start, mid - 1);
+    BuildBalancedBST(bstData, sortedData, mid + 1, end);
+}
+
+//----------------------------------------------------------------------------------
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Atmosphere: Menu.h Source File</title>
+<title>Atmosphere-ICT283: Menu.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Atmosphere
+   <div id="projectname">Atmosphere-ICT283
    </div>
   </td>
     <td>        <div id="MSearchBox" class="MSearchBoxInactive">
@@ -86,180 +86,200 @@ $(function() { codefold.init(); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//----------------------------------------------------------------------------------</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="_atmosphere_log_types_8h.html">&quot;atmospherelogtypes.h&quot;</a></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//----------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="_b_s_t_8h.html">&quot;BST.h&quot;</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">map</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">string</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   12</span><span class="comment">    * @brief Displays the main menu and prompts the user for a selection.</span></div>
-<div class="line"><span class="lineno">   13</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   14</span><span class="comment">    * Provides the user with options 1 through 5 in a menu format, and reads an integer input.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//----------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   14</span><span class="comment">    * @brief Runs the menu loop and processes the user&#39;s choice.</span></div>
 <div class="line"><span class="lineno">   15</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   16</span><span class="comment">    * @return int - the option selected by the user.</span></div>
-<div class="line"><span class="lineno">   17</span><span class="comment">    * @pre Assumes user will enter a valid integer.</span></div>
-<div class="line"><span class="lineno">   18</span><span class="comment">    * @post Returns a value between 1 and 5.</span></div>
-<div class="line"><span class="lineno">   19</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">int</span> <a class="code hl_function" href="_menu_8h.html#ab319ba328ff05328b5332df87cf1bdc2">DisplayMenu</a>();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   23</span><span class="comment">    * @brief Handles Option 1: Display wind speed average and standard deviation.</span></div>
-<div class="line"><span class="lineno">   24</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   25</span><span class="comment">    * Prompts user for month and year, then gathers wind speed values for that time period.</span></div>
-<div class="line"><span class="lineno">   26</span><span class="comment">    * If data is found, calculates average and standard deviation, and displays them.</span></div>
-<div class="line"><span class="lineno">   27</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   28</span><span class="comment">    * @param a - The atmospheric data record vector.</span></div>
-<div class="line"><span class="lineno">   29</span><span class="comment">    * @return void</span></div>
-<div class="line"><span class="lineno">   30</span><span class="comment">    * @pre Assumes user inputs valid month and year.</span></div>
-<div class="line"><span class="lineno">   31</span><span class="comment">    * @post Outputs statistics or &quot;No Data&quot; message.</span></div>
-<div class="line"><span class="lineno">   32</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a4db2fb2bcdeceb1e4f4b221498bd6e6c">OptionOne</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp; a);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   36</span><span class="comment">    * @brief Handles Option 2: Display temperature average and stddev for each month of a given year.</span></div>
-<div class="line"><span class="lineno">   37</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   38</span><span class="comment">    * Iterates through all the months of a year (prompted from the user) and prints the average temperature</span></div>
-<div class="line"><span class="lineno">   39</span><span class="comment">    * and standard deviation values for each month, or &quot;No Data&quot; if month does not contain any data.</span></div>
-<div class="line"><span class="lineno">   40</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   41</span><span class="comment">    * @param a - The atmospheric data record vector.</span></div>
-<div class="line"><span class="lineno">   42</span><span class="comment">    * @return void</span></div>
-<div class="line"><span class="lineno">   43</span><span class="comment">    * @pre Assumes valid integer year.</span></div>
-<div class="line"><span class="lineno">   44</span><span class="comment">    * @post Displays per-month statistics or &quot;No Data&quot;.</span></div>
-<div class="line"><span class="lineno">   45</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a36bbf055c01bee1b4d907e7191cf7f0c">OptionTwo</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp; a);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   49</span><span class="comment">    * @brief Handles Option 3: Display total solar radiation for each month of a given year.</span></div>
-<div class="line"><span class="lineno">   50</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   51</span><span class="comment">    * Prints monthly solar radiation totals in kWh/m^2 for a given year (prompted from the user),</span></div>
-<div class="line"><span class="lineno">   52</span><span class="comment">    * or &quot;No Data&quot; if month does not contain any data.</span></div>
-<div class="line"><span class="lineno">   53</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   54</span><span class="comment">    * @param a - The atmospheric data record vector.</span></div>
-<div class="line"><span class="lineno">   55</span><span class="comment">    * @return void</span></div>
-<div class="line"><span class="lineno">   56</span><span class="comment">    * @pre Assumes user inputs a valid year.</span></div>
-<div class="line"><span class="lineno">   57</span><span class="comment">    * @post Displays total solar radiation per month or &quot;No Data&quot;.</span></div>
-<div class="line"><span class="lineno">   58</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a56a59282f3b192913d32f3b88f57589f">OptionThree</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp; a);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   62</span><span class="comment">    * @brief Handles Option 4: Export wind, temperature, and solar radiation data to file.</span></div>
-<div class="line"><span class="lineno">   63</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   64</span><span class="comment">    * Writes formatted output of mean for speed and temperature, standard deviation for speed and temperature to</span></div>
-<div class="line"><span class="lineno">   65</span><span class="comment">    * WindTempSolar.csv for a given year (prompted from the user). Skips months with no data. If the year has no data at all,</span></div>
-<div class="line"><span class="lineno">   66</span><span class="comment">    * writes &quot;No Data&quot; instead.</span></div>
-<div class="line"><span class="lineno">   67</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   68</span><span class="comment">    * @param a - The atmospheric data record vector.</span></div>
-<div class="line"><span class="lineno">   69</span><span class="comment">    * @return void</span></div>
-<div class="line"><span class="lineno">   70</span><span class="comment">    * @pre Assumes data is correctly read and year input is valid.</span></div>
-<div class="line"><span class="lineno">   71</span><span class="comment">    * @post Outputs a CSV file with atmosphere statistics or &quot;No Data&quot; in the second line.</span></div>
-<div class="line"><span class="lineno">   72</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#afe504b4fcc67cce3f8b633c55ae385e4">OptionFour</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp; a);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   76</span><span class="comment">    * @brief Prints the date and time from a given AtmosRecType record.</span></div>
-<div class="line"><span class="lineno">   77</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   78</span><span class="comment">    * Outputs the formatted date (DD/MM/YYYY) and time (HH:MM) to the console.</span></div>
-<div class="line"><span class="lineno">   79</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   80</span><span class="comment">    * @param a - The atmospheric record vector containing date and time information.</span></div>
-<div class="line"><span class="lineno">   81</span><span class="comment">    * @pre a must contain valid Date and Time objects.</span></div>
-<div class="line"><span class="lineno">   82</span><span class="comment">    * @post The date and time are printed to the console.</span></div>
-<div class="line"><span class="lineno">   83</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a2dbaef4677f0f449906d7e551991fa3d">PrintDateAndTime</a>(<span class="keyword">const</span> AtmosRecType &amp; a);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   87</span><span class="comment">    * @brief Prompts the user to enter a valid month (1-12).</span></div>
+<div class="line"><span class="lineno">   16</span><span class="comment">    * Handles the menu loop after displaying the menu, and runs the method associated with the user&#39;s menu choice.</span></div>
+<div class="line"><span class="lineno">   17</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   18</span><span class="comment">    * @param atmos_bst - A BST containing the atmospheric data.</span></div>
+<div class="line"><span class="lineno">   19</span><span class="comment">    * @param atmos_map - An std::map containing the atmospheric data, keyed by years as integers.</span></div>
+<div class="line"><span class="lineno">   20</span><span class="comment">    * @return void</span></div>
+<div class="line"><span class="lineno">   21</span><span class="comment">    * @pre Assumes user will enter a valid integer.</span></div>
+<div class="line"><span class="lineno">   22</span><span class="comment">    * @post Calls the method associated with the menu choice.</span></div>
+<div class="line"><span class="lineno">   23</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a959c49c7c4b78422eba81e6fe4a2fa9c">RunMenuLoop</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_b_s_t.html">BST</a>&lt;AtmosRecType&gt; &amp; atmos_bst, <span class="keyword">const</span> std::map&lt;<span class="keywordtype">int</span>, AtmosLogType&gt; &amp; atmos_map);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   27</span><span class="comment">    * @brief Displays the main menu and prompts the user for a selection.</span></div>
+<div class="line"><span class="lineno">   28</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   29</span><span class="comment">    * Provides the user with options 1 through 5 in a menu format, and reads an integer input.</span></div>
+<div class="line"><span class="lineno">   30</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   31</span><span class="comment">    * @return int - the option selected by the user.</span></div>
+<div class="line"><span class="lineno">   32</span><span class="comment">    * @pre Assumes user will enter a valid integer.</span></div>
+<div class="line"><span class="lineno">   33</span><span class="comment">    * @post Returns a value between 1 and 5.</span></div>
+<div class="line"><span class="lineno">   34</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">int</span> <a class="code hl_function" href="_menu_8h.html#ab319ba328ff05328b5332df87cf1bdc2">DisplayMenu</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   38</span><span class="comment">    * @brief Display wind speed average and standard deviation.</span></div>
+<div class="line"><span class="lineno">   39</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   40</span><span class="comment">    * Prompts user for month and year, then gathers wind speed values for that time period.</span></div>
+<div class="line"><span class="lineno">   41</span><span class="comment">    * If data is found, calculates average and standard deviation, and displays them.</span></div>
+<div class="line"><span class="lineno">   42</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   43</span><span class="comment">    * @param data - An std::map containing the atmospheric data, keyed by years as integers.</span></div>
+<div class="line"><span class="lineno">   44</span><span class="comment">    * @return void</span></div>
+<div class="line"><span class="lineno">   45</span><span class="comment">    * @pre Assumes user inputs valid month and year.</span></div>
+<div class="line"><span class="lineno">   46</span><span class="comment">    * @post Outputs statistics or &quot;No Data&quot; message.</span></div>
+<div class="line"><span class="lineno">   47</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a9742f1b17dfa048a4725dfc127793965">DisplayWindSpeedAvgAndStdDev</a>(<span class="keyword">const</span> std::map&lt;<span class="keywordtype">int</span>, AtmosLogType&gt; &amp; data);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   51</span><span class="comment">    * @brief Display temperature average and stddev for each month of a given year.</span></div>
+<div class="line"><span class="lineno">   52</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   53</span><span class="comment">    * Iterates through all the months of a year (prompted from the user) and prints the average temperature</span></div>
+<div class="line"><span class="lineno">   54</span><span class="comment">    * and standard deviation values for each month, or &quot;No Data&quot; if month does not contain any data.</span></div>
+<div class="line"><span class="lineno">   55</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   56</span><span class="comment">    * @param data - An std::map containing the atmospheric data, keyed by years as integers.</span></div>
+<div class="line"><span class="lineno">   57</span><span class="comment">    * @return void</span></div>
+<div class="line"><span class="lineno">   58</span><span class="comment">    * @pre Assumes valid integer year.</span></div>
+<div class="line"><span class="lineno">   59</span><span class="comment">    * @post Displays per-month statistics or &quot;No Data&quot;.</span></div>
+<div class="line"><span class="lineno">   60</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#af4440c00ef11b98357697431f42d51b2">DisplayTempAvgAndStdDev</a>(<span class="keyword">const</span> std::map&lt;<span class="keywordtype">int</span>, AtmosLogType&gt; &amp; data);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   64</span><span class="comment">    * @brief Calculates and displays Sample Pearson Correlation Coefficients for a specified month.</span></div>
+<div class="line"><span class="lineno">   65</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   66</span><span class="comment">    * This function prompts the user for a target month and calculates three Sample Pearson Correlation Coefficients:</span></div>
+<div class="line"><span class="lineno">   67</span><span class="comment">    * - Wind Speed vs Air Temperature (S_T)</span></div>
+<div class="line"><span class="lineno">   68</span><span class="comment">    * - Wind Speed vs Solar Radiation (S_R)</span></div>
+<div class="line"><span class="lineno">   69</span><span class="comment">    * - Air Temperature vs Solar Radiation (T_R)</span></div>
+<div class="line"><span class="lineno">   70</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   71</span><span class="comment">    * It uses the static `Collector` class to gather filtered data from the provided BST of atmospheric records.</span></div>
+<div class="line"><span class="lineno">   72</span><span class="comment">    * Data is collected via in-order traversal using function pointers to Collector methods. Each correlation</span></div>
+<div class="line"><span class="lineno">   73</span><span class="comment">    * coefficient is then computed using the `sPCC` methods and printed to the console.</span></div>
+<div class="line"><span class="lineno">   74</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   75</span><span class="comment">    * @param data A constant reference to a BST of AtmosRecType records, representing all atmospheric data.</span></div>
+<div class="line"><span class="lineno">   76</span><span class="comment">    * @return void</span></div>
+<div class="line"><span class="lineno">   77</span><span class="comment">    * @pre The BST must be populated with valid AtmosRecType data. The Collector class must be correctly implemented.</span></div>
+<div class="line"><span class="lineno">   78</span><span class="comment">    * @post No changes to the BST. Output is printed to standard output. Collector’s internal state is reset between each correlation.</span></div>
+<div class="line"><span class="lineno">   79</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a145d5f04057cb6a76460db2963f13dc9">CalculateAndDisplaySPCC</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_b_s_t.html">BST</a>&lt;AtmosRecType&gt; &amp; data);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   83</span><span class="comment">    * @brief Export wind, temperature, and solar radiation data to file.</span></div>
+<div class="line"><span class="lineno">   84</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   85</span><span class="comment">    * Writes formatted output of mean for speed and temperature, standard deviation for speed and temperature to</span></div>
+<div class="line"><span class="lineno">   86</span><span class="comment">    * WindTempSolar.csv for a given year (prompted from the user). Skips months with no data. If the year has no data at all,</span></div>
+<div class="line"><span class="lineno">   87</span><span class="comment">    * writes &quot;No Data&quot; instead.</span></div>
 <div class="line"><span class="lineno">   88</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   89</span><span class="comment">    * Prompts the user to enter a valid month (1-12). Loops until a valid month is entered.</span></div>
-<div class="line"><span class="lineno">   90</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">   91</span><span class="comment">    * @return int - A valid month (1 through 12).</span></div>
-<div class="line"><span class="lineno">   92</span><span class="comment">    * @pre Function is called in a valid context, ie. in main() or any other function.</span></div>
-<div class="line"><span class="lineno">   93</span><span class="comment">    * @post Returns a valid month between 1 and 12.</span></div>
-<div class="line"><span class="lineno">   94</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keywordtype">int</span> <a class="code hl_function" href="_menu_8h.html#a31faf4239baa10e5bb69ba0db2f32289">PromptMonth</a>();</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">   98</span><span class="comment">    * @brief Prompts the user to enter a year.</span></div>
-<div class="line"><span class="lineno">   99</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">  100</span><span class="comment">    * Prompts the user to enter a year. Accepts any integer as valid input.</span></div>
-<div class="line"><span class="lineno">  101</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">  102</span><span class="comment">    * @return int - The entered year.</span></div>
-<div class="line"><span class="lineno">  103</span><span class="comment">    * @pre Function is called in a valid context, ie. in main() or any other function.</span></div>
-<div class="line"><span class="lineno">  104</span><span class="comment">    * @post Returns an integer value representing the year.</span></div>
-<div class="line"><span class="lineno">  105</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keywordtype">int</span> <a class="code hl_function" href="_menu_8h.html#ad65996beea80065ae55a757ef40f1c9a">PromptYear</a>();</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  109</span><span class="comment">    * @brief Converts a month number to its string representation.</span></div>
-<div class="line"><span class="lineno">  110</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">  111</span><span class="comment">    * Converts a month number to its string representation.</span></div>
-<div class="line"><span class="lineno">  112</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">  113</span><span class="comment">    * @param monthNum - The month number (1-12).</span></div>
-<div class="line"><span class="lineno">  114</span><span class="comment">    * @return const std::string&amp; - Name of the month or &quot;Invalid Month&quot; if out of range as a static const string reference.</span></div>
-<div class="line"><span class="lineno">  115</span><span class="comment">    * @pre monthNum is an integer.</span></div>
-<div class="line"><span class="lineno">  116</span><span class="comment">    * @post Returns corresponding month string or &quot;Invalid Month&quot; as a static const string reference.</span></div>
-<div class="line"><span class="lineno">  117</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="_menu_8h.html#a2f73eb3bff5cc3df578207eb7efeb70c">  118</a></span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_function" href="_menu_8h.html#a2f73eb3bff5cc3df578207eb7efeb70c">std</a>::<a class="code hl_function" href="_menu_8h.html#a2f73eb3bff5cc3df578207eb7efeb70c">string</a> &amp; <a class="code hl_function" href="_menu_8h.html#a2f73eb3bff5cc3df578207eb7efeb70c">MonthToString</a>(<span class="keywordtype">int</span> monthNum);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  121</span><span class="comment">    * @brief Gathers wind speed values for a specific year and optional month.</span></div>
+<div class="line"><span class="lineno">   89</span><span class="comment">    * @param data - An std::map containing the atmospheric data, keyed by years as integers.</span></div>
+<div class="line"><span class="lineno">   90</span><span class="comment">    * @return void</span></div>
+<div class="line"><span class="lineno">   91</span><span class="comment">    * @pre Assumes data is correctly read and year input is valid.</span></div>
+<div class="line"><span class="lineno">   92</span><span class="comment">    * @post Outputs a CSV file with atmosphere statistics or &quot;No Data&quot; in the second line.</span></div>
+<div class="line"><span class="lineno">   93</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a4e76d48111b1be18adad7a729bb249b1">ExportToWindTempSolarCSV</a>(<span class="keyword">const</span> std::map&lt;<span class="keywordtype">int</span>, AtmosLogType&gt; &amp; data);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">   97</span><span class="comment">    * @brief Prints the date and time from a given AtmosRecType record.</span></div>
+<div class="line"><span class="lineno">   98</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">   99</span><span class="comment">    * Outputs the formatted date (DD/MM/YYYY) and time (HH:MM) to the console.</span></div>
+<div class="line"><span class="lineno">  100</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  101</span><span class="comment">    * @param a - The atmospheric record vector containing date and time information.</span></div>
+<div class="line"><span class="lineno">  102</span><span class="comment">    * @pre a must contain valid Date and Time objects.</span></div>
+<div class="line"><span class="lineno">  103</span><span class="comment">    * @post The date and time are printed to the console.</span></div>
+<div class="line"><span class="lineno">  104</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a2dbaef4677f0f449906d7e551991fa3d">PrintDateAndTime</a>(<span class="keyword">const</span> AtmosRecType &amp; a);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  108</span><span class="comment">    * @brief Prompts the user to enter a valid month (1-12).</span></div>
+<div class="line"><span class="lineno">  109</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  110</span><span class="comment">    * Prompts the user to enter a valid month (1-12). Loops until a valid month is entered.</span></div>
+<div class="line"><span class="lineno">  111</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  112</span><span class="comment">    * @return int - A valid month (1 through 12).</span></div>
+<div class="line"><span class="lineno">  113</span><span class="comment">    * @pre Function is called in a valid context, ie. in main() or any other function.</span></div>
+<div class="line"><span class="lineno">  114</span><span class="comment">    * @post Returns a valid month between 1 and 12.</span></div>
+<div class="line"><span class="lineno">  115</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keywordtype">int</span> <a class="code hl_function" href="_menu_8h.html#a31faf4239baa10e5bb69ba0db2f32289">PromptMonth</a>();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  119</span><span class="comment">    * @brief Prompts the user to enter a year.</span></div>
+<div class="line"><span class="lineno">  120</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  121</span><span class="comment">    * Prompts the user to enter a year. Accepts any integer as valid input.</span></div>
 <div class="line"><span class="lineno">  122</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">  123</span><span class="comment">    * Gathers wind speed values for a specific year and optional month from an atmospheric record vector.</span></div>
-<div class="line"><span class="lineno">  124</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">  125</span><span class="comment">    * @param source - Const Reference to Atmospheric record vector.</span></div>
-<div class="line"><span class="lineno">  126</span><span class="comment">    * @param vec - Reference to Vector to store speed values.</span></div>
-<div class="line"><span class="lineno">  127</span><span class="comment">    * @param year - The year to filter data.</span></div>
-<div class="line"><span class="lineno">  128</span><span class="comment">    * @param month - The month to filter data.</span></div>
-<div class="line"><span class="lineno">  129</span><span class="comment">    * @pre source must contain valid atmospheric records.</span></div>
-<div class="line"><span class="lineno">  130</span><span class="comment">    * @post vec will be populated with valid speed values.</span></div>
-<div class="line"><span class="lineno">  131</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a97bb8750b1e439a51839efe94151882c">GatherSpeedValues</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp; source, <a class="code hl_class" href="class_vector.html">Vector</a>&lt;<span class="keywordtype">float</span>&gt; &amp; vec, <span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month);</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  135</span><span class="comment">    * @brief Gathers air temperature values for a specific year and optional month.</span></div>
-<div class="line"><span class="lineno">  136</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">  137</span><span class="comment">    * Gathers air temperature values for a specific year and optional month from an atmospheric record vector.</span></div>
-<div class="line"><span class="lineno">  138</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">  139</span><span class="comment">    * @param source - Const Reference to Atmospheric record vector.</span></div>
-<div class="line"><span class="lineno">  140</span><span class="comment">    * @param vec - Reference to Vector to store speed values.</span></div>
-<div class="line"><span class="lineno">  141</span><span class="comment">    * @param year - The year to filter data.</span></div>
-<div class="line"><span class="lineno">  142</span><span class="comment">    * @param month - The month to filter data.</span></div>
-<div class="line"><span class="lineno">  143</span><span class="comment">    * @pre source must contain valid atmospheric records.</span></div>
-<div class="line"><span class="lineno">  144</span><span class="comment">    * @post vec will be populated with valid temperature values.</span></div>
-<div class="line"><span class="lineno">  145</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#ac80715a909184955ccb48eeff6d5f22a">GatherTempValues</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp; source, <a class="code hl_class" href="class_vector.html">Vector</a>&lt;<span class="keywordtype">float</span>&gt; &amp; vec, <span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">/**</span></div>
-<div class="line"><span class="lineno">  149</span><span class="comment">    * @brief Gathers solar radiation values for a specific year and optional month.</span></div>
-<div class="line"><span class="lineno">  150</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">  151</span><span class="comment">    * Gathers solar radiation values for a specific year and optional month from an atmospheric record vector.</span></div>
-<div class="line"><span class="lineno">  152</span><span class="comment">    * Does not gather solar radiation values below 100 W/m^2.</span></div>
-<div class="line"><span class="lineno">  153</span><span class="comment">    *</span></div>
-<div class="line"><span class="lineno">  154</span><span class="comment">    * @param source - Const Reference to Atmospheric record vector.</span></div>
-<div class="line"><span class="lineno">  155</span><span class="comment">    * @param vec - Reference to Vector to store speed values.</span></div>
-<div class="line"><span class="lineno">  156</span><span class="comment">    * @param year - The year to filter data.</span></div>
-<div class="line"><span class="lineno">  157</span><span class="comment">    * @param month - The month to filter data.</span></div>
-<div class="line"><span class="lineno">  158</span><span class="comment">    * @pre source must contain valid atmospheric records.</span></div>
-<div class="line"><span class="lineno">  159</span><span class="comment">    * @post vec will be populated with valid solar radiation values.</span></div>
-<div class="line"><span class="lineno">  160</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a1bbe1f046928e057dfd0546ab9235df7">GatherSolarRadValues</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp; source, <a class="code hl_class" href="class_vector.html">Vector</a>&lt;<span class="keywordtype">float</span>&gt; &amp; vec, <span class="keywordtype">int</span> year, <span class="keywordtype">int</span> month);</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment">//----------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// MENU_H</span></div>
+<div class="line"><span class="lineno">  123</span><span class="comment">    * @return int - The entered year.</span></div>
+<div class="line"><span class="lineno">  124</span><span class="comment">    * @pre Function is called in a valid context, ie. in main() or any other function.</span></div>
+<div class="line"><span class="lineno">  125</span><span class="comment">    * @post Returns an integer value representing the year.</span></div>
+<div class="line"><span class="lineno">  126</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keywordtype">int</span> <a class="code hl_function" href="_menu_8h.html#ad65996beea80065ae55a757ef40f1c9a">PromptYear</a>();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  130</span><span class="comment">    * @brief Converts a month number to its string representation.</span></div>
+<div class="line"><span class="lineno">  131</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  132</span><span class="comment">    * Converts a month number to its string representation.</span></div>
+<div class="line"><span class="lineno">  133</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  134</span><span class="comment">    * @param monthNum - The month number (1-12).</span></div>
+<div class="line"><span class="lineno">  135</span><span class="comment">    * @return const std::string&amp; - Name of the month or &quot;Invalid Month&quot; if out of range as a static const string reference.</span></div>
+<div class="line"><span class="lineno">  136</span><span class="comment">    * @pre monthNum is an integer.</span></div>
+<div class="line"><span class="lineno">  137</span><span class="comment">    * @post Returns corresponding month string or &quot;Invalid Month&quot; as a static const string reference.</span></div>
+<div class="line"><span class="lineno">  138</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="_menu_8h.html#a2f73eb3bff5cc3df578207eb7efeb70c">  139</a></span><span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_function" href="_menu_8h.html#a2f73eb3bff5cc3df578207eb7efeb70c">std</a>::<a class="code hl_function" href="_menu_8h.html#a2f73eb3bff5cc3df578207eb7efeb70c">string</a> &amp; <a class="code hl_function" href="_menu_8h.html#a2f73eb3bff5cc3df578207eb7efeb70c">MonthToString</a>(<span class="keywordtype">int</span> monthNum);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  142</span><span class="comment">    * @brief Gathers wind speed values for a specified month.</span></div>
+<div class="line"><span class="lineno">  143</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  144</span><span class="comment">    * Gathers wind speed values for a specific month from an atmospheric record vector.</span></div>
+<div class="line"><span class="lineno">  145</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  146</span><span class="comment">    * @param source - Const Reference to Atmospheric record vector.</span></div>
+<div class="line"><span class="lineno">  147</span><span class="comment">    * @param vec - Reference to Vector to store speed values.</span></div>
+<div class="line"><span class="lineno">  148</span><span class="comment">    * @param month - The month to filter data.</span></div>
+<div class="line"><span class="lineno">  149</span><span class="comment">    * @pre source must contain valid atmospheric records.</span></div>
+<div class="line"><span class="lineno">  150</span><span class="comment">    * @post vec will be populated with valid speed values.</span></div>
+<div class="line"><span class="lineno">  151</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#aa987f03676be21a70bf2dbd39d9c1c32">GatherSpeedValues</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp; source, <a class="code hl_class" href="class_vector.html">Vector</a>&lt;<span class="keywordtype">float</span>&gt; &amp; vec, <span class="keywordtype">int</span> month);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  155</span><span class="comment">    * @brief Gathers air temperature values for a specific month.</span></div>
+<div class="line"><span class="lineno">  156</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  157</span><span class="comment">    * Gathers air temperature values for a specific month from an atmospheric record vector.</span></div>
+<div class="line"><span class="lineno">  158</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  159</span><span class="comment">    * @param source - Const Reference to Atmospheric record vector.</span></div>
+<div class="line"><span class="lineno">  160</span><span class="comment">    * @param vec - Reference to Vector to store speed values.</span></div>
+<div class="line"><span class="lineno">  161</span><span class="comment">    * @param month - The month to filter data.</span></div>
+<div class="line"><span class="lineno">  162</span><span class="comment">    * @pre source must contain valid atmospheric records.</span></div>
+<div class="line"><span class="lineno">  163</span><span class="comment">    * @post vec will be populated with valid temperature values.</span></div>
+<div class="line"><span class="lineno">  164</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a40813c9114a0cabdd32c7368d17e0628">GatherTempValues</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp; source, <a class="code hl_class" href="class_vector.html">Vector</a>&lt;<span class="keywordtype">float</span>&gt; &amp; vec, <span class="keywordtype">int</span> month);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="comment">/**</span></div>
+<div class="line"><span class="lineno">  168</span><span class="comment">    * @brief Gathers solar radiation values for a specific year and optional month.</span></div>
+<div class="line"><span class="lineno">  169</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  170</span><span class="comment">    * Gathers solar radiation values for a specific month from an atmospheric record vector.</span></div>
+<div class="line"><span class="lineno">  171</span><span class="comment">    * Does not gather solar radiation values below 100 W/m^2.</span></div>
+<div class="line"><span class="lineno">  172</span><span class="comment">    *</span></div>
+<div class="line"><span class="lineno">  173</span><span class="comment">    * @param source - Const Reference to Atmospheric record vector.</span></div>
+<div class="line"><span class="lineno">  174</span><span class="comment">    * @param vec - Reference to Vector to store speed values.</span></div>
+<div class="line"><span class="lineno">  175</span><span class="comment">    * @param month - The month to filter data.</span></div>
+<div class="line"><span class="lineno">  176</span><span class="comment">    * @pre source must contain valid atmospheric records.</span></div>
+<div class="line"><span class="lineno">  177</span><span class="comment">    * @post vec will be populated with valid solar radiation values.</span></div>
+<div class="line"><span class="lineno">  178</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="keywordtype">void</span> <a class="code hl_function" href="_menu_8h.html#a84bef07fe9986b3d74793e720cd3fc61">GatherSolarRadValues</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a> &amp; source, <a class="code hl_class" href="class_vector.html">Vector</a>&lt;<span class="keywordtype">float</span>&gt; &amp; vec, <span class="keywordtype">int</span> month);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="comment">//----------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">// MENU_H</span></div>
 <div class="ttc" id="a_atmosphere_log_types_8h_html_a076529dd036c3c08a50bdc5fd8b7f126"><div class="ttname"><a href="_atmosphere_log_types_8h.html#a076529dd036c3c08a50bdc5fd8b7f126">AtmosLogType</a></div><div class="ttdeci">Vector&lt; AtmosRecType &gt; AtmosLogType</div><div class="ttdoc">A Vector container storing multiple AtmosRecType records.</div><div class="ttdef"><b>Definition</b> <a href="_atmosphere_log_types_8h_source.html#l00024">AtmosphereLogTypes.h:24</a></div></div>
-<div class="ttc" id="a_menu_8h_html_a1bbe1f046928e057dfd0546ab9235df7"><div class="ttname"><a href="_menu_8h.html#a1bbe1f046928e057dfd0546ab9235df7">GatherSolarRadValues</a></div><div class="ttdeci">void GatherSolarRadValues(const AtmosLogType &amp;source, Vector&lt; float &gt; &amp;vec, int year, int month)</div><div class="ttdoc">Gathers solar radiation values for a specific year and optional month.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00285">Menu.cpp:285</a></div></div>
-<div class="ttc" id="a_menu_8h_html_a2dbaef4677f0f449906d7e551991fa3d"><div class="ttname"><a href="_menu_8h.html#a2dbaef4677f0f449906d7e551991fa3d">PrintDateAndTime</a></div><div class="ttdeci">void PrintDateAndTime(const AtmosRecType &amp;a)</div><div class="ttdoc">Prints the date and time from a given AtmosRecType record.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00202">Menu.cpp:202</a></div></div>
+<div class="ttc" id="a_menu_8h_html_a145d5f04057cb6a76460db2963f13dc9"><div class="ttname"><a href="_menu_8h.html#a145d5f04057cb6a76460db2963f13dc9">CalculateAndDisplaySPCC</a></div><div class="ttdeci">void CalculateAndDisplaySPCC(const BST&lt; AtmosRecType &gt; &amp;data)</div><div class="ttdoc">Calculates and displays Sample Pearson Correlation Coefficients for a specified month.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00146">Menu.cpp:146</a></div></div>
+<div class="ttc" id="a_menu_8h_html_a2dbaef4677f0f449906d7e551991fa3d"><div class="ttname"><a href="_menu_8h.html#a2dbaef4677f0f449906d7e551991fa3d">PrintDateAndTime</a></div><div class="ttdeci">void PrintDateAndTime(const AtmosRecType &amp;a)</div><div class="ttdoc">Prints the date and time from a given AtmosRecType record.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00269">Menu.cpp:269</a></div></div>
 <div class="ttc" id="a_menu_8h_html_a2f73eb3bff5cc3df578207eb7efeb70c"><div class="ttname"><a href="_menu_8h.html#a2f73eb3bff5cc3df578207eb7efeb70c">MonthToString</a></div><div class="ttdeci">static const std::string &amp; MonthToString(int monthNum)</div><div class="ttdoc">Converts a month number to its string representation.</div></div>
-<div class="ttc" id="a_menu_8h_html_a31faf4239baa10e5bb69ba0db2f32289"><div class="ttname"><a href="_menu_8h.html#a31faf4239baa10e5bb69ba0db2f32289">PromptMonth</a></div><div class="ttdeci">int PromptMonth()</div><div class="ttdoc">Prompts the user to enter a valid month (1-12).</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00210">Menu.cpp:210</a></div></div>
-<div class="ttc" id="a_menu_8h_html_a36bbf055c01bee1b4d907e7191cf7f0c"><div class="ttname"><a href="_menu_8h.html#a36bbf055c01bee1b4d907e7191cf7f0c">OptionTwo</a></div><div class="ttdeci">void OptionTwo(const AtmosLogType &amp;a)</div><div class="ttdoc">Handles Option 2: Display temperature average and stddev for each month of a given year.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00054">Menu.cpp:54</a></div></div>
-<div class="ttc" id="a_menu_8h_html_a4db2fb2bcdeceb1e4f4b221498bd6e6c"><div class="ttname"><a href="_menu_8h.html#a4db2fb2bcdeceb1e4f4b221498bd6e6c">OptionOne</a></div><div class="ttdeci">void OptionOne(const AtmosLogType &amp;a)</div><div class="ttdoc">Handles Option 1: Display wind speed average and standard deviation.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00028">Menu.cpp:28</a></div></div>
-<div class="ttc" id="a_menu_8h_html_a56a59282f3b192913d32f3b88f57589f"><div class="ttname"><a href="_menu_8h.html#a56a59282f3b192913d32f3b88f57589f">OptionThree</a></div><div class="ttdeci">void OptionThree(const AtmosLogType &amp;a)</div><div class="ttdoc">Handles Option 3: Display total solar radiation for each month of a given year.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00090">Menu.cpp:90</a></div></div>
-<div class="ttc" id="a_menu_8h_html_a97bb8750b1e439a51839efe94151882c"><div class="ttname"><a href="_menu_8h.html#a97bb8750b1e439a51839efe94151882c">GatherSpeedValues</a></div><div class="ttdeci">void GatherSpeedValues(const AtmosLogType &amp;source, Vector&lt; float &gt; &amp;vec, int year, int month)</div><div class="ttdoc">Gathers wind speed values for a specific year and optional month.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00255">Menu.cpp:255</a></div></div>
-<div class="ttc" id="a_menu_8h_html_ab319ba328ff05328b5332df87cf1bdc2"><div class="ttname"><a href="_menu_8h.html#ab319ba328ff05328b5332df87cf1bdc2">DisplayMenu</a></div><div class="ttdeci">int DisplayMenu()</div><div class="ttdoc">Displays the main menu and prompts the user for a selection.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00012">Menu.cpp:12</a></div></div>
-<div class="ttc" id="a_menu_8h_html_ac80715a909184955ccb48eeff6d5f22a"><div class="ttname"><a href="_menu_8h.html#ac80715a909184955ccb48eeff6d5f22a">GatherTempValues</a></div><div class="ttdeci">void GatherTempValues(const AtmosLogType &amp;source, Vector&lt; float &gt; &amp;vec, int year, int month)</div><div class="ttdoc">Gathers air temperature values for a specific year and optional month.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00270">Menu.cpp:270</a></div></div>
-<div class="ttc" id="a_menu_8h_html_ad65996beea80065ae55a757ef40f1c9a"><div class="ttname"><a href="_menu_8h.html#ad65996beea80065ae55a757ef40f1c9a">PromptYear</a></div><div class="ttdeci">int PromptYear()</div><div class="ttdoc">Prompts the user to enter a year.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00226">Menu.cpp:226</a></div></div>
-<div class="ttc" id="a_menu_8h_html_afe504b4fcc67cce3f8b633c55ae385e4"><div class="ttname"><a href="_menu_8h.html#afe504b4fcc67cce3f8b633c55ae385e4">OptionFour</a></div><div class="ttdeci">void OptionFour(const AtmosLogType &amp;a)</div><div class="ttdoc">Handles Option 4: Export wind, temperature, and solar radiation data to file.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00122">Menu.cpp:122</a></div></div>
+<div class="ttc" id="a_menu_8h_html_a31faf4239baa10e5bb69ba0db2f32289"><div class="ttname"><a href="_menu_8h.html#a31faf4239baa10e5bb69ba0db2f32289">PromptMonth</a></div><div class="ttdeci">int PromptMonth()</div><div class="ttdoc">Prompts the user to enter a valid month (1-12).</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00277">Menu.cpp:277</a></div></div>
+<div class="ttc" id="a_menu_8h_html_a40813c9114a0cabdd32c7368d17e0628"><div class="ttname"><a href="_menu_8h.html#a40813c9114a0cabdd32c7368d17e0628">GatherTempValues</a></div><div class="ttdeci">void GatherTempValues(const AtmosLogType &amp;source, Vector&lt; float &gt; &amp;vec, int month)</div><div class="ttdoc">Gathers air temperature values for a specific month.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00335">Menu.cpp:335</a></div></div>
+<div class="ttc" id="a_menu_8h_html_a4e76d48111b1be18adad7a729bb249b1"><div class="ttname"><a href="_menu_8h.html#a4e76d48111b1be18adad7a729bb249b1">ExportToWindTempSolarCSV</a></div><div class="ttdeci">void ExportToWindTempSolarCSV(const std::map&lt; int, AtmosLogType &gt; &amp;data)</div><div class="ttdoc">Export wind, temperature, and solar radiation data to file.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00177">Menu.cpp:177</a></div></div>
+<div class="ttc" id="a_menu_8h_html_a84bef07fe9986b3d74793e720cd3fc61"><div class="ttname"><a href="_menu_8h.html#a84bef07fe9986b3d74793e720cd3fc61">GatherSolarRadValues</a></div><div class="ttdeci">void GatherSolarRadValues(const AtmosLogType &amp;source, Vector&lt; float &gt; &amp;vec, int month)</div><div class="ttdoc">Gathers solar radiation values for a specific year and optional month.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00348">Menu.cpp:348</a></div></div>
+<div class="ttc" id="a_menu_8h_html_a959c49c7c4b78422eba81e6fe4a2fa9c"><div class="ttname"><a href="_menu_8h.html#a959c49c7c4b78422eba81e6fe4a2fa9c">RunMenuLoop</a></div><div class="ttdeci">void RunMenuLoop(const BST&lt; AtmosRecType &gt; &amp;atmos_bst, const std::map&lt; int, AtmosLogType &gt; &amp;atmos_map)</div><div class="ttdoc">Runs the menu loop and processes the user&#39;s choice.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00016">Menu.cpp:16</a></div></div>
+<div class="ttc" id="a_menu_8h_html_a9742f1b17dfa048a4725dfc127793965"><div class="ttname"><a href="_menu_8h.html#a9742f1b17dfa048a4725dfc127793965">DisplayWindSpeedAvgAndStdDev</a></div><div class="ttdeci">void DisplayWindSpeedAvgAndStdDev(const std::map&lt; int, AtmosLogType &gt; &amp;data)</div><div class="ttdoc">Display wind speed average and standard deviation.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00064">Menu.cpp:64</a></div></div>
+<div class="ttc" id="a_menu_8h_html_aa987f03676be21a70bf2dbd39d9c1c32"><div class="ttname"><a href="_menu_8h.html#aa987f03676be21a70bf2dbd39d9c1c32">GatherSpeedValues</a></div><div class="ttdeci">void GatherSpeedValues(const AtmosLogType &amp;source, Vector&lt; float &gt; &amp;vec, int month)</div><div class="ttdoc">Gathers wind speed values for a specified month.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00322">Menu.cpp:322</a></div></div>
+<div class="ttc" id="a_menu_8h_html_ab319ba328ff05328b5332df87cf1bdc2"><div class="ttname"><a href="_menu_8h.html#ab319ba328ff05328b5332df87cf1bdc2">DisplayMenu</a></div><div class="ttdeci">int DisplayMenu()</div><div class="ttdoc">Displays the main menu and prompts the user for a selection.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00048">Menu.cpp:48</a></div></div>
+<div class="ttc" id="a_menu_8h_html_ad65996beea80065ae55a757ef40f1c9a"><div class="ttname"><a href="_menu_8h.html#ad65996beea80065ae55a757ef40f1c9a">PromptYear</a></div><div class="ttdeci">int PromptYear()</div><div class="ttdoc">Prompts the user to enter a year.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00293">Menu.cpp:293</a></div></div>
+<div class="ttc" id="a_menu_8h_html_af4440c00ef11b98357697431f42d51b2"><div class="ttname"><a href="_menu_8h.html#af4440c00ef11b98357697431f42d51b2">DisplayTempAvgAndStdDev</a></div><div class="ttdeci">void DisplayTempAvgAndStdDev(const std::map&lt; int, AtmosLogType &gt; &amp;data)</div><div class="ttdoc">Display temperature average and stddev for each month of a given year.</div><div class="ttdef"><b>Definition</b> <a href="_menu_8cpp_source.html#l00099">Menu.cpp:99</a></div></div>
+<div class="ttc" id="aclass_b_s_t_html"><div class="ttname"><a href="class_b_s_t.html">BST</a></div><div class="ttdoc">A Binary Search Tree (BST) class that stores elements in sorted order.</div><div class="ttdef"><b>Definition</b> <a href="_b_s_t_8h_source.html#l00047">BST.h:47</a></div></div>
 <div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector</a></div><div class="ttdoc">A simplified dynamic array template class.</div><div class="ttdef"><b>Definition</b> <a href="_vector_8h_source.html#l00039">Vector.h:40</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00012">main.cpp:12</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="main_8cpp_source.html#l00009">main.cpp:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

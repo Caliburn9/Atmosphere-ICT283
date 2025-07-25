@@ -5,10 +5,27 @@
 
 #include "atmospherelogtypes.h"
 #include "vector.h"
+#include "BST.h"
+#include <map>
 #include <string>
 #include <fstream>
 
 //----------------------------------------------------------------------------------
+
+    /**
+    * @brief Loads atmospheric data from multiple input files listed in data_source.txt.
+    *
+    * This function opens the "data/data_source.txt" file and reads filenames line by line.
+    * For each listed file, it attempts to open and parse atmospheric records using ReadAtmosphereData().
+    * All valid data is appended to the provided AtmosLogType vector.
+    *
+    * @param atmosData A reference to an AtmosLogType (i.e., Vector of AtmosRecType) where all parsed records are stored.
+    * @return true if data_source.txt was successfully opened and at least one input file was attempted,
+    *           and false if data_source.txt could not be opened.
+    * @pre data/data_source.txt must exist and contain valid input filenames, one per line.
+    * @post atmosData contains all valid parsed records from the listed files. Invalid files are skipped with a warning.
+    */
+bool LoadAtmosphereData(AtmosLogType & atmosData);
 
     /**
     * @brief Reads atmospheric data from a file into a structured vector.
@@ -40,7 +57,7 @@ void ReadAtmosphereData(std::ifstream & file, AtmosLogType & atmosData);
     * @pre headerLine must be a valid CSV-formatted line containing column headers.
     * @post wastIndex, sIndex, tIndex, and srIndex are updated with appropriate values if found.
     */
-bool GetColumnIndices(std::string headerLine, int & wastIndex, int & sIndex, int & tIndex, int & srIndex);
+bool GetColumnIndices(std::string & headerLine, int & wastIndex, int & sIndex, int & tIndex, int & srIndex);
 
     /**
     * @brief Extracts required field values from a CSV line based on column indices.
@@ -61,7 +78,7 @@ bool GetColumnIndices(std::string headerLine, int & wastIndex, int & sIndex, int
     * @pre line must be a valid CSV-formatted string containing enough columns.
     * @post wastData, sData, tData, and srData are updated with values if their respective columns exist.
     */
-void ReadRowData(std::string line, std::string & wastData, int wastIndex, std::string & sData, int sIndex,
+void ReadRowData(std::string & line, std::string & wastData, int wastIndex, std::string & sData, int sIndex,
                  std::string & tData, int tIndex, std::string & srData, int srIndex);
 
     /**
@@ -105,6 +122,37 @@ void ParseTimeRecord(std::string timeStr, MyTime & t);
     */
 void WriteAtmosphereData(std::ofstream & file, const AtmosLogType & atmosData);
 
+    /**
+    * @brief Transfers data from AtmosRecType vector to BST and map structures
+    *
+    * This method transfers the data from the AtmosRecType vector (AtmosLogType) to a BST and an std::map.
+    * It orders the data into the map using the month integer as the key.
+    *
+    * @param atmosData - the reference to the AtmosRecType vector, AtmosLogType.
+    * @param bstData - the reference to the AtmosRecType Binary Search Tree.
+    * @param mapData - the reference to the AtmosLogType Map with month integers as the keys.
+    * @return void
+    * @pre atmosData, bstData and mapData are valid and properly constructed.
+    * @post bstData contains all records from atmosData. mapData contains records indexed by month.
+    */
+void TransferToBSTAndMap(const AtmosLogType & atmosData, BST<AtmosRecType> & bstData, std::map<int, AtmosLogType> & mapData);
+
+    /**
+    * @brief Recursively builds a height-balanced Binary Search Tree from sorted atmospheric data.
+    *
+    * This function uses a recursive divide-and-conquer strategy to construct a balanced BST
+    * by inserting the middle element of the current range, then repeating the process for
+    * the left and right subranges.
+    *
+    * @param bstData A reference to the BST where the balanced nodes will be inserted.
+    * @param sortedData A const reference to a sorted AtmosLogType (vector of AtmosRecType).
+    * @param start The starting index of the current range in the sorted vector.
+    * @param end The ending index of the current range in the sorted vector.
+    * @return void
+    * @pre sortedData must be sorted by the desired BST ordering criteria (e.g., Date/Time).
+    * @post bstData is populated with a balanced BST containing all elements from sortedData[start] to sortedData[end].
+    */
+void BuildBalancedBST(BST<AtmosRecType> & bstData, const AtmosLogType & sortedData, int start, int end);
 
 //----------------------------------------------------------------------------------
 

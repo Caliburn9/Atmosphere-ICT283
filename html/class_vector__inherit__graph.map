@@ -1,5 +1,7 @@
 <map id="Vector&lt; T &gt;" name="Vector&lt; T &gt;">
-<area shape="rect" id="Node000001" title="A simplified dynamic array template class." alt="" coords="33,5,138,352"/>
+<area shape="rect" id="Node000001" title="A simplified dynamic array template class." alt="" coords="112,5,217,352"/>
 <area shape="rect" id="Node000002" href="$class_vector.html" title=" " alt="" coords="5,424,166,771"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,367,88,424,83,424,83,367"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,320,95,377,88,425,83,424,90,375,105,318"/>
+<area shape="rect" id="Node000003" href="$class_vector.html" title=" " alt="" coords="190,456,296,739"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,366,216,376,229,456,224,457,211,376,209,367"/>
 </map>

@@ -124,7 +124,7 @@ public:
     * @pre The BST object must be fully constructed and initialized.
     * @post The callback function is called on each element in ascending order.
     */
-    void InOrderTraversal(void (*fp)(T &));
+    void InOrderTraversal(void (*fp)(const T &)) const;
 
     /**
     * @brief Perform pre-order traversal using a function pointer callback.
@@ -136,7 +136,7 @@ public:
     * @pre The BST object must be fully constructed and initialized.
     * @post The callback function is called on each element in pre-order sequence.
     */
-    void PreOrderTraversal(void (*fp)(T &));
+    void PreOrderTraversal(void (*fp)(const T &)) const;
 
     /**
     * @brief Perform post-order traversal using a function pointer callback.
@@ -148,7 +148,7 @@ public:
     * @pre The BST object must be fully constructed and initialized.
     * @post The callback function is called on each element in post-order sequence.
     */
-    void PostOrderTraversal(void (*fp)(T &));
+    void PostOrderTraversal(void (*fp)(const T &)) const;
 
 private:
     Node<T> * m_root; /// A pointer to the root of the Binary Search Tree.
@@ -226,7 +226,7 @@ private:
     * @pre node is a valid node pointer or nullptr.
     * @post The callback function is called on each node in in-order sequence.
     */
-    void InOrderTraversal(void (*fp)(T &), Node<T> * node);
+    void InOrderTraversal(void (*fp)(const T &), Node<T> * node) const;
 
     /**
     * @brief Recursive helper for pre-order traversal.
@@ -239,7 +239,7 @@ private:
     * @pre node is a valid node pointer or nullptr.
     * @post The callback function is called on each node in pre-order sequence.
     */
-    void PreOrderTraversal(void (*fp)(T &), Node<T> * node);
+    void PreOrderTraversal(void (*fp)(const T &), Node<T> * node) const;
 
     /**
     * @brief Recursive helper for post-order traversal.
@@ -252,7 +252,7 @@ private:
     * @pre node is a valid node pointer or nullptr.
     * @post The callback function is called on each node in post-order sequence.
     */
-    void PostOrderTraversal(void (*fp)(T &), Node<T> * node);
+    void PostOrderTraversal(void (*fp)(const T &), Node<T> * node) const;
 }; // end of class
 
 //---------------------------------------------------------------------------------------
@@ -311,15 +311,15 @@ bool BST<T>::Search(const T & val)
 //---------------------------------------------------------------------------------------
 
 template <class T>
-void BST<T>::InOrderTraversal(void (*fp)(T &))
+void BST<T>::InOrderTraversal(void (*fp)(const T &)) const
 {
-    InOrderTraversal(fp ,m_root);
+    InOrderTraversal(fp, m_root);
 }
 
 //---------------------------------------------------------------------------------------
 
 template <class T>
-void BST<T>::PreOrderTraversal(void (*fp)(T &))
+void BST<T>::PreOrderTraversal(void (*fp)(const T &)) const
 {
     PreOrderTraversal(fp, m_root);
 }
@@ -327,7 +327,7 @@ void BST<T>::PreOrderTraversal(void (*fp)(T &))
 //---------------------------------------------------------------------------------------
 
 template <class T>
-void BST<T>::PostOrderTraversal(void (*fp)(T &))
+void BST<T>::PostOrderTraversal(void (*fp)(const T &)) const
 {
     PostOrderTraversal(fp, m_root);
 }
@@ -378,18 +378,18 @@ void BST<T>::DeleteTree(Node<T> * & node)
 template <class T>
 void BST<T>::Insert(Node<T> * & node, const T & val)
 {
-    Node<T> * newNode = new Node<T>;
-    newNode->data = val;
-    newNode->left = nullptr;
-    newNode->right = nullptr;
-
     if (node == nullptr)
     {
-        node = newNode;
+        node = new Node<T>;
+        node->data = val;
+        node->left = nullptr;
+        node->right = nullptr;
     }
     else if (node->data == val)
     {
         std::cout << "Duplicates not allowed\n\n";
+        delete node;
+        node = nullptr;
         return;
     }
     else if (node->data > val)
@@ -431,7 +431,7 @@ bool BST<T>::Search(Node<T> * node, const T & val) const
 //---------------------------------------------------------------------------------------
 
 template <class T>
-void BST<T>::InOrderTraversal(void (*fp)(T &), Node<T> * node)
+void BST<T>::InOrderTraversal(void (*fp)(const T &), Node<T> * node) const
 {
     if (node != nullptr)
     {
@@ -444,7 +444,7 @@ void BST<T>::InOrderTraversal(void (*fp)(T &), Node<T> * node)
 //---------------------------------------------------------------------------------------
 
 template <class T>
-void BST<T>::PreOrderTraversal(void (*fp)(T &), Node<T> * node)
+void BST<T>::PreOrderTraversal(void (*fp)(const T &), Node<T> * node) const
 {
     if (node != nullptr)
     {
@@ -457,7 +457,7 @@ void BST<T>::PreOrderTraversal(void (*fp)(T &), Node<T> * node)
 //---------------------------------------------------------------------------------------
 
 template <class T>
-void BST<T>::PostOrderTraversal(void (*fp)(T &), Node<T> * node)
+void BST<T>::PostOrderTraversal(void (*fp)(const T &), Node<T> * node) const
 {
     if (node != nullptr)
     {

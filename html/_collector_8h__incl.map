@@ -1,0 +1,14 @@
+<map id="Collector.h" name="Collector.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="134,5,219,32"/>
+<area shape="rect" id="Node000002" href="$_atmosphere_log_types_8h.html" title=" " alt="" coords="40,80,198,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,34,141,69,137,66,165,31"/>
+<area shape="rect" id="Node000005" href="$_vector_8h.html" title=" " alt="" coords="196,155,264,181"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="187,31,212,79,228,139,223,141,208,81,183,34"/>
+<area shape="rect" id="Node000003" href="$_date_8h.html" title=" " alt="" coords="5,155,63,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,109,62,147,58,143,103,105"/>
+<area shape="rect" id="Node000004" href="$_my_time_8h.html" title=" " alt="" coords="87,155,162,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="123,107,125,139,120,139,118,107"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="140,105,200,144,197,148,137,109"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="198,229,262,256"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="233,182,233,214,227,214,227,182"/>
+</map>

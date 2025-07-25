@@ -282,3 +282,129 @@
 	"../Utils.h"
 	<iostream>
 
+1753255058 source:d:\tools\codeblocks projects\atmosphere-ict283\calc.cpp
+	"calc.h"
+	"atmospherelogtypes.h"
+	<math.h>
+
+1753402944 d:\tools\codeblocks projects\atmosphere-ict283\calc.h
+	"vector.h"
+	<math.h>
+	<iostream>
+
+1751559817 d:\tools\codeblocks projects\atmosphere-ict283\vector.h
+	<cassert>
+
+1753396322 d:\tools\codeblocks projects\atmosphere-ict283\atmospherelogtypes.h
+	"date.h"
+	"mytime.h"
+	"vector.h"
+
+1749936336 d:\tools\codeblocks projects\atmosphere-ict283\date.h
+
+1750279143 d:\tools\codeblocks projects\atmosphere-ict283\mytime.h
+
+1748789512 source:d:\tools\codeblocks projects\atmosphere-ict283\date.cpp
+	"date.h"
+
+1750279118 source:d:\tools\codeblocks projects\atmosphere-ict283\mytime.cpp
+	"mytime.h"
+
+1753438338 source:d:\tools\codeblocks projects\atmosphere-ict283\collector.cpp
+	"Collector.h"
+	"vector.h"
+	"date.h"
+	<cassert>
+
+1753400476 d:\tools\codeblocks projects\atmosphere-ict283\collector.h
+	"AtmosphereLogTypes.h"
+	"Vector.h"
+
+1753395273 source:d:\tools\codeblocks projects\atmosphere-ict283\main.cpp
+	"atmospherelogtypes.h"
+	"menu.h"
+	"fileio.h"
+	"BST.h"
+	<map>
+
+1753401043 d:\tools\codeblocks projects\atmosphere-ict283\menu.h
+	"atmospherelogtypes.h"
+	"BST.h"
+	<map>
+	<string>
+
+1753392598 d:\tools\codeblocks projects\atmosphere-ict283\bst.h
+	<iostream>
+
+1753401736 d:\tools\codeblocks projects\atmosphere-ict283\fileio.h
+	"atmospherelogtypes.h"
+	"vector.h"
+	"BST.h"
+	<map>
+	<string>
+	<fstream>
+
+1753392729 source:d:\tools\codeblocks projects\atmosphere-ict283\utils.cpp
+	"utils.h"
+	"date.h"
+	"mytime.h"
+	"VectorTest/unit.h"
+	<iostream>
+	<string>
+
+1753381331 d:\tools\codeblocks projects\atmosphere-ict283\utils.h
+	"date.h"
+	"BST.h"
+	"VectorTest/unit.h"
+	"mytime.h"
+	<iostream>
+	<string>
+
+1750184196 d:\tools\codeblocks projects\atmosphere-ict283\vectortest\unit.h
+	<iostream>
+	<string>
+
+1753451625 source:d:\tools\codeblocks projects\atmosphere-ict283\menu.cpp
+	"menu.h"
+	"atmospherelogtypes.h"
+	"calc.h"
+	"vector.h"
+	"BST.h"
+	"Collector.h"
+	"utils.h"
+	"fileio.h"
+	<map>
+	<iostream>
+	<iomanip>
+	<string>
+
+1753401135 source:d:\tools\codeblocks projects\atmosphere-ict283\fileio.cpp
+	"fileio.h"
+	"atmospherelogtypes.h"
+	"sort.h"
+	"BST.h"
+	<map>
+	<string>
+	<iostream>
+
+1750184232 source:d:\tools\codeblocks projects\atmosphere-ict283\vectortest\unit.cpp
+	"unit.h"
+	<string>
+
+1753075705 source:d:\tools\codeblocks projects\atmosphere-ict283\bsttest\bsttest.cpp
+	"../BST.h"
+	"../Date.h"
+	"../Utils.h"
+	<iostream>
+
+1753309573 source:d:\tools\codeblocks projects\atmosphere-ict283\atmospherelogtypes.cpp
+	"AtmosphereLogTypes.h"
+	"Calc.h"
+	"utils.h"
+
+1753295305 d:\tools\codeblocks projects\atmosphere-ict283\stack.h
+	<stack>
+
+1753405465 d:\tools\codeblocks projects\atmosphere-ict283\sort.h
+	"Vector.h"
+

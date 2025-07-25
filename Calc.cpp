@@ -4,7 +4,7 @@
 
 //----------------------------------------------------------------------------------
 
-bool CompareSpeed(float a, float b)
+bool CompareFloats(float a, float b)
 {
     float epsilon = 0.5f;
     return std::fabs(a - b) < epsilon;

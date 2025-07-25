@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mytime_0',['MyTime',['../class_my_time.html',1,'']]]
+  ['collector_0',['Collector',['../class_collector.html',1,'']]]
 ];

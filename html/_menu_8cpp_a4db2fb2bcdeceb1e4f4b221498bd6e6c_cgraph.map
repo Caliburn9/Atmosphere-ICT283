@@ -1,7 +1,0 @@
-<map id="OptionOne" name="OptionOne">
-<area shape="rect" id="Node000001" title="Handles Option 1: Display wind speed average and standard deviation." alt="" coords="5,31,89,57"/>
-<area shape="rect" id="Node000002" href="$_menu_8cpp.html#a31faf4239baa10e5bb69ba0db2f32289" title="Prompts the user to enter a valid month (1&#45;12)." alt="" coords="137,5,236,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,34,121,28,122,33,89,39"/>
-<area shape="rect" id="Node000003" href="$_menu_8cpp.html#ad65996beea80065ae55a757ef40f1c9a" title="Prompts the user to enter a year." alt="" coords="142,56,231,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="89,49,127,56,126,61,88,54"/>
-</map>

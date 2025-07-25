@@ -1,15 +1,21 @@
 <map id="Menu.h" name="Menu.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="155,5,220,32"/>
-<area shape="rect" id="Node000002" href="$_atmosphere_log_types_8h.html" title=" " alt="" coords="50,80,199,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,34,147,70,143,66,174,31"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="223,80,277,107"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="200,31,231,66,227,70,196,34"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="303,5,368,32"/>
+<area shape="rect" id="Node000002" href="$_atmosphere_log_types_8h.html" title=" " alt="" coords="81,80,230,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="305,35,202,76,200,71,303,30"/>
+<area shape="rect" id="Node000007" href="$_b_s_t_8h.html" title=" " alt="" coords="269,80,327,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="331,34,314,68,309,65,326,31"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="351,80,397,107"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="344,31,363,65,358,68,340,34"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="421,80,474,107"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="356,30,417,69,414,74,353,35"/>
 <area shape="rect" id="Node000003" href="$_date_8h.html" title=" " alt="" coords="5,155,63,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,109,63,147,60,143,107,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="136,110,70,149,67,144,133,105"/>
 <area shape="rect" id="Node000004" href="$_my_time_8h.html" title=" " alt="" coords="87,155,162,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="127,107,127,139,122,139,122,107"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="152,108,138,141,133,139,148,106"/>
 <area shape="rect" id="Node000005" href="$_vector_8h.html" title=" " alt="" coords="186,155,255,181"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="143,105,193,143,190,147,140,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="169,105,201,141,197,145,165,109"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="188,229,253,256"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="223,182,223,214,218,214,218,182"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="278,155,350,181"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="303,107,311,139,305,140,298,108"/>
 </map>

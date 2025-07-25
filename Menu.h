@@ -4,9 +4,24 @@
 //----------------------------------------------------------------------------------
 
 #include "atmospherelogtypes.h"
+#include "BST.h"
+#include <map>
 #include <string>
 
 //----------------------------------------------------------------------------------
+
+    /**
+    * @brief Runs the menu loop and processes the user's choice.
+    *
+    * Handles the menu loop after displaying the menu, and runs the method associated with the user's menu choice.
+    *
+    * @param atmos_bst - A BST containing the atmospheric data.
+    * @param atmos_map - An std::map containing the atmospheric data, keyed by years as integers.
+    * @return void
+    * @pre Assumes user will enter a valid integer.
+    * @post Calls the method associated with the menu choice.
+    */
+void RunMenuLoop(const BST<AtmosRecType> & atmos_bst, const std::map<int, AtmosLogType> & atmos_map);
 
     /**
     * @brief Displays the main menu and prompts the user for a selection.
@@ -20,57 +35,63 @@
 int DisplayMenu();
 
     /**
-    * @brief Handles Option 1: Display wind speed average and standard deviation.
+    * @brief Display wind speed average and standard deviation.
     *
     * Prompts user for month and year, then gathers wind speed values for that time period.
     * If data is found, calculates average and standard deviation, and displays them.
     *
-    * @param a - The atmospheric data record vector.
+    * @param data - An std::map containing the atmospheric data, keyed by years as integers.
     * @return void
     * @pre Assumes user inputs valid month and year.
     * @post Outputs statistics or "No Data" message.
     */
-void OptionOne(const AtmosLogType & a);
+void DisplayWindSpeedAvgAndStdDev(const std::map<int, AtmosLogType> & data);
 
     /**
-    * @brief Handles Option 2: Display temperature average and stddev for each month of a given year.
+    * @brief Display temperature average and stddev for each month of a given year.
     *
     * Iterates through all the months of a year (prompted from the user) and prints the average temperature
     * and standard deviation values for each month, or "No Data" if month does not contain any data.
     *
-    * @param a - The atmospheric data record vector.
+    * @param data - An std::map containing the atmospheric data, keyed by years as integers.
     * @return void
     * @pre Assumes valid integer year.
     * @post Displays per-month statistics or "No Data".
     */
-void OptionTwo(const AtmosLogType & a);
+void DisplayTempAvgAndStdDev(const std::map<int, AtmosLogType> & data);
 
     /**
-    * @brief Handles Option 3: Display total solar radiation for each month of a given year.
+    * @brief Calculates and displays Sample Pearson Correlation Coefficients for a specified month.
     *
-    * Prints monthly solar radiation totals in kWh/m^2 for a given year (prompted from the user),
-    * or "No Data" if month does not contain any data.
+    * This function prompts the user for a target month and calculates three Sample Pearson Correlation Coefficients:
+    * - Wind Speed vs Air Temperature (S_T)
+    * - Wind Speed vs Solar Radiation (S_R)
+    * - Air Temperature vs Solar Radiation (T_R)
     *
-    * @param a - The atmospheric data record vector.
+    * It uses the static `Collector` class to gather filtered data from the provided BST of atmospheric records.
+    * Data is collected via in-order traversal using function pointers to Collector methods. Each correlation
+    * coefficient is then computed using the `sPCC` methods and printed to the console.
+    *
+    * @param data A constant reference to a BST of AtmosRecType records, representing all atmospheric data.
     * @return void
-    * @pre Assumes user inputs a valid year.
-    * @post Displays total solar radiation per month or "No Data".
+    * @pre The BST must be populated with valid AtmosRecType data. The Collector class must be correctly implemented.
+    * @post No changes to the BST. Output is printed to standard output. Collector’s internal state is reset between each correlation.
     */
-void OptionThree(const AtmosLogType & a);
+void CalculateAndDisplaySPCC(const BST<AtmosRecType> & data);
 
     /**
-    * @brief Handles Option 4: Export wind, temperature, and solar radiation data to file.
+    * @brief Export wind, temperature, and solar radiation data to file.
     *
     * Writes formatted output of mean for speed and temperature, standard deviation for speed and temperature to
     * WindTempSolar.csv for a given year (prompted from the user). Skips months with no data. If the year has no data at all,
     * writes "No Data" instead.
     *
-    * @param a - The atmospheric data record vector.
+    * @param data - An std::map containing the atmospheric data, keyed by years as integers.
     * @return void
     * @pre Assumes data is correctly read and year input is valid.
     * @post Outputs a CSV file with atmosphere statistics or "No Data" in the second line.
     */
-void OptionFour(const AtmosLogType & a);
+void ExportToWindTempSolarCSV(const std::map<int, AtmosLogType> & data);
 
     /**
     * @brief Prints the date and time from a given AtmosRecType record.
@@ -118,47 +139,44 @@ int PromptYear();
 static const std::string & MonthToString(int monthNum);
 
     /**
-    * @brief Gathers wind speed values for a specific year and optional month.
+    * @brief Gathers wind speed values for a specified month.
     *
-    * Gathers wind speed values for a specific year and optional month from an atmospheric record vector.
+    * Gathers wind speed values for a specific month from an atmospheric record vector.
     *
     * @param source - Const Reference to Atmospheric record vector.
     * @param vec - Reference to Vector to store speed values.
-    * @param year - The year to filter data.
     * @param month - The month to filter data.
     * @pre source must contain valid atmospheric records.
     * @post vec will be populated with valid speed values.
     */
-void GatherSpeedValues(const AtmosLogType & source, Vector<float> & vec, int year, int month);
+void GatherSpeedValues(const AtmosLogType & source, Vector<float> & vec, int month);
 
     /**
-    * @brief Gathers air temperature values for a specific year and optional month.
+    * @brief Gathers air temperature values for a specific month.
     *
-    * Gathers air temperature values for a specific year and optional month from an atmospheric record vector.
+    * Gathers air temperature values for a specific month from an atmospheric record vector.
     *
     * @param source - Const Reference to Atmospheric record vector.
     * @param vec - Reference to Vector to store speed values.
-    * @param year - The year to filter data.
     * @param month - The month to filter data.
     * @pre source must contain valid atmospheric records.
     * @post vec will be populated with valid temperature values.
     */
-void GatherTempValues(const AtmosLogType & source, Vector<float> & vec, int year, int month);
+void GatherTempValues(const AtmosLogType & source, Vector<float> & vec, int month);
 
     /**
     * @brief Gathers solar radiation values for a specific year and optional month.
     *
-    * Gathers solar radiation values for a specific year and optional month from an atmospheric record vector.
+    * Gathers solar radiation values for a specific month from an atmospheric record vector.
     * Does not gather solar radiation values below 100 W/m^2.
     *
     * @param source - Const Reference to Atmospheric record vector.
     * @param vec - Reference to Vector to store speed values.
-    * @param year - The year to filter data.
     * @param month - The month to filter data.
     * @pre source must contain valid atmospheric records.
     * @post vec will be populated with valid solar radiation values.
     */
-void GatherSolarRadValues(const AtmosLogType & source, Vector<float> & vec, int year, int month);
+void GatherSolarRadValues(const AtmosLogType & source, Vector<float> & vec, int month);
 
 //----------------------------------------------------------------------------------
 

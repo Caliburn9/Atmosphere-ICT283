@@ -1,0 +1,25 @@
+<map id="CalculateAndDisplaySPCC" name="CalculateAndDisplaySPCC">
+<area shape="rect" id="Node000001" title="Calculates and displays Sample Pearson Correlation Coefficients for a specified month." alt="" coords="5,208,187,235"/>
+<area shape="rect" id="Node000002" href="$class_collector.html#a6aace49fd8b87d93dac493fa2941942c" title="Clears all stored data and resets the target month." alt="" coords="265,5,378,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,206,120,173,149,128,187,82,233,42,249,33,252,37,236,46,191,86,154,131,125,175,107,209"/>
+<area shape="rect" id="Node000003" href="$class_collector.html#a1d092781157af0a842e61a636c82ff24" title="Collects wind speed and solar radiation data for the target month." alt="" coords="251,56,392,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,206,157,151,193,120,233,92,245,86,248,91,236,97,197,124,161,155,110,210"/>
+<area shape="rect" id="Node000005" href="$class_collector.html#a145af7a8fd45e4c339938307d658442a" title="Collects wind speed and temperature data for the target month." alt="" coords="252,107,391,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="118,205,169,175,234,143,251,136,253,141,236,148,172,179,120,210"/>
+<area shape="rect" id="Node000006" href="$class_collector.html#ae82e2d44a91bc83d471e1bde5e1bac6f" title="Collects temperature and solar radiation data for the target month." alt="" coords="251,157,392,184"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="158,205,244,185,245,191,159,210"/>
+<area shape="rect" id="Node000007" href="$class_collector.html#aa5f36122afff84835fe45f4053273c0d" title="Returns the vector containing collected solar radiation values." alt="" coords="247,208,396,235"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="187,219,232,219,232,224,187,224"/>
+<area shape="rect" id="Node000008" href="$class_collector.html#a8e43895afaf0836b6ad1c7f8a6e84cb9" title="Returns the vector containing collected wind speed values." alt="" coords="241,259,402,285"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="159,233,245,252,244,257,158,238"/>
+<area shape="rect" id="Node000009" href="$class_collector.html#a241bcd5f2e3df37129a9d6d0fe4f1fc4" title="Returns the vector containing collected temperature values." alt="" coords="243,309,400,336"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="120,233,172,263,236,295,253,302,251,307,234,300,169,268,118,238"/>
+<area shape="rect" id="Node000010" href="$_menu_8cpp.html#a31faf4239baa10e5bb69ba0db2f32289" title="Prompts the user to enter a valid month (1&#45;12)." alt="" coords="272,360,371,387"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="110,233,161,288,197,319,236,346,258,356,256,361,233,350,193,323,157,291,106,237"/>
+<area shape="rect" id="Node000011" href="$class_collector.html#ae20209c5a3694777177926ad29e9977a" title="Sets the month used as a filter for data collection." alt="" coords="235,411,408,437"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="107,234,125,267,154,311,191,357,236,397,244,401,241,406,233,401,187,361,149,314,120,270,102,237"/>
+<area shape="rect" id="Node000004" href="$class_date.html#af2dcc6ce51dbb2bd798499a149bdffb7" title="Returns the value of the month variable as an integer." alt="" coords="456,107,570,133"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="376,81,446,100,444,105,374,86"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="391,117,441,117,441,123,391,123"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="374,154,444,135,446,140,376,159"/>
+</map>

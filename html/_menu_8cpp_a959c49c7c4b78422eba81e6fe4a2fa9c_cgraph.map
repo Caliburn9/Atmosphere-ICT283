@@ -1,0 +1,29 @@
+<map id="RunMenuLoop" name="RunMenuLoop">
+<area shape="rect" id="Node000001" title="Runs the menu loop and processes the user&#39;s choice." alt="" coords="5,233,111,260"/>
+<area shape="rect" id="Node000002" href="$_menu_8cpp.html#a145d5f04057cb6a76460db2963f13dc9" title="Calculates and displays Sample Pearson Correlation Coefficients for a specified month." alt="" coords="159,208,340,235"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,237,143,233,143,238,111,242"/>
+<area shape="rect" id="Node000013" href="$_menu_8cpp.html#ab319ba328ff05328b5332df87cf1bdc2" title="Displays the main menu and prompts the user for a selection." alt="" coords="201,259,298,285"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="111,251,186,261,185,266,111,256"/>
+<area shape="rect" id="Node000003" href="$class_collector.html#a6aace49fd8b87d93dac493fa2941942c" title="Clears all stored data and resets the target month." alt="" coords="418,5,531,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="255,206,274,173,303,128,341,82,386,42,403,33,405,37,390,46,344,86,307,131,278,175,260,209"/>
+<area shape="rect" id="Node000004" href="$class_collector.html#a1d092781157af0a842e61a636c82ff24" title="Collects wind speed and solar radiation data for the target month." alt="" coords="404,56,545,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="260,206,311,151,347,120,387,92,398,86,401,91,389,97,350,124,314,155,264,210"/>
+<area shape="rect" id="Node000006" href="$class_collector.html#a145af7a8fd45e4c339938307d658442a" title="Collects wind speed and temperature data for the target month." alt="" coords="405,107,544,133"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="271,205,323,175,387,143,405,136,407,141,389,148,325,179,274,210"/>
+<area shape="rect" id="Node000007" href="$class_collector.html#ae82e2d44a91bc83d471e1bde5e1bac6f" title="Collects temperature and solar radiation data for the target month." alt="" coords="404,157,545,184"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="312,205,397,185,398,191,313,210"/>
+<area shape="rect" id="Node000008" href="$class_collector.html#aa5f36122afff84835fe45f4053273c0d" title="Returns the vector containing collected solar radiation values." alt="" coords="400,208,549,235"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="341,219,385,219,385,224,341,224"/>
+<area shape="rect" id="Node000009" href="$class_collector.html#a8e43895afaf0836b6ad1c7f8a6e84cb9" title="Returns the vector containing collected wind speed values." alt="" coords="394,259,555,285"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="313,233,398,252,397,257,312,238"/>
+<area shape="rect" id="Node000010" href="$class_collector.html#a241bcd5f2e3df37129a9d6d0fe4f1fc4" title="Returns the vector containing collected temperature values." alt="" coords="396,309,553,336"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="317,233,341,244,357,257,366,270,375,283,390,295,399,301,397,305,386,300,371,287,362,273,353,261,339,249,314,238"/>
+<area shape="rect" id="Node000011" href="$_menu_8cpp.html#a31faf4239baa10e5bb69ba0db2f32289" title="Prompts the user to enter a valid month (1&#45;12)." alt="" coords="425,360,524,387"/>
+<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="323,233,342,245,354,257,361,271,367,297,372,322,379,334,390,346,412,359,409,364,386,350,374,337,367,324,361,298,356,272,349,260,338,249,320,238"/>
+<area shape="rect" id="Node000012" href="$class_collector.html#ae20209c5a3694777177926ad29e9977a" title="Sets the month used as a filter for data collection." alt="" coords="388,411,561,437"/>
+<area shape="poly" id="edge13_Node000002_Node000012" title=" " alt="" coords="325,233,342,245,357,264,364,284,367,322,369,360,376,379,390,397,393,400,389,404,386,400,371,381,364,361,361,323,359,285,352,267,338,249,322,237"/>
+<area shape="rect" id="Node000005" href="$class_date.html#af2dcc6ce51dbb2bd798499a149bdffb7" title="Returns the value of the month variable as an integer." alt="" coords="609,107,724,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="529,81,599,100,598,105,528,86"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="545,117,594,117,594,123,545,123"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="528,154,598,135,599,140,529,159"/>
+</map>

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['vector_0',['Vector',['../class_vector.html',1,'Vector&lt; T &gt;'],['../class_vector.html#a39d6069675db4ecfc1ab81d440da759a',1,'Vector::Vector()'],['../class_vector.html#acf7619af10ed5201835f5e8b4981c13a',1,'Vector::Vector(int n)'],['../class_vector.html#ad0ed347210040680329535d7e4d16ae1',1,'Vector::Vector(const Vector&lt; T &gt; &amp;other)']]],
-  ['vector_2eh_1',['Vector.h',['../_vector_8h.html',1,'']]],
-  ['vector_3c_20atmosrectype_20_3e_2',['Vector&lt; AtmosRecType &gt;',['../class_vector.html',1,'']]]
+  ['readatmospheredata_0',['ReadAtmosphereData',['../_file_i_o_8cpp.html#a441c83f0f3813ff647d5801f505f8a7a',1,'ReadAtmosphereData(std::ifstream &amp;file, AtmosLogType &amp;atmosData):&#160;FileIO.cpp'],['../_file_i_o_8h.html#a441c83f0f3813ff647d5801f505f8a7a',1,'ReadAtmosphereData(std::ifstream &amp;file, AtmosLogType &amp;atmosData):&#160;FileIO.cpp']]],
+  ['readrowdata_1',['ReadRowData',['../_file_i_o_8cpp.html#a524b9cc11ab093550365e56f1b9c7090',1,'ReadRowData(std::string &amp;line, std::string &amp;wastData, int wastIndex, std::string &amp;sData, int sIndex, std::string &amp;tData, int tIndex, std::string &amp;srData, int srIndex):&#160;FileIO.cpp'],['../_file_i_o_8h.html#a524b9cc11ab093550365e56f1b9c7090',1,'ReadRowData(std::string &amp;line, std::string &amp;wastData, int wastIndex, std::string &amp;sData, int sIndex, std::string &amp;tData, int tIndex, std::string &amp;srData, int srIndex):&#160;FileIO.cpp']]],
+  ['right_2',['right',['../struct_node.html#ad7092450d89448320103cde1f72da320',1,'Node']]],
+  ['runmenuloop_3',['RunMenuLoop',['../_menu_8h.html#a959c49c7c4b78422eba81e6fe4a2fa9c',1,'RunMenuLoop(const BST&lt; AtmosRecType &gt; &amp;atmos_bst, const std::map&lt; int, AtmosLogType &gt; &amp;atmos_map):&#160;Menu.cpp'],['../_menu_8cpp.html#a959c49c7c4b78422eba81e6fe4a2fa9c',1,'RunMenuLoop(const BST&lt; AtmosRecType &gt; &amp;atmos_bst, const std::map&lt; int, AtmosLogType &gt; &amp;atmos_map):&#160;Menu.cpp']]]
 ];

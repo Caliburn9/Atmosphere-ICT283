@@ -1,0 +1,7 @@
+<map id="operator&gt;" name="operator&gt;">
+<area shape="rect" id="Node000001" title="Greater&#45;than operator for comparing two MyTime objects." alt="" coords="5,31,82,57"/>
+<area shape="rect" id="Node000002" href="$class_my_time.html#a0cd9e282faa3d123040027cd5049a407" title="Returns the value of the hour variable as an integer." alt="" coords="135,5,260,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,35,119,29,120,34,83,40"/>
+<area shape="rect" id="Node000003" href="$class_my_time.html#af2e9884fb159ca6dd19d61617a491a75" title="Returns the value of the minute variable as an integer." alt="" coords="130,56,266,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="83,48,115,53,114,58,82,53"/>
+</map>

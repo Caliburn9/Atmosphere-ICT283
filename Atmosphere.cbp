@@ -47,11 +47,20 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 			</Target>
+			<Target title="StackTest">
+				<Option output="Atmosphere" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="AtmosphereLogTypes.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="AtmosphereLogTypes.h">
 			<Option target="Debug" />
 			<Option target="Release" />
@@ -69,6 +78,14 @@
 			<Option target="Release" />
 		</Unit>
 		<Unit filename="Calc.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Collector.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="Collector.h">
 			<Option target="Debug" />
 			<Option target="Release" />
 		</Unit>
@@ -109,11 +126,17 @@
 			<Option target="Debug" />
 			<Option target="Release" />
 			<Option target="TimeTest" />
+			<Option target="BSTTest" />
 		</Unit>
 		<Unit filename="MyTime.h">
 			<Option target="Debug" />
 			<Option target="Release" />
 			<Option target="TimeTest" />
+			<Option target="BSTTest" />
+		</Unit>
+		<Unit filename="Sort.h">
+			<Option target="Debug" />
+			<Option target="Release" />
 		</Unit>
 		<Unit filename="TimeTest/MyTimeTest.cpp">
 			<Option target="TimeTest" />
@@ -135,18 +158,15 @@
 			<Option target="Release" />
 			<Option target="VectorTest" />
 		</Unit>
-		<Unit filename="VectorSTL.h">
-			<Option target="Debug" />
-			<Option target="Release" />
-			<Option target="VectorTest" />
-		</Unit>
 		<Unit filename="VectorTest/Unit.cpp">
 			<Option target="VectorTest" />
 			<Option target="BSTTest" />
+			<Option target="Debug" />
 		</Unit>
 		<Unit filename="VectorTest/Unit.h">
 			<Option target="VectorTest" />
 			<Option target="BSTTest" />
+			<Option target="Debug" />
 		</Unit>
 		<Unit filename="VectorTest/VectorTest.cpp">
 			<Option target="VectorTest" />

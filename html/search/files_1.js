@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['calc_2ecpp_0',['Calc.cpp',['../_calc_8cpp.html',1,'']]],
-  ['calc_2eh_1',['Calc.h',['../_calc_8h.html',1,'']]]
+  ['bst_2eh_0',['BST.h',['../_b_s_t_8h.html',1,'']]]
 ];

@@ -1,0 +1,5 @@
+<map id="DisplayTempAvgAndStdDev" name="DisplayTempAvgAndStdDev">
+<area shape="rect" id="Node000001" title="Display temperature average and stddev for each month of a given year." alt="" coords="5,5,193,32"/>
+<area shape="rect" id="Node000002" href="$_menu_8cpp.html#ad65996beea80065ae55a757ef40f1c9a" title="Prompts the user to enter a year." alt="" coords="241,5,330,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,16,225,16,225,21,193,21"/>
+</map>

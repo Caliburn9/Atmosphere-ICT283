@@ -1,0 +1,28 @@
+<map id="operator&gt;" name="operator&gt;">
+<area shape="rect" id="Node000001" title="Greater&#45;than operator for comparing two AtmosRecType objects." alt="" coords="5,107,82,133"/>
+<area shape="rect" id="Node000002" href="$_calc_8cpp.html#ab8e2f110d7f8cf2f18bc7a33e136714d" title="Compare two floating&#45;point speed values to check if they are approximately equal." alt="" coords="130,5,240,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="56,104,87,74,128,42,136,37,139,42,131,46,91,78,59,108"/>
+<area shape="rect" id="Node000003" href="$_utils_8cpp.html#a27425be265a0cc57e4f731825154ec4d" title="Comparison operator for comparing two Date objects." alt="" coords="143,107,227,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="82,117,127,117,127,123,82,123"/>
+<area shape="rect" id="Node000007" href="$_utils_8cpp.html#a6a5695c42cf47c1d6240bb7144d705f1" title="Comparison operator for comparing two MyTime objects." alt="" coords="143,208,227,235"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="59,132,91,162,131,194,139,198,136,203,128,198,87,166,56,136"/>
+<area shape="rect" id="Node000010" href="$_utils_8cpp.html#a4e4faf476e7d66ef88aaca8b11a60175" title="Greater&#45;than operator for comparing two Date objects." alt="" coords="147,56,223,83"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="81,104,131,86,133,91,83,109"/>
+<area shape="rect" id="Node000011" href="$_utils_8cpp.html#a20ee99e90ca597f1ed33226aaae71de2" title="Greater&#45;than operator for comparing two MyTime objects." alt="" coords="147,157,223,184"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="83,131,133,149,131,154,81,136"/>
+<area shape="rect" id="Node000004" href="$class_date.html#a6304a67f1c13b239eb8e80ad68161e40" title="Returns the value of the day variable as an integer." alt="" coords="305,5,407,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="219,104,238,93,252,80,262,67,271,55,286,42,295,37,297,41,290,46,275,58,266,71,256,83,242,97,222,108"/>
+<area shape="rect" id="Node000005" href="$class_date.html#af2dcc6ce51dbb2bd798499a149bdffb7" title="Returns the value of the month variable as an integer." alt="" coords="299,56,413,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="227,105,294,85,295,90,228,110"/>
+<area shape="rect" id="Node000006" href="$class_date.html#ad79ce504482f317ddcfdc4ecad77671f" title="Returns the value of the year variable as an integer." alt="" coords="304,107,408,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="227,117,289,117,289,123,227,123"/>
+<area shape="rect" id="Node000008" href="$class_my_time.html#a0cd9e282faa3d123040027cd5049a407" title="Returns the value of the hour variable as an integer." alt="" coords="294,208,419,235"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="227,219,278,219,278,224,227,224"/>
+<area shape="rect" id="Node000009" href="$class_my_time.html#af2e9884fb159ca6dd19d61617a491a75" title="Returns the value of the minute variable as an integer." alt="" coords="288,157,424,184"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="227,206,294,186,295,191,228,211"/>
+<area shape="poly" id="edge10_Node000010_Node000004" title=" " alt="" coords="223,56,293,34,295,40,224,61"/>
+<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="224,67,284,67,284,72,224,72"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="224,78,295,99,293,104,223,83"/>
+<area shape="poly" id="edge14_Node000011_Node000008" title=" " alt="" coords="224,179,295,200,293,206,223,184"/>
+<area shape="poly" id="edge15_Node000011_Node000009" title=" " alt="" coords="224,168,273,168,273,173,224,173"/>
+</map>

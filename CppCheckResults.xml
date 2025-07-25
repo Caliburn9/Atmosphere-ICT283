@@ -2,88 +2,92 @@
 <results version="2">
     <cppcheck version="2.18.0" />
     <errors>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Vector&apos; has a constructor with 1 argument that is not explicit." verbose='Class &apos;Vector&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions.' cwe="398" file0="Utils.cpp">
+            <location file="Vector.h" line="63" column="5" />
+            <symbol>Vector</symbol>
+        </error>
+        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Vector &lt; float &gt;&apos; has a constructor with 1 argument that is not explicit." verbose='Class &apos;Vector &lt; float &gt;&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions.' cwe="398" file0="Collector.cpp">
+            <location file="Vector.h" line="63" column="5" />
+            <symbol>Vector &lt; float &gt;</symbol>
+        </error>
+        <error id="constParameterReference" severity="style" msg="Parameter &apos;a&apos; can be declared as reference to const" verbose="Parameter &apos;a&apos; can be declared as reference to const" cwe="398" file0="Collector.cpp">
+            <location file="Collector.cpp" line="59" column="42" info="Parameter &apos;a&apos; can be declared as reference to const" />
+            <symbol>a</symbol>
+        </error>
+        <error id="constParameterReference" severity="style" msg="Parameter &apos;a&apos; can be declared as reference to const" verbose="Parameter &apos;a&apos; can be declared as reference to const" cwe="398" file0="Collector.cpp">
+            <location file="Collector.cpp" line="77" column="42" info="Parameter &apos;a&apos; can be declared as reference to const" />
+            <symbol>a</symbol>
+        </error>
+        <error id="constParameterReference" severity="style" msg="Parameter &apos;a&apos; can be declared as reference to const" verbose="Parameter &apos;a&apos; can be declared as reference to const" cwe="398" file0="Collector.cpp">
+            <location file="Collector.cpp" line="95" column="42" info="Parameter &apos;a&apos; can be declared as reference to const" />
+            <symbol>a</symbol>
+        </error>
         <error id="noExplicitConstructor" severity="style" msg="Class &apos;Vector &lt; AtmosRecType &gt;&apos; has a constructor with 1 argument that is not explicit." verbose='Class &apos;Vector &lt; AtmosRecType &gt;&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions.' cwe="398" file0="Menu.h">
             <location file="Vector.h" line="63" column="5" />
             <symbol>Vector &lt; AtmosRecType &gt;</symbol>
         </error>
-        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Vector &lt; float &gt;&apos; has a constructor with 1 argument that is not explicit." verbose='Class &apos;Vector &lt; float &gt;&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions.' cwe="398" file0="Menu.h">
-            <location file="Vector.h" line="63" column="5" />
-            <symbol>Vector &lt; float &gt;</symbol>
-        </error>
-        <error id="variableScope" severity="style" msg="The scope of the variable &apos;mean&apos; can be reduced." verbose="The scope of the variable &apos;mean&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="Menu.cpp">
-            <location file="Menu.cpp" line="59" column="11" />
-            <symbol>mean</symbol>
-        </error>
-        <error id="variableScope" severity="style" msg="The scope of the variable &apos;stddev&apos; can be reduced." verbose="The scope of the variable &apos;stddev&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="Menu.cpp">
-            <location file="Menu.cpp" line="59" column="17" />
-            <symbol>stddev</symbol>
-        </error>
-        <error id="variableScope" severity="style" msg="The scope of the variable &apos;total&apos; can be reduced." verbose="The scope of the variable &apos;total&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="Menu.cpp">
-            <location file="Menu.cpp" line="95" column="11" />
-            <symbol>total</symbol>
-        </error>
-        <error id="variableScope" severity="style" msg="The scope of the variable &apos;mean&apos; can be reduced." verbose="The scope of the variable &apos;mean&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="Menu.cpp">
-            <location file="Menu.cpp" line="127" column="11" />
-            <symbol>mean</symbol>
-        </error>
-        <error id="variableScope" severity="style" msg="The scope of the variable &apos;stddev&apos; can be reduced." verbose="The scope of the variable &apos;stddev&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="Menu.cpp">
-            <location file="Menu.cpp" line="127" column="17" />
-            <symbol>stddev</symbol>
-        </error>
-        <error id="variableScope" severity="style" msg="The scope of the variable &apos;total&apos; can be reduced." verbose="The scope of the variable &apos;total&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="Menu.cpp">
-            <location file="Menu.cpp" line="127" column="25" />
-            <symbol>total</symbol>
-        </error>
-        <error id="unreadVariable" severity="style" msg="Variable &apos;mean&apos; is assigned a value that is never used." verbose="Variable &apos;mean&apos; is assigned a value that is never used." cwe="563" file0="Menu.cpp">
-            <location file="Menu.cpp" line="65" column="14" />
-            <symbol>mean</symbol>
-        </error>
-        <error id="unreadVariable" severity="style" msg="Variable &apos;stddev&apos; is assigned a value that is never used." verbose="Variable &apos;stddev&apos; is assigned a value that is never used." cwe="563" file0="Menu.cpp">
-            <location file="Menu.cpp" line="66" column="16" />
-            <symbol>stddev</symbol>
-        </error>
-        <error id="unreadVariable" severity="style" msg="Variable &apos;total&apos; is assigned a value that is never used." verbose="Variable &apos;total&apos; is assigned a value that is never used." cwe="563" file0="Menu.cpp">
-            <location file="Menu.cpp" line="101" column="15" />
-            <symbol>total</symbol>
-        </error>
-        <error id="unreadVariable" severity="style" msg="Variable &apos;mean&apos; is assigned a value that is never used." verbose="Variable &apos;mean&apos; is assigned a value that is never used." cwe="563" file0="Menu.cpp">
-            <location file="Menu.cpp" line="141" column="14" />
-            <symbol>mean</symbol>
-        </error>
-        <error id="unreadVariable" severity="style" msg="Variable &apos;stddev&apos; is assigned a value that is never used." verbose="Variable &apos;stddev&apos; is assigned a value that is never used." cwe="563" file0="Menu.cpp">
-            <location file="Menu.cpp" line="142" column="16" />
-            <symbol>stddev</symbol>
-        </error>
-        <error id="unreadVariable" severity="style" msg="Variable &apos;total&apos; is assigned a value that is never used." verbose="Variable &apos;total&apos; is assigned a value that is never used." cwe="563" file0="Menu.cpp">
-            <location file="Menu.cpp" line="143" column="15" />
-            <symbol>total</symbol>
-        </error>
         <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;(end=headerLine.find(&apos;,&apos;,start))!=-1&apos; is always true" verbose="Condition &apos;(end=headerLine.find(&apos;,&apos;,start))!=-1&apos; is always true" cwe="571" file0="FileIO.cpp">
-            <location file="FileIO.cpp" line="98" column="47" info="Condition &apos;(end=headerLine.find(&apos;,&apos;,start))!=-1&apos; is always true" />
+            <location file="FileIO.cpp" line="100" column="47" info="Condition &apos;(end=headerLine.find(&apos;,&apos;,start))!=-1&apos; is always true" />
         </error>
         <error id="variableScope" severity="style" msg="The scope of the variable &apos;end&apos; can be reduced." verbose="The scope of the variable &apos;end&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="FileIO.cpp">
-            <location file="FileIO.cpp" line="149" column="20" />
+            <location file="FileIO.cpp" line="151" column="20" />
             <symbol>end</symbol>
         </error>
         <error id="passedByValue" severity="performance" msg="Function parameter &apos;headerLine&apos; should be passed by const reference." verbose="Parameter &apos;headerLine&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="FileIO.cpp">
-            <location file="FileIO.cpp" line="88" column="35" info="Function parameter &apos;headerLine&apos; should be passed by const reference." />
+            <location file="FileIO.cpp" line="90" column="35" info="Function parameter &apos;headerLine&apos; should be passed by const reference." />
             <symbol>headerLine</symbol>
         </error>
         <error id="passedByValue" severity="performance" msg="Function parameter &apos;line&apos; should be passed by const reference." verbose="Parameter &apos;line&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="FileIO.cpp">
-            <location file="FileIO.cpp" line="145" column="30" info="Function parameter &apos;line&apos; should be passed by const reference." />
+            <location file="FileIO.cpp" line="147" column="30" info="Function parameter &apos;line&apos; should be passed by const reference." />
             <symbol>line</symbol>
         </error>
         <error id="passedByValue" severity="performance" msg="Function parameter &apos;dateStr&apos; should be passed by const reference." verbose="Parameter &apos;dateStr&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="FileIO.cpp">
-            <location file="FileIO.cpp" line="188" column="34" info="Function parameter &apos;dateStr&apos; should be passed by const reference." />
+            <location file="FileIO.cpp" line="190" column="34" info="Function parameter &apos;dateStr&apos; should be passed by const reference." />
             <symbol>dateStr</symbol>
         </error>
         <error id="passedByValue" severity="performance" msg="Function parameter &apos;timeStr&apos; should be passed by const reference." verbose="Parameter &apos;timeStr&apos; is passed by value. It could be passed as a const reference which is usually faster and recommended in C++." cwe="398" file0="FileIO.cpp">
-            <location file="FileIO.cpp" line="204" column="34" info="Function parameter &apos;timeStr&apos; should be passed by const reference." />
+            <location file="FileIO.cpp" line="206" column="34" info="Function parameter &apos;timeStr&apos; should be passed by const reference." />
             <symbol>timeStr</symbol>
         </error>
+        <error id="constParameterReference" severity="style" msg="Parameter &apos;atmosData&apos; can be declared as reference to const" verbose="Parameter &apos;atmosData&apos; can be declared as reference to const" cwe="398" file0="FileIO.cpp">
+            <location file="FileIO.cpp" line="234" column="41" info="Parameter &apos;atmosData&apos; can be declared as reference to const" />
+            <symbol>atmosData</symbol>
+        </error>
         <error id="unreadVariable" severity="style" msg="Variable &apos;data&apos; is assigned a value that is never used." verbose="Variable &apos;data&apos; is assigned a value that is never used." cwe="563" file0="FileIO.cpp">
-            <location file="FileIO.cpp" line="148" column="22" />
+            <location file="FileIO.cpp" line="150" column="22" />
             <symbol>data</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="class member &apos;MyTime::m_hour&apos; is never used." verbose="class member &apos;MyTime::m_hour&apos; is never used." cwe="563" file0="MyTime.h">
+            <location file="MyTime.h" line="94" column="9" />
+            <symbol>MyTime::m_hour</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="class member &apos;MyTime::m_minute&apos; is never used." verbose="class member &apos;MyTime::m_minute&apos; is never used." cwe="563" file0="MyTime.h">
+            <location file="MyTime.h" line="95" column="9" />
+            <symbol>MyTime::m_minute</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;AtmosRecType::speed&apos; is never used." verbose="struct member &apos;AtmosRecType::speed&apos; is never used." cwe="563" file0="AtmosphereLogTypes.h">
+            <location file="AtmosphereLogTypes.h" line="18" column="11" />
+            <symbol>AtmosRecType::speed</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;AtmosRecType::temperature&apos; is never used." verbose="struct member &apos;AtmosRecType::temperature&apos; is never used." cwe="563" file0="AtmosphereLogTypes.h">
+            <location file="AtmosphereLogTypes.h" line="19" column="11" />
+            <symbol>AtmosRecType::temperature</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;AtmosRecType::solar_rad&apos; is never used." verbose="struct member &apos;AtmosRecType::solar_rad&apos; is never used." cwe="563" file0="AtmosphereLogTypes.h">
+            <location file="AtmosphereLogTypes.h" line="20" column="11" />
+            <symbol>AtmosRecType::solar_rad</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="class member &apos;Unit::m_id&apos; is never used." verbose="class member &apos;Unit::m_id&apos; is never used." cwe="563" file0="VectorTest/Unit.h">
+            <location file="VectorTest/Unit.h" line="128" column="17" />
+            <symbol>Unit::m_id</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="class member &apos;Unit::m_name&apos; is never used." verbose="class member &apos;Unit::m_name&apos; is never used." cwe="563" file0="VectorTest/Unit.h">
+            <location file="VectorTest/Unit.h" line="129" column="17" />
+            <symbol>Unit::m_name</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="class member &apos;Unit::m_credits&apos; is never used." verbose="class member &apos;Unit::m_credits&apos; is never used." cwe="563" file0="VectorTest/Unit.h">
+            <location file="VectorTest/Unit.h" line="130" column="10" />
+            <symbol>Unit::m_credits</symbol>
         </error>
         <error id="unusedStructMember" severity="style" msg="class member &apos;Date::m_day&apos; is never used." verbose="class member &apos;Date::m_day&apos; is never used." cwe="563" file0="Date.h">
             <location file="Date.h" line="118" column="9" />
@@ -97,29 +101,49 @@
             <location file="Date.h" line="120" column="9" />
             <symbol>Date::m_year</symbol>
         </error>
-        <error id="noExplicitConstructor" severity="style" msg="Class &apos;Vector&apos; has a constructor with 1 argument that is not explicit." verbose='Class &apos;Vector&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions.' cwe="398" file0="AtmosphereLogTypes.h">
-            <location file="Vector.h" line="63" column="5" />
-            <symbol>Vector</symbol>
+        <error id="unusedStructMember" severity="style" msg="class member &apos;Collector::m_targetMonth&apos; is never used." verbose="class member &apos;Collector::m_targetMonth&apos; is never used." cwe="563" file0="Collector.h">
+            <location file="Collector.h" line="50" column="16" />
+            <symbol>Collector::m_targetMonth</symbol>
         </error>
-        <error id="unusedStructMember" severity="style" msg="struct member &apos;AtmosRecType::speed&apos; is never used." verbose="struct member &apos;AtmosRecType::speed&apos; is never used." cwe="563" file0="AtmosphereLogTypes.h">
-            <location file="AtmosphereLogTypes.h" line="17" column="11" />
-            <symbol>AtmosRecType::speed</symbol>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;mean&apos; can be reduced." verbose="The scope of the variable &apos;mean&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="Menu.cpp">
+            <location file="Menu.cpp" line="62" column="11" />
+            <symbol>mean</symbol>
         </error>
-        <error id="unusedStructMember" severity="style" msg="struct member &apos;AtmosRecType::temperature&apos; is never used." verbose="struct member &apos;AtmosRecType::temperature&apos; is never used." cwe="563" file0="AtmosphereLogTypes.h">
-            <location file="AtmosphereLogTypes.h" line="18" column="11" />
-            <symbol>AtmosRecType::temperature</symbol>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;stddev&apos; can be reduced." verbose="The scope of the variable &apos;stddev&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="Menu.cpp">
+            <location file="Menu.cpp" line="62" column="17" />
+            <symbol>stddev</symbol>
         </error>
-        <error id="unusedStructMember" severity="style" msg="struct member &apos;AtmosRecType::solar_rad&apos; is never used." verbose="struct member &apos;AtmosRecType::solar_rad&apos; is never used." cwe="563" file0="AtmosphereLogTypes.h">
-            <location file="AtmosphereLogTypes.h" line="19" column="11" />
-            <symbol>AtmosRecType::solar_rad</symbol>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;mean&apos; can be reduced." verbose="The scope of the variable &apos;mean&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="Menu.cpp">
+            <location file="Menu.cpp" line="122" column="11" />
+            <symbol>mean</symbol>
         </error>
-        <error id="unusedStructMember" severity="style" msg="class member &apos;MyTime::m_hour&apos; is never used." verbose="class member &apos;MyTime::m_hour&apos; is never used." cwe="563" file0="MyTime.h">
-            <location file="MyTime.h" line="94" column="9" />
-            <symbol>MyTime::m_hour</symbol>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;stddev&apos; can be reduced." verbose="The scope of the variable &apos;stddev&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="Menu.cpp">
+            <location file="Menu.cpp" line="122" column="17" />
+            <symbol>stddev</symbol>
         </error>
-        <error id="unusedStructMember" severity="style" msg="class member &apos;MyTime::m_minute&apos; is never used." verbose="class member &apos;MyTime::m_minute&apos; is never used." cwe="563" file0="MyTime.h">
-            <location file="MyTime.h" line="95" column="9" />
-            <symbol>MyTime::m_minute</symbol>
+        <error id="variableScope" severity="style" msg="The scope of the variable &apos;total&apos; can be reduced." verbose="The scope of the variable &apos;total&apos; can be reduced. Warning: Be careful when fixing this message, especially when there are inner loops. Here is an example where cppcheck will write that the scope for &apos;i&apos; can be reduced:\012void f(int x)\012{\012    int i = 0;\012    if (x) {\012        // it&apos;s safe to move &apos;int i = 0;&apos; here\012        for (int n = 0; n &lt; 10; ++n) {\012            // it is possible but not safe to move &apos;int i = 0;&apos; here\012            do_something(&amp;i);\012        }\012    }\012}\012When you see this message it is always safe to reduce the variable scope 1 level." cwe="398" file0="Menu.cpp">
+            <location file="Menu.cpp" line="122" column="25" />
+            <symbol>total</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;mean&apos; is assigned a value that is never used." verbose="Variable &apos;mean&apos; is assigned a value that is never used." cwe="563" file0="Menu.cpp">
+            <location file="Menu.cpp" line="68" column="14" />
+            <symbol>mean</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;stddev&apos; is assigned a value that is never used." verbose="Variable &apos;stddev&apos; is assigned a value that is never used." cwe="563" file0="Menu.cpp">
+            <location file="Menu.cpp" line="69" column="16" />
+            <symbol>stddev</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;mean&apos; is assigned a value that is never used." verbose="Variable &apos;mean&apos; is assigned a value that is never used." cwe="563" file0="Menu.cpp">
+            <location file="Menu.cpp" line="136" column="14" />
+            <symbol>mean</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;stddev&apos; is assigned a value that is never used." verbose="Variable &apos;stddev&apos; is assigned a value that is never used." cwe="563" file0="Menu.cpp">
+            <location file="Menu.cpp" line="137" column="16" />
+            <symbol>stddev</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;total&apos; is assigned a value that is never used." verbose="Variable &apos;total&apos; is assigned a value that is never used." cwe="563" file0="Menu.cpp">
+            <location file="Menu.cpp" line="138" column="15" />
+            <symbol>total</symbol>
         </error>
         <error id="noExplicitConstructor" severity="style" msg="Class &apos;Vector &lt; int &gt;&apos; has a constructor with 1 argument that is not explicit." verbose='Class &apos;Vector &lt; int &gt;&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions.' cwe="398" file0="VectorTest/VectorTest.cpp">
             <location file="Vector.h" line="63" column="5" />
@@ -145,18 +169,6 @@
             <location file="VectorTest/VectorTest.cpp" line="452" column="15" />
             <symbol>y</symbol>
         </error>
-        <error id="unusedStructMember" severity="style" msg="class member &apos;Unit::m_id&apos; is never used." verbose="class member &apos;Unit::m_id&apos; is never used." cwe="563" file0="VectorTest/Unit.h">
-            <location file="VectorTest/Unit.h" line="128" column="17" />
-            <symbol>Unit::m_id</symbol>
-        </error>
-        <error id="unusedStructMember" severity="style" msg="class member &apos;Unit::m_name&apos; is never used." verbose="class member &apos;Unit::m_name&apos; is never used." cwe="563" file0="VectorTest/Unit.h">
-            <location file="VectorTest/Unit.h" line="129" column="17" />
-            <symbol>Unit::m_name</symbol>
-        </error>
-        <error id="unusedStructMember" severity="style" msg="class member &apos;Unit::m_credits&apos; is never used." verbose="class member &apos;Unit::m_credits&apos; is never used." cwe="563" file0="VectorTest/Unit.h">
-            <location file="VectorTest/Unit.h" line="130" column="10" />
-            <symbol>Unit::m_credits</symbol>
-        </error>
         <error id="noExplicitConstructor" severity="style" msg="Class &apos;Vector&apos; has a constructor with 1 argument that is not explicit." verbose='Class &apos;Vector&apos; has a constructor with 1 argument that is not explicit. Such, so called &quot;Converting constructors&quot;, should in general be explicit for type safety reasons as that prevents unintended implicit conversions.' cwe="398" file0="VectorSTL.h">
             <location file="VectorSTL.h" line="70" column="5" />
             <symbol>Vector</symbol>
@@ -181,20 +193,20 @@
             <location file="Calc.cpp" line="7" column="6" />
             <symbol>CompareSpeed</symbol>
         </error>
-        <error id="unusedFunction" severity="style" msg="The function &apos;sPCC&apos; is never used." verbose="The function &apos;sPCC&apos; is never used." cwe="561">
-            <location file="Calc.h" line="107" column="7" />
-            <symbol>sPCC</symbol>
-        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;MAD&apos; is never used." verbose="The function &apos;MAD&apos; is never used." cwe="561">
             <location file="Calc.h" line="158" column="7" />
             <symbol>MAD</symbol>
         </error>
+        <error id="unusedFunction" severity="style" msg="The function &apos;GetTargetMonth&apos; is never used." verbose="The function &apos;GetTargetMonth&apos; is never used." cwe="561">
+            <location file="Collector.cpp" line="31" column="16" />
+            <symbol>GetTargetMonth</symbol>
+        </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;WriteAtmosphereData&apos; is never used." verbose="The function &apos;WriteAtmosphereData&apos; is never used." cwe="561">
-            <location file="FileIO.cpp" line="217" column="6" />
+            <location file="FileIO.cpp" line="219" column="6" />
             <symbol>WriteAtmosphereData</symbol>
         </error>
         <error id="unusedFunction" severity="style" msg="The function &apos;PrintDateAndTime&apos; is never used." verbose="The function &apos;PrintDateAndTime&apos; is never used." cwe="561">
-            <location file="Menu.cpp" line="203" column="6" />
+            <location file="Menu.cpp" line="198" column="6" />
             <symbol>PrintDateAndTime</symbol>
         </error>
         <error id="checkersReport" severity="information" msg="Active checkers: 169/966" verbose="Active checkers: 169/966" />

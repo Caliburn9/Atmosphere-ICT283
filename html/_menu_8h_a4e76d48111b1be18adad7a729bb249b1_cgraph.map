@@ -1,0 +1,5 @@
+<map id="ExportToWindTempSolarCSV" name="ExportToWindTempSolarCSV">
+<area shape="rect" id="Node000001" title="Export wind, temperature, and solar radiation data to file." alt="" coords="5,5,199,32"/>
+<area shape="rect" id="Node000002" href="$_menu_8cpp.html#ad65996beea80065ae55a757ef40f1c9a" title="Prompts the user to enter a year." alt="" coords="247,5,336,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,16,231,16,231,21,199,21"/>
+</map>

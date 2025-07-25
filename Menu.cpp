@@ -2,11 +2,46 @@
 #include "atmospherelogtypes.h"
 #include "calc.h"
 #include "vector.h"
-//#include "vectorstl.h"
+#include "BST.h"
+#include "Collector.h"
+#include "utils.h"
 #include "fileio.h"
+#include <map>
 #include <iostream>
 #include <iomanip>
 #include <string>
+
+//----------------------------------------------------------------------------------
+
+void RunMenuLoop(const BST<AtmosRecType> & atmos_bst, const std::map<int, AtmosLogType> & atmos_map)
+{
+    int choice = DisplayMenu();
+    while(choice != 5)
+    {
+        switch(choice)
+        {
+        case 1:
+            DisplayWindSpeedAvgAndStdDev(atmos_map);
+            std::cout << std::endl;
+            break;
+        case 2:
+            DisplayTempAvgAndStdDev(atmos_map);
+            std::cout << std::endl;
+            break;
+        case 3:
+            CalculateAndDisplaySPCC(atmos_bst);
+            std::cout << std::endl;
+            break;
+        case 4:
+            ExportToWindTempSolarCSV(atmos_map);
+            std::cout << std::endl;
+            break;
+        default:
+            std::cout << "Invalid option\n";
+        }
+        choice = DisplayMenu();
+    }
+}
 
 //----------------------------------------------------------------------------------
 
@@ -14,7 +49,7 @@ int DisplayMenu()
 {
     std::cout << "1. Wind Speed Average and Standard Deviation for a Specified Month and Year\n";
     std::cout << "2. Air Temperature Average and Standard Deviation for Each Month in a Specified Year\n";
-    std::cout << "3. Total Solar Radiation (in kWh/m^2) for Each Month in a Specified Year\n";
+    std::cout << "3. Sample Pearson Correlation Coefficients for a Specified Month (Across All Years)\n";
     std::cout << "4. Export monthly Wind, Temperature & Solar Radiation stats for a Specified Year to WindTempSolar.csv\n";
     std::cout << "5. Exit\n";
     int choice;
@@ -26,12 +61,21 @@ int DisplayMenu()
 
 //----------------------------------------------------------------------------------
 
-void OptionOne(const AtmosLogType & a)
+void DisplayWindSpeedAvgAndStdDev(const std::map<int, AtmosLogType> & data)
 {
     int month = PromptMonth();
     int year = PromptYear();
+
+    std::map<int, AtmosLogType>::const_iterator constItr = data.find(year);
+    if (constItr == data.end())
+    {
+        std::cout << MonthToString(month) << " " << year << ": No Data\n";
+        return;
+    }
+    const AtmosLogType & logOfYear = constItr->second;
+
     Vector<float> speedVec;
-    GatherSpeedValues(a, speedVec, year, month);
+    GatherSpeedValues(logOfYear, speedVec, month);
 
     if (speedVec.GetSize() > 0)
     {
@@ -42,7 +86,7 @@ void OptionOne(const AtmosLogType & a)
 
         std::cout << MonthToString(month) << " " << year << ":" << std::endl;
         std::cout << "Average Speed: " << (mean * 3.6f) << " km/h" << std::endl;
-        std::cout << "Sample stddev: " << stddev << "\n";
+        std::cout << "Sample stddev: " << (stddev * 3.6f) << "\n";
     }
     else
     {
@@ -52,7 +96,7 @@ void OptionOne(const AtmosLogType & a)
 
 //----------------------------------------------------------------------------------
 
-void OptionTwo(const AtmosLogType & a)
+void DisplayTempAvgAndStdDev(const std::map<int, AtmosLogType> & data)
 {
     int year = PromptYear();
     Vector<float> tempVec;
@@ -60,13 +104,24 @@ void OptionTwo(const AtmosLogType & a)
 
     std::cout << year << std::endl;
 
+    std::map<int, AtmosLogType>::const_iterator constItr = data.find(year);
+    if (constItr == data.end())
+    {
+        for (int month = 1; month <= 12; month++)
+        {
+            std::cout << MonthToString(month) << ": No Data\n";
+        }
+        return;
+    }
+    const AtmosLogType & logOfYear = constItr->second;
+
     for (int month = 1; month <= 12; month++)
     {
         mean = 0.0f;
         stddev = 0.0f;
         tempVec.Clear();
 
-        GatherTempValues(a, tempVec, year, month);
+        GatherTempValues(logOfYear, tempVec, month);
 
         if (tempVec.GetSize() > 0)
         {
@@ -88,43 +143,42 @@ void OptionTwo(const AtmosLogType & a)
 
 //----------------------------------------------------------------------------------
 
-void OptionThree(const AtmosLogType & a)
+void CalculateAndDisplaySPCC(const BST<AtmosRecType> & data)
 {
-    int year = PromptYear();
-    Vector<float> srVec;
-    float total;
+    int month = PromptMonth();
 
-    std::cout << year << std::endl;
+    // Calculate ST
+    Collector::Clear();
+    Collector::SetTargetMonth(month);
+    data.InOrderTraversal(Collector::CollectST);
+    float st = sPCC(Collector::GetSpeedVec(), Collector::GetTempVec());
 
-    for (int month = 1; month <= 12; month++)
-    {
-        total = 0.0f;
-        srVec.Clear();
+    // Calculate SR
+    Collector::Clear();
+    Collector::SetTargetMonth(month);
+    data.InOrderTraversal(Collector::CollectSR);
+    float sr = sPCC(Collector::GetSpeedVec(), Collector::GetRadVec());
 
-        GatherSolarRadValues(a, srVec, year, month);
+    // Calculate TR
+    Collector::Clear();
+    Collector::SetTargetMonth(month);
+    data.InOrderTraversal(Collector::CollectTR);
+    float tr = sPCC(Collector::GetTempVec(), Collector::GetRadVec());
 
-        if (srVec.GetSize() > 0)
-        {
-            total = CalculateTotal(srVec, srVec.GetSize());
-
-            std::cout << std::fixed << std::setprecision(1);
-
-            std::cout << MonthToString(month) << ": " << (total * (10.0f / 60.0f) / 1000.0f) << " kWh/m^2\n";
-        }
-        else
-        {
-            std::cout << MonthToString(month) << ": No Data\n";
-        }
-    }
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Sample Pearson Correlation Coefficient for " << MonthToString(month) << std::endl;
+    std::cout << "S_T: " << st << std::endl;
+    std::cout << "S_R: " << sr << std::endl;
+    std::cout << "T_R: " << tr << std::endl;
 }
 
 //----------------------------------------------------------------------------------
 
-void OptionFour(const AtmosLogType & a)
+void ExportToWindTempSolarCSV(const std::map<int, AtmosLogType> & data)
 {
     int year = PromptYear();
     Vector<float> speedVec, tempVec, srVec;
-    float mean, stddev, total;
+    float mean, stddev, total, mad;
     bool dataPrinted = false;
 
     std::ofstream out("data/WindTempSolar.csv");
@@ -136,18 +190,28 @@ void OptionFour(const AtmosLogType & a)
 
     out << year << std::endl;
 
+    std::map<int, AtmosLogType>::const_iterator constItr = data.find(year);
+    if (constItr == data.end())
+    {
+        out << "No Data\n";
+        out.close();
+        return;
+    }
+    const AtmosLogType & logOfYear = constItr->second;
+
     for (int month = 1; month <= 12; month++)
     {
         mean = 0.0f;
         stddev = 0.0f;
         total = 0.0f;
+        mad = 0.0f;
         speedVec.Clear();
         tempVec.Clear();
         srVec.Clear();
 
-        GatherSpeedValues(a, speedVec, year, month);
-        GatherTempValues(a, tempVec, year, month);
-        GatherSolarRadValues(a, srVec, year, month);
+        GatherSpeedValues(logOfYear, speedVec, month);
+        GatherTempValues(logOfYear, tempVec, month);
+        GatherSolarRadValues(logOfYear, srVec, month);
 
         if (speedVec.GetSize() > 0 || tempVec.GetSize() > 0 || srVec.GetSize() > 0)
         {
@@ -160,7 +224,8 @@ void OptionFour(const AtmosLogType & a)
             {
                 mean = CalculateMean(speedVec, speedVec.GetSize());
                 stddev = CalculateStandardDeviation(speedVec, speedVec.GetSize(), mean);
-                out << (mean * 3.6f) << "(" << stddev << "),";
+                mad = MAD(speedVec, speedVec.GetSize());
+                out << (mean * 3.6f) << "(" << (stddev * 3.6f) << ", " << (mad * 3.6f) << "),";
             }
             else
             {
@@ -171,7 +236,8 @@ void OptionFour(const AtmosLogType & a)
             {
                 mean = CalculateMean(tempVec, tempVec.GetSize());
                 stddev = CalculateStandardDeviation(tempVec, tempVec.GetSize(), mean);
-                out << mean << "(" << stddev << "),";
+                mad = MAD(tempVec, tempVec.GetSize());
+                out << mean << "(" << stddev << ", " << mad << "),";
             }
             else
             {
@@ -253,13 +319,11 @@ static const std::string & MonthToString(int monthNum)
 
 //----------------------------------------------------------------------------------
 
-void GatherSpeedValues(const AtmosLogType & source, Vector<float> & vec, int year, int month)
+void GatherSpeedValues(const AtmosLogType & source, Vector<float> & vec, int month)
 {
     for (int i = 0; i < source.GetSize(); i++)
     {
-        if (source[i].date.GetYear() == year
-            && source[i].date.GetMonth() == month
-            && source[i].speed != -1.0f)
+        if (source[i].date.GetMonth() == month && source[i].speed != -1.0f)
         {
             vec.PushBack(source[i].speed);
         }
@@ -268,13 +332,11 @@ void GatherSpeedValues(const AtmosLogType & source, Vector<float> & vec, int yea
 
 //----------------------------------------------------------------------------------
 
-void GatherTempValues(const AtmosLogType & source, Vector<float> & vec, int year, int month)
+void GatherTempValues(const AtmosLogType & source, Vector<float> & vec, int month)
 {
     for (int i = 0; i < source.GetSize(); i++)
     {
-        if (source[i].date.GetYear() == year
-            && source[i].date.GetMonth() == month
-            && source[i].temperature != -1.0f)
+        if (source[i].date.GetMonth() == month && source[i].temperature != -1.0f)
         {
             vec.PushBack(source[i].temperature);
         }
@@ -283,13 +345,11 @@ void GatherTempValues(const AtmosLogType & source, Vector<float> & vec, int year
 
 //----------------------------------------------------------------------------------
 
-void GatherSolarRadValues(const AtmosLogType & source, Vector<float> & vec, int year, int month)
+void GatherSolarRadValues(const AtmosLogType & source, Vector<float> & vec, int month)
 {
     for (int i = 0; i < source.GetSize(); i++)
     {
-        if (source[i].date.GetYear() == year
-            && source[i].date.GetMonth() == month
-            && source[i].solar_rad >= 100.0f)
+        if (source[i].date.GetMonth() == month && source[i].solar_rad >= 100.0f)
         {
             vec.PushBack(source[i].solar_rad);
         }
